@@ -1,5 +1,5 @@
 import React from 'react';
-import Bubble from './Bubble/Bubble';
+import Bubble from '../Bubble/Bubble';
 import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee} from '@fortawesome/free-solid-svg-icons';
