@@ -1,0 +1,6 @@
+.greeting{
+    font-size:3rem;
+    padding:2rem;
+    color:rgb(255, 255, 255);
+    z-index:10;
+}

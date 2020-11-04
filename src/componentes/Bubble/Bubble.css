@@ -5,6 +5,7 @@
     align-content:center;
     align-items:center;
     padding-right:2rem;
+    padding-bottom:1rem;
 }
 
 
@@ -18,8 +19,8 @@ h3 {
 }
 
 .bubble{ 
-    width:7vh;
-    height:7vh;
+    width:3rem;
+    height:3rem;
     border-radius:200px;
     background-color:rgb(126, 126, 126);
     text-align:center;
@@ -34,4 +35,9 @@ h3 {
 .bubble_icon{
     text-align: center;
     padding: 0;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
 }
