@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './componentes/NavBar/NavBar';
 import Example from './componentes/Sidebar/SideBar';
 import Home from './componentes/Home/Home';
+import Button1 from './componentes/Button1/Button1';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
     <NavBar/>
     <Example/>
     <div ClassName="section">
-      <Home greeting="Mi tienda gourmet"/>
+      <Home greeting="Mi tienda"/>
     </div>
+    <Button1></Button1>
     </>
   );
 }
