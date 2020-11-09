@@ -1,0 +1,21 @@
+.card_holder{
+    background-color:rgba(128, 128, 128, 0.61);
+    width:15%;
+    height: 300px;
+    margin:2px;
+    padding:2px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    border-radius:5px;
+}
+
+h2{
+    margin:0;
+}
+
+@media only screen and (max-width: 600px) {
+    .card_holder {
+        width:30%;
+    }
+  }

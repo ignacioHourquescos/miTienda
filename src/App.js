@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './componentes/NavBar/NavBar';
 import Example from './componentes/Sidebar/SideBar';
 import Home from './componentes/Home/Home';
-import Button1 from './componentes/Button1/Button1';
+import ProductGrid from './componentes/ProductGrid/ProductGrid';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
     <div ClassName="section">
       <Home greeting="Mi tienda"/>
     </div>
-    <Button1></Button1>
+    <ProductGrid/>
     </>
   );
 }

@@ -1,16 +1,29 @@
 
-import React, { useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 
 const Button1 = () =>{
-    const [name, setName]=useState('Hola como va');
-    const cambiarName =() =>{
-        setName("Hola coders");
+    const [contador, setContador]=useState(0);
+    
+    useEffect(() => {
+        //se va a mostrar el valor
+        console.log("se monto");
+
+        return()=>{
+            console.log("Murio");
+            //se terminod e ejecutar toda la logica
+        }
+    });
+
+    const sumarNumero =() =>{
+       setContador(contador +1);
     }
     
+    console.log("se va a renderizas");
+
     return<>
         <div className="App">
-            <button onClick={()=>{cambiarName()}}>{name}</button>
+            <button onClick={()=>{sumarNumero()}}>{contador}</button>
         </div>
         </>
 }

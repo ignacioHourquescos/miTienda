@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Bubble from '../Bubble/Bubble';
 import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +9,16 @@ import { faCoffee} from '@fortawesome/free-solid-svg-icons';
 
 
 const NavBar = () =>{
+    // const [showMenu, setShowMenu]=useState(false);
+
+    // const restarUnidad = contador => {
+    //   alert(contador);  
+    //   document.getElementsByClassName("list")[0].style.("display:none");
+    // }
+
+
+
+
     return(
         <div className="sidebar">
         <div className="menu">
