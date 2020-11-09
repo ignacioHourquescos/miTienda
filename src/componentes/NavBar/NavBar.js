@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Bubble from '../Bubble/Bubble';
 import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
