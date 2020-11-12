@@ -3,7 +3,7 @@ import React from 'react';
 import { stack as Menu } from 'react-burger-menu';
 import './SideBar.css';
 
-class Example extends React.Component {
+class SideBar extends React.Component {
   showSettings (event) {
     event.preventDefault();
   }
@@ -23,4 +23,4 @@ class Example extends React.Component {
 }
 
 
-export default Example;
+export default SideBar;

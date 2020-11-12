@@ -1,5 +1,5 @@
 import React from 'react';
-import Contador from '../Contador/Contador';
+import ItemCount from '../ItemCount/ItemCount';
 import './Card.css';
 
 const Card = ({producto}) =>{
@@ -8,7 +8,7 @@ const Card = ({producto}) =>{
         <>
         <div className="card_holder">
             <h2>{producto}</h2>
-            <Contador initial={5} min={0} max={10}  onAdd="" producto={producto}/>
+            <ItemCount initial={5} min={0} max={10}  onAdd="" producto={producto}/>
         </div>
         </>
     );

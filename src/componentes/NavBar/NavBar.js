@@ -11,8 +11,8 @@ import { faCoffee} from '@fortawesome/free-solid-svg-icons';
 const NavBar = () =>{
     // const [showMenu, setShowMenu]=useState(false);
 
-    // const restarUnidad = contador => {
-    //   alert(contador);  
+    // const restarUnidad = ItemCount => {
+    //   alert(ItemCount);  
     //   document.getElementsByClassName("list")[0].style.("display:none");
     // }
 

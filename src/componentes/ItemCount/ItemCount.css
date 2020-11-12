@@ -1,4 +1,4 @@
-.barra_contador{
+.barra_ItemCount{
     text-align:center;
     display:flex;
     align-content:center;
@@ -11,7 +11,7 @@
 
 
 
-.barra_contador > button{
+.barra_ItemCount > button{
     width:15%;
     font-size:1.3rem;
     text-align:center;
