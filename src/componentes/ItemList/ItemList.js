@@ -6,19 +6,11 @@ import Item from '../Item/Item'
 
 
 const ItemList = ({products}) =>{
-    console.log(products);
-    // myFunction(productsReceived);
-    // function myFunction(elemento) {
-    //     setTimeout( console.log("hole"), 3500);
-    //   }
-    //   function myFunction() {
-    //     setTimeout(function(){ alert("Hello"); }, 3000);
-    //   }
-    //   myFunction();  
- 
-
-    // return (productsReceived.map(article => <Item article={article}/>));
-    return(<Item></Item>)
+    
+  
+    return (
+        products.map(article => <Item id={article.id} name={article.name} price={article.price} stock={article.stock}/>));
+    
 }
 
 export default ItemList;

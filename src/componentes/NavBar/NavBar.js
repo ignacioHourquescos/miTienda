@@ -1,6 +1,7 @@
 import React from 'react';
 import Bubble from '../Bubble/Bubble';
 import './NavBar.css';
+import CartIcon from '../CartIcon/CartIcon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee} from '@fortawesome/free-solid-svg-icons';
 
@@ -20,6 +21,8 @@ const NavBar = () =>{
 
 
     return(
+      <>
+        <CartIcon/>
         <div className="sidebar">
         <div className="menu">
         <FontAwesomeIcon icon={faCoffee} />
@@ -32,6 +35,7 @@ const NavBar = () =>{
           <Bubble nombreCategoria="Gourmet"/>
         </div>
       </div>
+      </>
     )
 }
 

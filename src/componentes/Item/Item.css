@@ -1,0 +1,36 @@
+.card_holder{
+    background-color:rgba(128, 128, 128, 0.61);
+    width:15%;
+    height: 300px;
+    margin:2px;
+    padding:2px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    border-radius:5px;
+}
+
+h2{
+    margin:0;
+}
+
+@media only screen and (max-width: 600px) {
+    .card_holder {
+        width:30%;
+    }
+  }
+
+
+.product_grid{
+    display:flex;
+    width:80%;
+    margin: 5rem;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+
+@media only screen and (max-width: 600px) {
+    .product_grid {
+        margin:1px;
+    }
+  }
