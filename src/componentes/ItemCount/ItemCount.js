@@ -21,10 +21,6 @@ const ItemCount = ({initial, min, max, onAdd}) =>{
             <span>{ItemCount}</span>
             <button onClick={()=>{sumarUnidad()}}>+</button>
         </div>
-
-        <div className="agregar_carrito"> 
-            <button onClick={()=>{onAdd(ItemCount)}}>Agregar al Carrito</button>
-        </div>
     </div>
 }
 

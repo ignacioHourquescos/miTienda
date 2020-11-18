@@ -1,14 +1,37 @@
 
 
-///////////DESAFIO CLASE 5- entrega 16/11
-  /containers/Home/Home.js pueden tener una función getProducts() en el mismo archivo pero fuera del componente
-   Home que haga el setTimeout de 2segs y  luego devuelva la promesa con el array de productos harcodeados.
 
-  En el componente Home del mismo archivo consumen la promesa de getProducts().
-  
-  Usan en el jsx el componente ItemList y le envían por props los productos.
-- /components/ItemList/ItemList.js hacen un foreach/map del los datos que reciben por 
-props y por cada elemento llaman al componente Item
- enviándole por props los datos de c/producto.
-- /components/Item/Item.js recibe por props el detalle de un producto en particular y 
-renderean una card o similar con la info del producto.
+
+///////////DESAFIO CLASE 7- entrega 18/11
+
+
+Crear componente ItemDetail.js que debe recibir por prop el Ítem obtenido en 6A
+Conectarlo con el contador del desafío 4 y un nuevo botón “Comprar”
+
+
+
+
+- /components/ItemDetail/ItemDetail.js: muestran los datos del producto. y agregan además el ItemCount.
+
+Es 1 sólo producto (lo que vería al hacer click a un producto del listado de la clase pasada). 
+El lunes vemos cómo conectar ambos.
+
+
+NavBar ->NavBar 
+Post -> Item ->
+Feed OCntianer->Home Container
+Feedlist -> Item List
+
+Item Detail Container -> un solo producto. llamar a otra promise depedne de un
+
+index
+    app
+        Home Container (listado ppal de los productos)
+          item List (map de todos los productos para renderizar una card)
+              Item Detail (cada prodcuto)
+        ItemDetail Container
+          Item Detail (botn añadir al carrito)
+            Item Count
+
+
+snippet rfce
