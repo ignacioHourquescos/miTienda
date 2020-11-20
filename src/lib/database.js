@@ -2,7 +2,7 @@ export default function getProductsFromDatabase(){
     return new Promise ((resolve) =>{
         setTimeout(() => {
             resolve(product);
-        }, 2000)
+        }, 1000)
     })
 }
 

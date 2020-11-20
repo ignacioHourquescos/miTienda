@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import './HomeContainer.css';
 
 import ItemList from '../../componentes/ItemList/ItemList';
@@ -14,13 +15,14 @@ const Home= () =>{
     
     useEffect(() => {
         getProductsFromDatabase()
-            .then((result) => {return (result);})
+            //.then(() => {console.log("hola");})
             .then((result) => {setProducts(result);})   
     }, []);
     
     
     return(<>
         <ItemList  products={products}/>
+       
         </>
     )
 }
