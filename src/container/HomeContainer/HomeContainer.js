@@ -15,7 +15,7 @@ const Home= () =>{
     
     useEffect(() => {
         getProductsFromDatabase()
-            //.then(() => {console.log("hola");})
+            .then(() => {console.log("hola");})
             .then((result) => {setProducts(result);})   
     }, []);
     

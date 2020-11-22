@@ -1,7 +1,7 @@
-export default function getProductsFromDatabase(){ 
+export default function getProductsFromDatabase(id){ 
     return new Promise ((resolve) =>{
         setTimeout(() => {
-            resolve(product);
+            resolve(product[id]);
         }, 1000)
     })
 }

@@ -15,15 +15,14 @@ const ItemDetailContainer = () => {
         getSingleProductFromDatabase()
             .then((result) => {return (result)})
             .then((result) => {setProduct(result);}) 
-            .then(() =>setLoading(false));  
+            .then(()       =>  setLoading(false)) 
     }, []);
 
-    const singleArticle =  product.map(article => 
-        <ItemDetail id={article.id} name={article.name} price={article.price} desc={article.desc} pres={article.pres} stock={article.stock}/>
-    );
 
-    return (<div>{loading ? <h1>Loading...</h1> : <div>{singleArticle}</div>}</div>
-   )
+        
+   
+
+    return (<div>{loading ? <h1>Loading...</h1> : <ItemDetail product={product}/>}</div>)
       
     
 }
