@@ -1,9 +1,10 @@
 import React from 'react';
 // import Bubble from '../Bubble/Bubble';
 import './NavBar.css';
+import {Link} from 'react-router-dom';
 import CartIcon from '../CartIcon/CartIcon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee} from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -21,11 +22,13 @@ const NavBar = () =>{
 
 
     return(
-      <>
+      <>   <Link to={`/cart/`}>
         <CartIcon/>
         <div className="sidebar">
         <div className="menu">
-        <FontAwesomeIcon icon={faCoffee} />
+     
+        <FontAwesomeIcon icon={faShoppingCart } />
+        
         </div>
         {/* <div className="list">
           <Bubble nombreCategoria="Bebidas" icono="faCoffee"/>
@@ -35,6 +38,7 @@ const NavBar = () =>{
           <Bubble nombreCategoria="Gourmet"/>
         </div> */}
       </div>
+      </Link>
       </>
     )
 }

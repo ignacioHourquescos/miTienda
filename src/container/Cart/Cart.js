@@ -11,7 +11,7 @@ const Cart = () => {
     },[userid]);
     return (
         <div>
-            {console.log("asdasd" + userid)
+            {console.log("Adentor del carrito del ususario" + userid)
             }
             
         </div>

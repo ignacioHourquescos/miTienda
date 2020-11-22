@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import getSingleProductFromDatabase from '../../lib/databaseSingleProduct';
+import {getSingleProductFromDatabase} from '../../lib/database';
 import './ItemDetailContainer.css';
 import ItemDetail from '../../componentes/ItemDetail/ItemDetail';
 import {useParams} from 'react-router-dom';
@@ -12,8 +12,7 @@ const ItemDetailContainer = () => {
     console.log("este es el numero de id: " +id);
     useEffect(() => {
         setLoading(true);
-        getSingleProductFromDatabase()
-            .then((result) => {return (result)})
+        getSingleProductFromDatabase(id)
             .then((result) => {setProduct(result);}) 
             .then(()       =>  setLoading(false)) 
     }, []);
