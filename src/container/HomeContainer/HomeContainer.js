@@ -20,9 +20,9 @@ const Home= () =>{
     }, []);
     
 
-    return(<>
-        <ItemList className="home_container" products={products}/>
-        </>
+    return(<div className="home_container">
+        <ItemList className="list" products={products}/>
+        </div>
     )
 }
 

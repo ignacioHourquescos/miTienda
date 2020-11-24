@@ -7,5 +7,8 @@
 
 .home_container{
     display:flex;
-    background-color:red;
+    flex-direction: row;
+    flex-wrap:wrap;
+
+    padding:2rem;
 }

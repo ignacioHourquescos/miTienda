@@ -26,11 +26,12 @@ const Item = ({id, name, price, stock}) =>{
                     <h3>Stock: {stock}</h3>
                 </Link>
                 
-                <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/>
-
-                <div className="add_to_cart_button primary"> 
+                <div>
+                    <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/>
+                    <div className="add_to_cart_button primary"> 
                         <button>Agregar </button>
                     </div>
+                </div>
             
             </div>
         </div>
