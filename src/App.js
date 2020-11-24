@@ -4,10 +4,11 @@ import './App.css'
 //Components
 import NavBar               from './componentes/NavBar/NavBar';
 import SideBar              from './componentes/SideBar/SideBar';
+import Cart                 from './componentes/Cart/Cart';
+
 //Containers
 import HomeContainer        from './container/HomeContainer/HomeContainer';
 import ItemDetailContainer  from './container/ItemDetailContainer/ItemDetailContainer';
-import Cart                 from './container/Cart/Cart';
 
 
 

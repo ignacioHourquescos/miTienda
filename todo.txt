@@ -1,23 +1,78 @@
-Configurar el routinf para que "/" nos lleve a Home.js y s epuedsa ver el listado de productos. 
-Posteriormnte clickeandoun producto se  debe poder nacer a sudetalles'item/:id' y desde cualquiera de 
-ambas navegar al carrito (CART.js) cleickeando en el CAROTNINCO.js y
+OBSERVACIONE SJOSE LUIS TP8
 
-
-José Luis
-Está mal implementado el tema de la base de datos, y conceptualmente está al revés.
-
-En home tenes que tener algo así:
-  getProductsFromDatabase().then((result) => {
-   setProducts(result)
-  })
+En App, cambiá 
+import SideBar       from './componentes/SideBar/SideBar'; por 
+import SideBar       from './componentes/Sidebar/SideBar';
+(la b de Sidebar en minúsc. sino me falla porque es case sensitive)
 
 
 
-en ambos Home e ItemDetailContainer, estás haciendo 2 .then cuando sólo necesitas uno. Ayudate con console.log para ver en consola qué datos estás recibiendo.
-getProductsFromDatabase tiene que devolver el array de productos. Todos.
+TP9
+Consigna:
+
+Configurar un evento entre el ItemDetail.js y su counter (ItemCount.js del entregable 4) que está dentro de él. Cada vez que se actualice el counter,
+ el botón de compra (Abajo del counter) debe cambiar su texto a Comprar X, donde x es la última cifra emitida por el contador.
+
+JOSE LUIS
+2 . Fijate de ir implementando el onAdd en ItemDetail, para en ItemDetail al menos mostrar en consola el valor del counter. 
+Lo vas a necesitar para la próxima clase.
+
+TOTO
+dos registrados al mismo estado es un callbakc y 
+los dos se registran al mismo etado. uno maneja el estado y los dos muestrna los datos.
+se hace un click en uno y cambie el estado darriba y d elos dos que estan suscriptos.
 
 
 
-Luego, a getSingleProductFromDatabase es a quien le tenes que enviar el id, (y dejar la función también en database.js) y éste debería hacer el filtro para retorar un objeto y mostrar un producto en particular.
-Hacé esos cambios para poder aprobarte, no puedo aprobarte si al levantar la aplicación me da error.
+
+
+
+
+
+
+import { useEffect, useState } from 'react';
+import { NavLink, Link } from 'react-router-dom/cjs/react-router-dom.min';
+import './styles/main.css';
+
+const ButtonComponente = ({id, callback}) => {
+    return <button onClick={() => {callback(2)}}> {id} </button>
+}
+
+const ComponenteDos = () => {
+    return <div>Hola</div>
+}
+
+const Home = () => {
+    const [id, setId] = useState(2);
+
+    const mostrarAlert = (valor) => {
+        setId(valor)
+    }
+
+
+    // El componente esta por montarse
+    return <>
+        <div>
+            <h1>Soy el componente de home ;)</h1>
+            <button onClick={mostrarAlert}>Mostrar console.log</button>
+            <button onClick={() => {mostrarAlert()}}>Mostrar console.log</button>
+            <a>
+                <Link to={'/detalle/'+id}>
+                ¡Haceme Click! * Vamos al componente de productos * 
+                </Link>
+            </a>
+            {id != 2 ?
+            <ButtonComponente id={id} callback={mostrarAlert}/>
+            :<ComponenteDos />}
+        </div>
+    </>
+
+}
+
+export default Home;
+
+
+
+
+
 

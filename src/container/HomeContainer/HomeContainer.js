@@ -21,7 +21,7 @@ const Home= () =>{
     
 
     return(<>
-        <ItemList  products={products}/>
+        <ItemList className="home_container" products={products}/>
         </>
     )
 }
