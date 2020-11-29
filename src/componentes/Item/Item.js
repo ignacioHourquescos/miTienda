@@ -5,7 +5,7 @@ import './Item.css';
 
 
 
-const Item = ({id, name, price, stock}) =>{
+const Item = ({article}) =>{
 
     const [units, setUnits]=useState(0);
     
@@ -19,12 +19,21 @@ const Item = ({id, name, price, stock}) =>{
    return(
         <div className="product_grid">
             <div className="card_holder">
+                <div className="image_container">
+                    <Link to={`/product/${article.id}`} >
+                        <img className="image" src={article.img}></img>
+               
+                    </Link>
+                </div>
 
-                <Link to={`/product/${id}`} >
-                    <h2>{name}</h2>
-                    <h3>Precio: ${price}</h3>
-                    <h3>Stock: {stock}</h3>
+                <Link to={`/product/${article.id}`} >
+                    <h2>{article.name}</h2>
                 </Link>
+                    
+                <div className="numeric_info">
+                    <h3> ${article.price}</h3>
+                    <h3>Disponible: {article.stock}</h3>
+                    </div> 
                 
                 <div>
                     <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/>

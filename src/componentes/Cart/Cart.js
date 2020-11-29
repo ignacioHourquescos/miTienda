@@ -1,19 +1,15 @@
-import React , {useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import React  from 'react';
+import useAppContext from '../../context/UseAppContext';
 
 const Cart = () => {
-    const {userid} = useParams();
-    useEffect(() =>{
-        console.log("Parametro recibido en useEffect: ", userid);
-        return() =>{
-            console.log("Parametro recibido al final: "+ userid);
-        }
-    },[userid]);
+
+    //Variable & function from context
+    const {cartArray, handleCartArray} = useAppContext();
+   
+
     return (
         <div>
-            {console.log("Adentor del carrito del ususario" + userid)
-            }
-            
+         {cartArray[0].name}
         </div>
     )
 }

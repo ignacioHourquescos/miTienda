@@ -5,20 +5,15 @@ import {Link} from 'react-router-dom';
 import CartIcon from '../CartIcon/CartIcon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart} from '@fortawesome/free-solid-svg-icons';
-
-
+//App Context
+import useAppContext from '../../context/UseAppContext';
 
 
 
 const NavBar = () =>{
-    // const [showMenu, setShowMenu]=useState(false);
 
-    // const restarUnidad = ItemCount => {
-    //   alert(ItemCount);  
-    //   document.getElementsByClassName("list")[0].style.("display:none");
-    // }
-
-
+    //Variable & function from context
+    const {cartArray, handleCartArray} = useAppContext();
 
 
     return(
@@ -26,9 +21,9 @@ const NavBar = () =>{
         <CartIcon/>
         <div className="sidebar">
         <div className="menu">
-     
+      
         <FontAwesomeIcon icon={faShoppingCart } />
-        
+        {cartArray.length}
         </div>
         {/* <div className="list">
           <Bubble nombreCategoria="Bebidas" icono="faCoffee"/>

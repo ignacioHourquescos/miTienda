@@ -1,15 +1,14 @@
-.barra_ItemCount{
-    text-align:center;
-    display:flex;
-    align-content:center;
+
+.barra_ItemCount {
+    display: flex;
+    text-align: center;
+    align-content: center;
     align-items: center;
     justify-content:space-between;
-    border:0px solid grey;
+    border: 0px solid grey;
     border-radius:5px;
     background-color:white;
 }
-
-
 
 .barra_ItemCount > button{
     width:15%;

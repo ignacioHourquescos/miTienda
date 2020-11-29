@@ -7,21 +7,35 @@ const ItemCount = ({initial, min, max, onAdd}) =>{
     const [ItemCount, setItemCount]=useState(initial);
 
     //funciones de barra_ItemCount
-    const restarUnidad = () => { if (ItemCount > min) setItemCount(ItemCount - 1); }
-    const sumarUnidad =  () => { if (ItemCount < max) setItemCount(ItemCount + 1); }
+   
+        const restarUnidad = (ItemCount) => {
+             if (ItemCount > min) {
+             setItemCount(ItemCount - 1); 
+             onAdd(ItemCount-1);
+            }
+        }
 
-    //funcion de agerga al carrito. A desarollar
+        const sumarUnidad =  (ItemCount) => { 
+            if (ItemCount < max) {
+                setItemCount(ItemCount + 1);
+                onAdd(ItemCount+1);
+            }
+        
+        }
+        
+        useEffect((t) => {
+            setItemCount(ItemCount);
+
+        }, []);
     
-
-      
     return(
         <div>
             <div className="barra_ItemCount">
-                <button onClick={()=>{restarUnidad();onAdd(ItemCount)}}>-</button>
+                <button onClick={()=>{restarUnidad(ItemCount)}}>-</button>
                
                 <span>{ItemCount}</span>
                
-                <button onClick={()=>{sumarUnidad();onAdd(ItemCount)}}>+</button>
+                <button onClick={()=>{sumarUnidad(ItemCount)}}>+</button>
             </div>
         </div>
     )
