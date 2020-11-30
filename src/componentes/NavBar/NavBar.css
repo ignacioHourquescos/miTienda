@@ -13,8 +13,8 @@
 }
 
 .menu{
-    width:7vh;
-    height:7vh;
+    width:10vh;
+    height:10vh;
     border-radius:200px;
     background-color:rgb(228, 0, 0);
     position: fixed;
@@ -24,9 +24,9 @@
     margin-top:0.4rem;
     bottom: 2rem;
     right:2rem;
+    z-index:15;
 }
 .list{
-
     width:100%;
     padding-right:2rem;
     margin-bottom:5.5rem;
@@ -37,3 +37,16 @@
 }
 
 
+.counter_cart_icon{
+    background-color: white;
+    position:absolute;
+    top:-12px;
+    right:-6px;
+    border-radius:200px;
+    width:5vh;
+    height:5vh;
+    text-align:center;
+    border:2px solid red;
+    font-weight: bold;
+    z-index:15;
+}

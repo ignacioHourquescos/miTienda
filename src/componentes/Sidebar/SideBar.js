@@ -9,7 +9,7 @@ const SideBar = () =>{
     return (
       <Menu right customCrossIcon={ false }>
 
-        <li><Link to={'/carrito'}>Carrito</Link></li>
+        <a className="menu-item"><Link style={{textDecoration:'none',color:'white'}}to={'/carrito'}>Carrito</Link></a>
 
         <a id="home" className="menu-item" href="/">Home</a>
         <a id="about" className="menu-item" href="/about">About</a>

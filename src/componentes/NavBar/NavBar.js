@@ -20,10 +20,11 @@ const NavBar = () =>{
       <>   <Link to={`/cart/`}>
         <CartIcon/>
         <div className="sidebar">
+
         <div className="menu">
-      
-        <FontAwesomeIcon icon={faShoppingCart } />
-        {cartArray.length}
+          <div className="counter_cart_icon">{cartArray.length}</div>
+          <FontAwesomeIcon style={{color:'white'}} icon={faShoppingCart } />
+        
         </div>
         {/* <div className="list">
           <Bubble nombreCategoria="Bebidas" icono="faCoffee"/>
