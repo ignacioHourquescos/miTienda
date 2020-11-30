@@ -25,6 +25,7 @@
     bottom: 2rem;
     right:2rem;
     z-index:15;
+
 }
 .list{
     width:100%;
@@ -49,4 +50,8 @@
     border:2px solid red;
     font-weight: bold;
     z-index:15;
+    -webkit-box-shadow: 18px 22px 49px -32px rgba(0,0,0,0.75);
+    -moz-box-shadow: 18px 22px 49px -32px rgba(0,0,0,0.75);
+    box-shadow: 18px 22px 49px -32px rgba(0,0,0,0.75);
+
 }
