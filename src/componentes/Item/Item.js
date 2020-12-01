@@ -40,7 +40,7 @@ const Item = ({article}) =>{
 
                     <div className="add_to_cart">
                          <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/> 
-                        <AddToCart className ="algo" product={article} units={units}/>
+                        <AddToCart className ="button_item" product={article} units={units}/>
                     </div>
                 </div>
             </div>

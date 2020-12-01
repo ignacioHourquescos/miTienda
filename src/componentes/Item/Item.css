@@ -11,7 +11,14 @@ h2{
 }
 
 
+.data_container{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
 
+    height:30%;
+    width:90%
+}
 .card_holder{
     background-color:rgba(31, 30, 30, 0.575);
     width:100%;
@@ -82,12 +89,13 @@ h3{
     flex-direction:row;
     justify-content:space-between;
     justify-items:space-between;
-
+    align-content:center;
+    align-items:center;
     width:100%;
 
 }
 
-.algo{
+.button_item{
     width:70%;
     font-size:0.9rem;
     text-align:center;
@@ -95,6 +103,8 @@ h3{
     border:0px;
     color:rgb(71, 71, 71);
     border-radius:5px;
+    padding:0;
+    border:0;
 }
 
 .link_to_product{
