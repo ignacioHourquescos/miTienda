@@ -2,9 +2,9 @@
 .bm-burger-button {
     position: fixed;
     width: 25px;
-    height: 25px;
-    top: 2rem;
-    right:2rem;
+    height: 20px;
+    top: 1rem;
+    left:2rem;
   }
   
   /* Color/shape of burger icon bars */
@@ -55,7 +55,6 @@
   /* Wrapper for item list */
   .bm-item-list {
     color: #b8b7ad;
-    padding: 0.8em;
   }
   
   /* Individual item */
@@ -72,7 +71,7 @@
 /*peronlaes*/
 
 .bm-item.menu-item{
-    font-size:24px;
+    font-size:18px;
     color:white;
     text-decoration:none;
     font-family: 'Varela Round', sans-serif;

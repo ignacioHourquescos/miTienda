@@ -18,3 +18,11 @@ olvidé mencionar que el contador debería empezar en 1 porque ahora empezas en 
 TP 10
  Al clickear en el botón de comprar en ItemDetail.js, se debe guardar el producto y cantidad comprada en el nuevo CartContext.
   Al navegar a Cart.js se debe poder ver el detalle del producto agregado, y en el CartIcon.js deberíamos ver la longitud de items agregados.
+
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 110" style={{position:'fixed',zIndex:'100'}}><path fill="#0019ff" fillOpacity="1" d="M0,64L1440,96L1440,0L0,0Z"></path></svg>    
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 110" style={{zIndex:'10'}}><path fill="#0019ff" fillOpacity="1" d="M0,64L1440,96L1440,0L0,0Z"></path></svg>    
+            </div>
+
+
+semrush.com

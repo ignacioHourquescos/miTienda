@@ -2,8 +2,10 @@ import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css'
 //Components
-import NavBar               from './componentes/NavBar/NavBar';
+import CartIcon             from './componentes/CartIcon/CartIcon';
 import SideBar              from './componentes/SideBar/SideBar';
+import Diagonal             from './componentes/Diagonal/Diagonal';
+import CallToActionIcons    from './componentes/CallToActionIcons/CallToActionIcons'; 
 
 //Containers
 import HomeContainer        from './container/HomeContainer/HomeContainer';
@@ -20,7 +22,9 @@ function App() {
     <AppProvider>
       <BrowserRouter>
         <SideBar/>
-        <NavBar/>
+        <CartIcon/>
+        <Diagonal/>
+        <CallToActionIcons/>
           <Switch>
             <Route exact path="/">
               <HomeContainer/>   
@@ -35,6 +39,7 @@ function App() {
               <Cart/>
             </Route>  */}
           </Switch>
+          
       </BrowserRouter>
     </AppProvider>
   );

@@ -29,8 +29,8 @@ h2{
 box-shadow: 18px 22px 49px -32px rgba(0,0,0,0.75);
 }
 
-.card_holder:hover {
-    transform: scale(1.1);
+.image_container:hover {
+    transform: scale(1.05);
     transition-duration: 1s; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
   .image_container{

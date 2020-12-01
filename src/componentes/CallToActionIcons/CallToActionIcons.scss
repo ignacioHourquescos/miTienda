@@ -1,35 +1,51 @@
-.sidebar{
-    background-color:rgba(255, 255, 255, 0);
+.sidebar2{
+   
     height:100vh;
     padding:0;
     margin:0;
     position:fixed;
     right:0;
+    bottom:1rem;
     display:flex;
-    flex-direction:row;
-    align-content:flex-end;
-    align-items:flex-end;
+    flex-direction:column;
+    justify-content:flex-end;
+    justify-items:flex-end;
+    right:2rem;
     padding-bottom: 2rem;
     z-index:199;
+    
+    
+    div{
+        
+        width:10vh;
+        height:10vh;
+        border-radius:200px;
+        
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin-top:0.4rem;
+        bottom: 1rem;
+        right:2rem;
+        z-index:15;
+        z-index:200;
+    }
+    .cta1{
+        background-color:rgb(122, 122, 122);
+    }
+    .cta2{
+        background-color:rgb(228, 65, 0);
+    }
+    .cta3{
+        background-color:rgb(17, 17, 17);
+    }
 }
 
-.menu{
-    width:8vh;
-    height:8vh;
-    border-radius:200px;
-    background-color:rgb(228, 0, 0);
-    position: fixed;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:0.4rem;
-    top: 1rem;
-    right:2rem;
-    z-index:15;
-    z-index:200;
 
-}
-.list{
+
+
+
+.list2{
     width:100%;
     padding-right:2rem;
     margin-bottom:5.5rem;
@@ -40,7 +56,7 @@
 }
 
 
-.counter_cart_icon{
+.counter_cart_icon2{
     background-color: white;
     position:absolute;
     top:-12px;

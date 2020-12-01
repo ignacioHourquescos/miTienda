@@ -9,7 +9,7 @@ import AddToCart from '../AddToCart/AddToCart';
 
 const Item = ({article}) =>{
 
-    const [units, setUnits]=useState(0);
+    const [units, setUnits]=useState();
     
 
     const optionSelected = (value) =>{
@@ -39,7 +39,7 @@ const Item = ({article}) =>{
                     </div>  */}
 
                     <div className="add_to_cart">
-                        <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/>
+                         <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/> 
                         <AddToCart className ="algo" product={article} units={units}/>
                     </div>
                 </div>
