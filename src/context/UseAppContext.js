@@ -1,10 +1,43 @@
 
 
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useEffect, useContext, useState } from 'react'
+import {getFirestore} from './firebase'
+
+
+const App =() =>{
+
+
+    const [productos, setProductos] = useState();
+
+    useEffect(() =>{
+
+        const db = getFirestore();
+        const itemCollection = db.collection("productos")
+
+        itemCollection-get().then((response) =>{
+            const aux = response.docs.map(element => {
+                return element.data();
+            });
+            setProductos(aux);
+        });
+    }, []);
+
+    return <>
+    <div className={theme}></div>
+    </>
+}
+
+
+
+
+
+
 
 const AppContext = createContext()
 
 const useAppContext = () => useContext(AppContext)
+
+
 
 
 
