@@ -1,10 +1,8 @@
 
 
-Fijate algunos errores, como que al agregar 0 unidades  te da NaN. 
-
-
 Fijate además de que si agregas 1, vas al carrito, y volves al ahome,
- desaparece el item que pusiste en el carrito. eso es porque estas a href, tenes que usar el Link en todos lados. no se usa a href.
+ desaparece el item que pusiste en el carrito. eso es porque estas a href,
+  tenes que usar el Link en todos lados. no se usa a href.
 
 
 

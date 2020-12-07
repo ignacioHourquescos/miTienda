@@ -33,13 +33,6 @@ const CartIcon = () =>{
           <FontAwesomeIcon style={{color:'white'}} icon={faShoppingCart } />
         
         </div>
-        {/* <div className="list">
-          <Bubble nombreCategoria="Bebidas" icono="faCoffee"/>
-          <Bubble nombreCategoria="Vinos"/>
-          <Bubble nombreCategoria="Alacena"/>
-          <Bubble nombreCategoria="Hogar"/>
-          <Bubble nombreCategoria="Gourmet"/>
-        </div> */}
       </div>
       </Link>
       </>

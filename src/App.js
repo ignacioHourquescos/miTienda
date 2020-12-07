@@ -27,18 +27,21 @@ function App() {
         <Diagonal/>
         <CallToActionIcons/>
           <Switch>
-            <Route exact path="/:category">
-              <CategoryContainer/>   
+
+            <Route exact path="/cart">
+              <CartContainer/>
             </Route>
-            <Route exact path="/">
-              <HomeContainer/>   
+             
+             <Route exact path="/:category">
+              <CategoryContainer/>   
             </Route>
             <Route exact path="/product/:id">
               <ItemDetailContainer/>
             </Route> 
-            <Route exact path="/cart">
-              <CartContainer/>
-            </Route> 
+
+            <Route exact path="/">
+              <HomeContainer/>   
+            </Route>
             {/* <Route exact path="/cart/:userid">
               <Cart/>
             </Route>  */}
