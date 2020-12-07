@@ -16,7 +16,7 @@ const AddToCart = ({product, units}) => {
 
     return (
         <div> 
-            <button onClick={() =>addToCart(units, product)}>Agregar {units } unidad </button>
+            <button onClick={() =>{isNaN(units)? alert("no tinene producsots") : addToCart(units, product)}}>Agregar {units } unidad </button>
         </div>      
     )
 }

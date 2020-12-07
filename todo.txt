@@ -1,28 +1,18 @@
-TP9 - cambios a hacer
-recordá cambiar por:
-import SideBar              from './componentes/SideBar/SideBar';
-por
-import SideBar              from './componentes/Sidebar/SideBar';
-sino no me compila al bajar el git
 
-En Item podes eliminar Itemcounter y el botón agregar
-product debería tener la url de la imagen, sino siempre mostras vino.
+
+Fijate algunos errores, como que al agregar 0 unidades  te da NaN. 
+
+
+Fijate además de que si agregas 1, vas al carrito, y volves al ahome,
+ desaparece el item que pusiste en el carrito. eso es porque estas a href, tenes que usar el Link en todos lados. no se usa a href.
 
 
 
-olvidé mencionar que el contador debería empezar en 1 porque ahora empezas en comprar 0 unidades, y
- fijate el contador está desfasado en 1 . si seleccionas 3 unidades en el ItemCoutner, en el botón te figura 2.
+Esa función countIndividualCartItems podrías dejarla en CartContext
 
 
 
-TP 10
- Al clickear en el botón de comprar en ItemDetail.js, se debe guardar el producto y cantidad comprada en el nuevo CartContext.
-  Al navegar a Cart.js se debe poder ver el detalle del producto agregado, y en el CartIcon.js deberíamos ver la longitud de items agregados.
+Limpiar y organizar mejor el código, pero vas bastante bien encaminado. 
+La próxima es seguir mejorando el CartContext para validar 
+si el producto fue previamente agregado, eliminar un item del carrito, ponerle importe total, etc.
 
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 110" style={{position:'fixed',zIndex:'100'}}><path fill="#0019ff" fillOpacity="1" d="M0,64L1440,96L1440,0L0,0Z"></path></svg>    
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 110" style={{zIndex:'10'}}><path fill="#0019ff" fillOpacity="1" d="M0,64L1440,96L1440,0L0,0Z"></path></svg>    
-            </div>
-
-
-semrush.com
