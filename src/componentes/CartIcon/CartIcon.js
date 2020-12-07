@@ -8,19 +8,13 @@ import { faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 //App Context
 import useAppContext from '../../context/UseAppContext';
 
-const countIndividualCartItems = (elemento) => {
-  var counter = 0;
-  for (var i = 0; i < elemento.length; i++) {
-    counter = counter + elemento[i].quantity;
-  }
-  return counter;
-};
+
 
 
 const CartIcon = () =>{
 
     //Variable & function from context
-    const {cartArray, handleCartArray} = useAppContext();
+    const {cartArray, countIndividualCartItems} = useAppContext();
 
 
     return(<>  

@@ -5,11 +5,6 @@ Fijate además de que si agregas 1, vas al carrito, y volves al ahome,
   tenes que usar el Link en todos lados. no se usa a href.
 
 
-
-Esa función countIndividualCartItems podrías dejarla en CartContext
-
-
-
 Limpiar y organizar mejor el código, pero vas bastante bien encaminado. 
 La próxima es seguir mejorando el CartContext para validar 
 si el producto fue previamente agregado, eliminar un item del carrito, ponerle importe total, etc.
