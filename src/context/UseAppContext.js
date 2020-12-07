@@ -26,6 +26,8 @@ export const AppProvider = ({ children}) => {
 
     const [cartArray, setCartArray] = useState([]);
 
+
+    //Add to Cart Function. 
     const handleCartArray = (units, newItem) => { 
 
         const existing = cartArray.find((article)=>article.id === newItem.id);
@@ -39,8 +41,14 @@ export const AppProvider = ({ children}) => {
         }     
 
     }
+
+    //get total value of cart productSelected
+    const getTotalCartValue = cartArray.reduce((acumulator, current) => {
+            return acumulator + current.quantity * current.price;       
+        },0);
+    
         
-    return(<AppContext.Provider value={{cartArray, handleCartArray, countIndividualCartItems}}>{children}</AppContext.Provider>)
+    return(<AppContext.Provider value={{cartArray, handleCartArray, countIndividualCartItems, getTotalCartValue}}>{children}</AppContext.Provider>)
 }
 
 

@@ -14,20 +14,19 @@ import useAppContext from '../../context/UseAppContext';
 const CartIcon = () =>{
 
     //Variable & function from context
-    const {cartArray, countIndividualCartItems} = useAppContext();
-
+    const {cartArray, countIndividualCartItems, getTotalCartValue} = useAppContext();
 
     return(<>  
        <Link to={`/cart/`}>
-
         <div className="sidebar">
-
-        <div className="menu">
-          <div className="counter_cart_icon">{countIndividualCartItems(cartArray)}</div>
-          <FontAwesomeIcon style={{color:'white'}} icon={faShoppingCart } />
-        
+         
+          <div className="menu">
+          
+            <div className="counter_cart_icon">{countIndividualCartItems(cartArray)}</div>
+            <FontAwesomeIcon style={{color:'white'}} icon={faShoppingCart } />
+            <div className="total_value_icon">{getTotalCartValue==0?" ":"$"+getTotalCartValue}</div>
+          </div>
         </div>
-      </div>
       </Link>
       </>
     )

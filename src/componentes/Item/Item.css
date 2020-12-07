@@ -1,4 +1,7 @@
 
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&family=Righteous&display=swap');
 h2{
     margin:0;
 }
@@ -53,7 +56,8 @@ h2{
 }
 
 h2{
-    font-size:0.95rem;
+    font-size:0.85rem;
+
     color:rgb(40, 40, 40);
     margin:0;
     padding:0;
@@ -75,17 +79,15 @@ h3{
 }
 
 .price{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+ 
     z-index:1;
-    background-color:rgb(127, 240, 15);
-    color:rgb(22, 22, 22);
+    color:rgb(80, 24, 191);
 
+    
     line-height:1.5rem;
     padding:0.2rem;
     margin:0 0.5rem;
-    font-size:1.65rem;
+    font-size:1.2rem;
 }
 
 /* .add_to_cart{
@@ -106,7 +108,7 @@ h3{
     width:100%;
     font-size:0.8rem;
     text-align:center;
-    background-color:rgb(80, 24, 191);
+    background-color:rgb(48, 48, 48);
     border:0px;
     line-height:1.7rem;
     color:rgb(255, 255, 255);
