@@ -4,16 +4,29 @@ import {Link} from 'react-router-dom';
 import './Item.css';
 
 import AddToCart from '../AddToCart/AddToCart';
+import useAppContext from '../../context/UseAppContext';
 
 
 
 const Item = ({article}) =>{
+    const {cartArray, handleCartArray} = useAppContext();
 
-    const [units, setUnits]=useState();
-    const optionSelected = (value) =>{
-        setUnits(value);
+    const checkExistingCartProduct = (id) =>{
+        const found = cartArray.find((element)=> element.id==id)
+            console.log(found);
+            return;
     }
 
+
+    const addToCart = (unitsSelected, productSelected) =>{
+        handleCartArray(unitsSelected, productSelected)
+
+   }
+
+
+    
+
+    const [units, setUnits]=useState();
 
    return(
         <div className="product_grid">
@@ -32,8 +45,8 @@ const Item = ({article}) =>{
                     </Link>
                         
                     <div className="add_to_cart">
-                         <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/> 
-                        <AddToCart className ="button_item" product={article} units={units}/>
+                         {/* <ItemCount initial={5} min={0} max={10}  onAdd={optionSelected}/>  */}
+                         <button onClick={() =>{addToCart(1, article)}}>COMPRAR</button>
                     </div>
                 </div>
 
@@ -43,3 +56,8 @@ const Item = ({article}) =>{
 }
 
 export default Item;
+
+
+
+
+

@@ -27,8 +27,17 @@ export const AppProvider = ({ children}) => {
     const [cartArray, setCartArray] = useState([]);
 
     const handleCartArray = (units, newItem) => { 
-        setCartArray([...cartArray, {"quantity":units, "id":newItem.id,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
-        console.log(cartArray);
+
+        const existing = cartArray.find((article)=>article.id === newItem.id);
+        if (existing) {
+            console.log("Articulo existente en el carrito")
+            existing.quantity = existing.quantity +1;
+            setCartArray([...cartArray]);
+        }else{
+            console.log("Articulo nuevo en el carrito")
+            setCartArray([...cartArray, {"quantity":units, "id":newItem.id,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
+        }     
+
     }
         
     return(<AppContext.Provider value={{cartArray, handleCartArray, countIndividualCartItems}}>{children}</AppContext.Provider>)
