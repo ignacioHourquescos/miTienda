@@ -11,6 +11,7 @@ import CallToActionIcons    from './componentes/CallToActionIcons/CallToActionIc
 import HomeContainer        from './container/HomeContainer/HomeContainer';
 import ItemDetailContainer  from './container/ItemDetailContainer/ItemDetailContainer';
 import CartContainer        from './container/CartContainer/CartContainer';
+import CategoryContainer    from './container/CategoryContainer/CategoryContainer';
 
 //AppContext
 import { AppProvider } from './context/UseAppContext'
@@ -26,6 +27,9 @@ function App() {
         <Diagonal/>
         <CallToActionIcons/>
           <Switch>
+            <Route exact path="/:category">
+              <CategoryContainer/>   
+            </Route>
             <Route exact path="/">
               <HomeContainer/>   
             </Route>
