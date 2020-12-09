@@ -5,20 +5,19 @@
 
 
 
-
-
-
-- si agrego desde la página principal uno producto, y luego voy al detalle y agrego el mismo producto, en el carrito me aparece en 2 filas (no agrupa)
-
-- si abro queso, el botón de incrementar queda abajo de los 3 puntos y no me permite hacerle click (no sé bien la utilidad de eso tampoco)
-
-- permitir eliminar un producto del carrito
-
-- que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
-
-
-
+HECHO
 - hacé npm uninstall node-sass y lueo npm i sass
 - estas permitiendo agregar 0 productos
 - dice prodcutos
 - el botón comprar en la pantalla principal no hace nada
+- si abro queso, el botón de incrementar queda abajo de los 3 puntos y no me permite hacerle click (no sé bien la utilidad de eso tampoco)
+
+
+EN POGRESO
+- que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
+- permitir eliminar un producto del carrito
+
+TRABADADO
+- si agrego desde la página principal uno producto, y luego voy al detalle y agrego el mismo producto, en el carrito me aparece en 2 filas (no agrupa)
+
+

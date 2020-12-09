@@ -1,11 +1,16 @@
 .container{
     display:flex;
-    margin:10% 2%;
+    height:80%;
+    margin:0 2rem;
     justify-content:space-between;
     align-items: center;
     padding:2rem;
     background-color: rgba(255, 255, 255, 0.733);
 
+    .item_detail_desc{
+        width:60%;
+        margin:2rem;
+    }
 }
 
 .shopping_cart{
@@ -16,7 +21,7 @@
 .flexcol{
     display:flex;
     flex-direction:column;
-    background-color:rgba(255, 0, 0, 0.171);
     padding:1rem;
+    width:50%;
 }
 

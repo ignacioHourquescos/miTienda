@@ -1,5 +1,5 @@
 import React from 'react';
-import './ItemImage.css';
+import './ItemImage.scss';
 
 
 
@@ -7,8 +7,8 @@ const ItemImage = ({product}) => {
 
     return (
         <>
-         <div className="imagen">
-                <img className="imagen" src={product.img} alt={product.img}/>
+         <div className="image_detail_container">
+                <img className="image_detail" src={product.img} alt={product.img}/>
             </div>
         </>
     )

@@ -26,23 +26,28 @@ function App() {
         <SideBar/>
         <CartIcon/>
         <Diagonal/>
-        <CallToActionMenu/>
-        <CallToActionIcons/>
+        
           <Switch>
 
             <Route exact path="/cart">
               <CartContainer/>
+               
             </Route>
              
              <Route exact path="/:category">
-              <CategoryContainer/>   
+              <CategoryContainer/>  
+              <CallToActionMenu/>
+              <CallToActionIcons/>
             </Route>
             <Route exact path="/product/:id">
               <ItemDetailContainer/>
+             
             </Route> 
 
             <Route exact path="/">
               <HomeContainer/>   
+              <CallToActionMenu/>
+              <CallToActionIcons/>
             </Route>
             {/* <Route exact path="/cart/:userid">
               <Cart/>

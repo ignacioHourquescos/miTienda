@@ -1,6 +1,8 @@
 import React  from 'react';
 import useAppContext from '../../context/UseAppContext';
 import './CartList.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 
 
 const CartList = () => {
@@ -25,7 +27,8 @@ const CartList = () => {
                     <h4>{element.name}</h4>
                     <h4>${element.price}</h4>
                     <h4>${element.price*element.quantity}</h4>
-               
+                    <FontAwesomeIcon onClick={()=>{alert("se elimina prodcuto")}} style={{color:'grey'}} icon={faTimesCircle } />
+      
                 </div>
             ))}
         </div>

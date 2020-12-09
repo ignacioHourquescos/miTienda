@@ -14,3 +14,131 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*////////////////////////////////////////////*/
+/*/////////////////////////////////ROWS///////*/
+/*////////////////////////////////////////////*/
+
+
+
+/*/////////////////////////////////SPACE_AROUND*/
+.flexrow-I-I-{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items:center;
+}
+
+.flexrow_I_I_{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items:flex-end;
+}
+
+
+.flexrow°I°I°{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items:flex-start;
+}
+
+/*/////////////////////////////////SPACE_BETWEEN*/
+.flexrowI---I{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.flexrowI___I{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items:flex-end;
+}
+
+.flexrowI°°°I{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items:flex-start;
+}
+
+
+
+/*/////////////////////////////////LEFT*/
+.flexrow----I{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-end;
+  align-items:center;
+}
+
+.flexrow____I{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-end;
+  align-items:flex-end;
+}
+
+.flexrow°°°°I{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-end;
+  align-items:flex-start;
+}
+
+
+/*/////////////////////////////////RIGTH*/
+.flexrowI----{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items:center;
+}
+
+.flexrowI____{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items:flex-end;
+}
+
+.flexrowI°°°°{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items:flex-start;
+}
+
+
+/*////////////////////////////////////////////*/
+/*//////////////////////////////COMLUNS///////*/
+/*////////////////////////////////////////////*/
+
+.flexcolI---I{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  justify-items:flex-end;
+  align-content:center;
+  align-items:space-between;
+  background-color:green;
+}
+
+.flexrowI___I{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items:flex-end;
+}
+
+.flexrowI°°°I{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items:flex-start;
+}
+

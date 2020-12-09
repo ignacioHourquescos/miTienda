@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import ItemDescription from '../ItemDescription/ItemDescription';
 import ItemImage from '../ItemImage/ItemImage';
 import AddToCart from '../AddToCart/AddToCart';
-import './ItemDetail.css';
+import './ItemDetail.scss';
 
 const ItemDetail = ({product}) => {
 
@@ -20,7 +20,7 @@ const ItemDetail = ({product}) => {
     return (
         <div className="container">
             <ItemImage product={product}/>
-            <div className="flexcol">
+            <div className="flexcolI---I item_detail_desc">
                 <ItemDescription product={product}/> 
                 <ItemCount initial={1} min={0} max={10}  onAdd={optionSelected}/>
                 <AddToCart product={product} units={units}/>

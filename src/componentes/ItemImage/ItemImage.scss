@@ -1,0 +1,19 @@
+$mobile: "only screen and (max-width : 776px)";
+
+.image_detail_container{
+   height:40%;
+    position: relative;
+    text-align:center;
+    background-color:white;
+}
+
+.image_detail{
+   max-width: 40%;;
+ 
+    object-fit: cover;
+    border-radius:4px 4px 0 0;
+    z-index:1;
+    @media #{$mobile}{
+        width:100%;
+    }
+}
