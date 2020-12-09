@@ -1,48 +1,45 @@
 import React, {useState} from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 import {Link} from 'react-router-dom';
-import './Item.css';
-
-import AddToCart from '../AddToCart/AddToCart';
+import './Item.scss';
+import ItemPurchaseIndicator from '../ItemPurchaseIndicator/ItemPurchaseIndicator'
 import useAppContext from '../../context/UseAppContext';
 
 
 
 const Item = ({article}) =>{
-    const {cartArray, handleCartArray} = useAppContext();
-
-
-    const addToCart = (unitsSelected, productSelected) =>{
-        handleCartArray(unitsSelected, productSelected)
-
-   }
-
-
-    
-
-    const [units, setUnits]=useState();
+    const {handleCartArray} = useAppContext();
+    const [purchaseInProgress, setPurchaseInProgress] = useState(false);
 
    return(
         <div className="product_grid">
             
             <div className="card_holder">
-                
+
+                {/*////////CARD IMAGE & DETAIL//////*/}
+                {purchaseInProgress ? <ItemPurchaseIndicator article={article}/> :""}
+
                 <div className="image_container">  
-                    <Link to={`/product/${article.id}`} >
-                        <img className="image" src={article.img}/>
+                    <Link to={`/product/${article.id}`} style={{backgroundColor:"white"}}  >
+                        <img style={{backgroundColor:"white"}} className="image" src={article.img} alt={article.desc}/>
                     </Link>
                 </div>
 
+
+
+                {/*/////////////CARD FOOTER//////////*/}
                 <div className="data_container">
+                    
                     <Link className="link_to_product" to={`/product/${article.id}`} >
                         <h2>{article.name}</h2>
                         <h3 className="price"> ${article.price}</h3>
                     </Link>  
+
                     <div className="add_to_cart">
-                         {/* <ItemCount initial={5} min={0} max={10}  onAdd={optionSelected}/>  */}
-                         <button onClick={() =>{addToCart(1, article)}}>COMPRAR</button>
+                         <button onClick={() =>{handleCartArray(1, article);setPurchaseInProgress(true)}}>AGREGAR</button>
                     </div>
+
                 </div>
+
 
             </div>
         </div>

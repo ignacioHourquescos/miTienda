@@ -7,7 +7,7 @@ import useAppContext from '../../context/UseAppContext';
 
 const AddToCart = () => {
 
-    const {cartArray, getTotalCartValue} = useAppContext();
+    const {getTotalCartValue} = useAppContext();
 
     return (
         <div className="cart_container"> 

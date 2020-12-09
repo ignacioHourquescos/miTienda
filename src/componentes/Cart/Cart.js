@@ -11,8 +11,8 @@ const Cart = () => {
 
     return (
         <>
-            {cartArray.length==0
-            ? <h1>No tiene prodcutos aun agregados</h1>
+            {cartArray.length===0
+            ? <h1>No tiene productos aun agregados</h1>
             : <CartList/>}
         </>
     )

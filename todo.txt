@@ -1,10 +1,24 @@
 
 
-Fijate además de que si agregas 1, vas al carrito, y volves al ahome,
- desaparece el item que pusiste en el carrito. eso es porque estas a href,
-  tenes que usar el Link en todos lados. no se usa a href.
 
 
 
-si el producto fue previamente agregado, eliminar un item del carrito, ponerle importe total, etc.
 
+
+
+
+
+- si agrego desde la página principal uno producto, y luego voy al detalle y agrego el mismo producto, en el carrito me aparece en 2 filas (no agrupa)
+
+- si abro queso, el botón de incrementar queda abajo de los 3 puntos y no me permite hacerle click (no sé bien la utilidad de eso tampoco)
+
+- permitir eliminar un producto del carrito
+
+- que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
+
+
+
+- hacé npm uninstall node-sass y lueo npm i sass
+- estas permitiendo agregar 0 productos
+- dice prodcutos
+- el botón comprar en la pantalla principal no hace nada

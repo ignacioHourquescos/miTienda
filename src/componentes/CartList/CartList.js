@@ -20,7 +20,7 @@ const CartList = () => {
 
             {cartArray.map((element) =>(
                 <div className="cart_list_row">
-                    <div><img  src={element.img}></img></div>
+                    <div><img  src={element.img} alt={element.img}></img></div>
                     <h4>{element.quantity}</h4>
                     <h4>{element.name}</h4>
                     <h4>${element.price}</h4>

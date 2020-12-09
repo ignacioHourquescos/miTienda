@@ -2,21 +2,18 @@ import React from 'react';
 //Components & CSS
 //AppContext
 import useAppContext from '../../context/UseAppContext';
+import swal from 'sweetalert'
 
 
 const AddToCart = ({product, units}) => {
 
     //Variable & function from context
-    const {cartArray, handleCartArray} = useAppContext();
-
-    const addToCart = (unitsSelected, productSelected) =>{
-         handleCartArray(unitsSelected, productSelected)
-    }
+    const {handleCartArray} = useAppContext();
 
 
     return (
         <div> 
-            <button onClick={() =>{isNaN(units)? alert("no tinene producsots") : addToCart(units, product)}}>Agregar {units } unidad </button>
+            <button onClick={() =>{(units===0 || isNaN(units))? swal("Debe seleccionar una cantidad valida!") : handleCartArray(units, product)}}>Agregar {units } unidad </button>
         </div>      
     )
 }

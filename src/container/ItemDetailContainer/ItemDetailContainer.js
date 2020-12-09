@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         getSingleProductFromDatabase(id)
             .then((result) => {setProduct(result);}) 
             .then(()       =>  setLoading(false)) 
-    }, []);
+    }, [id]);
 
 
     return (<div>{loading ? <h1>Loading...</h1> : <ItemDetail product={product}/>}</div>)

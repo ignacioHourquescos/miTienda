@@ -19,7 +19,7 @@ const Home= () =>{
         getProductsByCategory(category)
             .then((result) => {setProducts(result);}) 
             .then(()       =>  setLoading(false)) 
-    }, []);
+    }, [category]);
 
 
 

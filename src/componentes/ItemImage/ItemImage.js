@@ -7,8 +7,8 @@ const ItemImage = ({product}) => {
 
     return (
         <>
-         <div >
-                <img className="imagen" src={product.img}/>
+         <div className="imagen">
+                <img className="imagen" src={product.img} alt={product.img}/>
             </div>
         </>
     )

@@ -2,6 +2,8 @@
 import {getFirestore} from '../firebase'
 
 
+
+
 // Fetches all Products
 export function getProductsFromDatabase() {
     return new Promise((resolve, reject) => {

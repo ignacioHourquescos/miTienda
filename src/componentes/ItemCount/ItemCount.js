@@ -26,7 +26,7 @@ const ItemCount = ({initial, min, max, onAdd}) =>{
         useEffect((t) => {
             setItemCount(ItemCount);
 
-        }, []);
+        }, [ItemCount]);
     
     return(
         <div>

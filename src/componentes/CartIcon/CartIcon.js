@@ -24,7 +24,7 @@ const CartIcon = () =>{
           
             <div className="counter_cart_icon">{countIndividualCartItems(cartArray)}</div>
             <FontAwesomeIcon style={{color:'white'}} icon={faShoppingCart } />
-            <div className="total_value_icon">{getTotalCartValue==0?" ":"$"+getTotalCartValue}</div>
+            <div className="total_value_icon">{getTotalCartValue===0?" ":"$"+getTotalCartValue}</div>
           </div>
         </div>
       </Link>
