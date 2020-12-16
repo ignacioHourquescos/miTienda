@@ -32,9 +32,9 @@ const AddToCart = () => {
 
                      const db =getFirestore().collection("Purchases").add(purchase)
                      .then(({id})=> {
-                        swal("Su compra fue ingresada correctamente \n" + "Numero de orden: " + id);
+                        swal("Su compra fue ingresada correctamente \n" + "Tu numero de orden: " + id);
                      }).catch(error =>{
-                         swal("Intente nuevamente!");
+                         swal("ocurrio un error. Intente nuevamente!");
                      })
                      console.log(purchase)
                  }}>pedir</button>
