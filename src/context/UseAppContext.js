@@ -33,10 +33,12 @@ export const AppProvider = ({ children}) => {
         const existing = cartArray.find((article)=>article.id === newItem.id);
         if (existing) {
             console.log("Articulo existente en el carrito")
+            console.log(newItem.id);
             existing.quantity = existing.quantity +1;
             setCartArray([...cartArray]);
         }else{
             console.log("Articulo nuevo en el carrito")
+            console.log(newItem.id);
             setCartArray([...cartArray, {"quantity":units, "id":newItem.id,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
         }     
 

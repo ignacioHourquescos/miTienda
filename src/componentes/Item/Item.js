@@ -9,7 +9,7 @@ import useAppContext from '../../context/UseAppContext';
 const Item = ({article}) =>{
     const {handleCartArray} = useAppContext();
     const [purchaseInProgress, setPurchaseInProgress] = useState(false);
-
+    const [units, setUnits]=useState(1);
    return(
         <div className="product_grid">
             
@@ -35,7 +35,7 @@ const Item = ({article}) =>{
                     </Link>  
 
                     <div className="add_to_cart">
-                         <button onClick={() =>{handleCartArray(1, article);setPurchaseInProgress(true)}}>AGREGAR</button>
+                         <button onClick={() =>{handleCartArray(units, article);setPurchaseInProgress(true)}}>AGREGAR</button>
                     </div>
 
                 </div>
