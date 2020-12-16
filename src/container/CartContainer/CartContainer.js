@@ -20,8 +20,8 @@ const AddToCart = () => {
             <div className="cart_actions">
                 <h1>Tu Carrito:</h1>
                 <h1>${getTotalCartValue}</h1>
-                {/* <ClientData/> */}
-                 <button onClick={() =>{
+                <ClientData/>                  
+                <button onClick={() =>{
                      let purchase ={
                          buyer: {name:"Facundo Cabral", mail:"facundocabal@gmail.com", phone:"1154326432"},
                          items: cartArray,

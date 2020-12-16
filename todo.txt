@@ -17,13 +17,6 @@ NUEVOS COMENTARIOS
 - fijate de ir limpiando todos los errores de la terminal y de la consola de chrome para la entrega final
 
 DESAFIO 12
-Usa tu tus items del cart para modelar tu orden al siguiente formato:
-{ buyer: { name, phone, email }, items: [{id, title, price}], total  }, si todavía no creaste el formulario de compra puedes usar un objeto hardcodeado de tipo { name, phone, email }
-
-
-Crea tu colección de órdenes. Si todavía no tienes el componente de Cart.js con el resumen de compra, ármalo en base al CartContext.
-Utiliza las operaciones de inserción para insertar tu orden en la colección y dale al user su id de orden auto-generada
-{ buyer: { name, phone, email }, items: [{id, title, price}], date, total  }
 
 ///////////////////////////////////////////////////////////////////////////////////////
 ENTREGA FINAL

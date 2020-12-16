@@ -1,56 +1,75 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import {getFirestore} from '../../firebase'
+import swal from 'sweetalert'
+
+//AppContext
+import useAppContext from '../../context/UseAppContext';
 
 const MySwal = withReactContent(Swal);
 
-let changePwSwal = {
-  title: 'Change Password?',
+let enterData = {
+  title: 'Ingrese sus datos',
   focusConfirm: false,
   html: `
-    <input class="swal2-input" id="currentPassword" type="password" placeholder="Enter your current password..." /><br />
-    <input class="swal2-input" id="newPassword1" type="password" placeholder="Enter your new password..." /><br />
-    <input class="swal2-input" id="newPassword2" type="password" placeholder="Confirm your new password..." />
+    <input class="swal2-input" id="name"      type="text" placeholder="Nombre" /><br />
+    <input class="swal2-input" id="mail"      type="mail" placeholder="Mail" /><br />
+    <input class="swal2-input" id="phone" type="phone" placeholder="Telefono" />
   `,
   type: 'warning',
   showCancelButton: true,
   cancelButtonColor: 'grey',
-  confirmButtonText: 'Update!',
+  confirmButtonText: 'Confirmar',
   allowOutsideClick: false,
   preConfirm: () => ({
-    currentPassword: document.getElementById('currentPassword').value,
-    newPassword1: document.getElementById('newPassword1').value,
-    newPassword2: document.getElementById('newPassword2').value
+    name: document.getElementById('name').value,
+    mail: document.getElementById('mail').value,
+    phone: document.getElementById('phone').value
   })
 };
 
 const ClientData = () =>{
   const [formdata, setformdata] = useState();
+  const {getTotalCartValue,cartArray} = useAppContext();
 
   const handleResetPassword = () => {
     const resetPw = async () => {
-      const swalval = await MySwal.fire(changePwSwal);
-      let v = swalval && swalval.value || swalval.dismiss;
-      if (v && v.currentPassword && v.newPassword1 && v.newPassword2 || v === 'cancel') {
-        if (v.newPassword1 !== v.newPassword2) {
-          await MySwal.fire({ type: 'error', title: 'Passwords do not match!' });
+      const swalval = await MySwal.fire(enterData);  
+      
+      if (true) {
+        if (swalval.value.name=='' ) {
+          await MySwal.fire({ type: 'error', title: 'Complete su nombre' });
           resetPw();
-        } else if (v !== 'cancel') {
-          setformdata(swalval);
+        } else if (swalval.value.mail=='' && swalval.value.phone==''){
+          await MySwal.fire({ type: 'error', title: 'Complete al menos un dato de contacto' });
+          resetPw();
         }
-      } else {
-        await MySwal.fire({ type: 'error', title: 'All fields are required!!' });
-        resetPw();
+        else  {
+          setformdata(swalval);
+          let purchase ={
+            buyer: {name:swalval.value.name, mail:swalval.value.mail, phone:swalval.value.phone},
+            items: cartArray,
+            total: getTotalCartValue,
+            date: new Date()
+          }
+        const db =getFirestore().collection("Purchases").add(purchase)
+        .then(({id})=> {
+           swal("Gracias "+ swalval.value.name+ "!\n" +"Tu compra fue ingresada correctamente \n" + "Nro orden: " + id);
+        }).catch(error =>{
+            swal("ocurrio un error. Intente nuevamente!");
+        })
+        }
       }
     }
     console.log(formdata);
+   
     resetPw();
   }
 
   return (
     <div>
-      <button onClick={handleResetPassword}>Reset Password</button>
-      <h5>{JSON.stringify(formdata, null, 2)}</h5>
+      <button onClick={handleResetPassword}>Confirmar Compra</button>
     </div>
   );
 }
