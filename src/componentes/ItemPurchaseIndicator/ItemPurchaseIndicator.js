@@ -25,7 +25,7 @@ const ItemPurchaseIndicator = ({article}) =>{
             </div>
 
             <Link className="modify_purchase" to={`/product/${article.id}`} >
-                 Modificar       
+                 Mas Detalle       
             </Link>  
 
             

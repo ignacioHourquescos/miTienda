@@ -7,16 +7,26 @@ import useAppContext from '../../context/UseAppContext';
 
 
 const Item = ({article}) =>{
-    const {handleCartArray} = useAppContext();
+    const {cartArray, handleCartArray} = useAppContext();
     const [purchaseInProgress, setPurchaseInProgress] = useState(false);
     const [units, setUnits]=useState(1);
+
+
+    const verifyPurchaseInProgress = (id) => {
+        if(cartArray.find(element =>element.id==id)) return true;
+        return false;
+    }
+
+
+
+
    return(
         <div className="product_grid">
             
             <div className="card_holder">
 
                 {/*////////CARD IMAGE & DETAIL//////*/}
-                {purchaseInProgress ? <ItemPurchaseIndicator article={article}/> :""}
+                {purchaseInProgress|| verifyPurchaseInProgress(article.id) ? <ItemPurchaseIndicator article={article}/> :""}
 
                 <div className="image_container">  
                     <Link to={`/product/${article.id}`} style={{backgroundColor:"white"}}  >
