@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './Item.scss';
 import ItemPurchaseIndicator from '../ItemPurchaseIndicator/ItemPurchaseIndicator'
@@ -11,12 +11,18 @@ const Item = ({article}) =>{
     const [purchaseInProgress, setPurchaseInProgress] = useState(false);
     const [units, setUnits]=useState(1);
 
+    function handleChange(newValue) {
+        setPurchaseInProgress(newValue);
+      }
 
-    const verifyPurchaseInProgress = (id) => {
-        if(cartArray.find(element =>element.id==id)) return true;
-        return false;
-    }
-
+    useEffect(()=>{
+        if(cartArray.find(element =>element.id==article.id)) {
+            setPurchaseInProgress(true)
+        }
+        else{
+            setPurchaseInProgress(false)
+        };
+    },[cartArray])
 
 
 
@@ -26,7 +32,7 @@ const Item = ({article}) =>{
             <div className="card_holder">
 
                 {/*////////CARD IMAGE & DETAIL//////*/}
-                {purchaseInProgress|| verifyPurchaseInProgress(article.id) ? <ItemPurchaseIndicator article={article}/> :""}
+                {purchaseInProgress ? <ItemPurchaseIndicator article={article} onChange={handleChange} /> :""}
 
                 <div className="image_container">  
                     <Link to={`/product/${article.id}`} style={{backgroundColor:"white"}}  >

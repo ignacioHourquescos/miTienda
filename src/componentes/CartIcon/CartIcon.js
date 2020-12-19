@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './CartIcon.css';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +15,11 @@ const CartIcon = () =>{
 
     //Variable & function from context
     const {cartArray, countIndividualCartItems, getTotalCartValue} = useAppContext();
+    const [cartItems, setCartItems]=useState(0);
+
+    useEffect(()=>{
+      setCartItems(countIndividualCartItems(cartArray))
+    },[cartArray])
 
     return(<>  
        <Link to={`/cart/`}>
@@ -22,7 +27,7 @@ const CartIcon = () =>{
          
           <div className="menu">
           
-            <div className="counter_cart_icon">{countIndividualCartItems(cartArray)}</div>
+            <div className="counter_cart_icon">{cartItems}</div>
             <FontAwesomeIcon style={{color:'white'}} icon={faShoppingCart } />
             <div className="total_value_icon">{getTotalCartValue===0?" ":"$"+getTotalCartValue}</div>
           </div>

@@ -4,24 +4,31 @@ import ItemCount from '../ItemCount/ItemCount';
 import ItemDescription from '../ItemDescription/ItemDescription';
 import ItemImage from '../ItemImage/ItemImage';
 import AddToCart from '../AddToCart/AddToCart';
+import useAppContext from '../../context/UseAppContext';
 import './ItemDetail.scss';
 
 const ItemDetail = ({product}) => {
 
     const [units, setUnits]=useState(1);
-
+    const {cartArray} = useAppContext();
     
     const optionSelected = (value) =>{
-        console.log("mouse clicked on itemCount");
-        console.log(value);
         setUnits(value);
     }
 
-
+    //Searches existing quantity of the article in Cart
+    const find =(id)=>{
+        var aux = cartArray.find(element =>element.id==id);
+        if (!aux) return 0;
+        return aux.quantity;
+    }
 
     return (
         <div className="container">
-            <ItemImage product={product}/>
+            <div className="flexcolI---I">
+                <ItemImage product={product}/>
+                <div>canitdada acutal en tu carrito: {find(product.id)}</div>
+            </div>
             <div className="flexcolI---I item_detail_desc">
                 <ItemDescription product={product}/> 
                 <ItemCount initial={1} min={0} max={10}  onAdd={optionSelected}/>

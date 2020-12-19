@@ -26,7 +26,6 @@ export const AppProvider = ({ children}) => {
 
     const [cartArray, setCartArray] = useState([]);
 
-
     //Add to Cart Function. 
     const handleCartArray = (units, newItem) => { 
 
@@ -36,13 +35,24 @@ export const AppProvider = ({ children}) => {
             console.log(newItem);
             existing.quantity = existing.quantity +units;
             setCartArray([...cartArray]);
+
         }else{
             console.log("Articulo nuevo en el carrito")
             console.log(newItem);
             setCartArray([...cartArray, {"id":newItem.id,"quantity":units,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
         }     
-
     }
+
+
+    //Emliniate existing item on CartArrays
+    const eliminateItem = (item) => {
+        let index = cartArray.findIndex(element => element.id ===item.id);
+        cartArray.splice(index,1);
+        console.log("esta es la posicion del elemtno a elimintar"+ index)
+    }
+
+
+
 
     //get total value of cart productSelected
     const getTotalCartValue = cartArray.reduce((acumulator, current) => {
@@ -50,7 +60,7 @@ export const AppProvider = ({ children}) => {
         },0);
     
         
-    return(<AppContext.Provider value={{cartArray, handleCartArray, countIndividualCartItems, getTotalCartValue}}>{children}</AppContext.Provider>)
+    return(<AppContext.Provider value={{cartArray, handleCartArray, countIndividualCartItems, eliminateItem, getTotalCartValue}}>{children}</AppContext.Provider>)
 }
 
 

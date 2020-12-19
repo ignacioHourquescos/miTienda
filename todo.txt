@@ -10,9 +10,6 @@ EN POGRESO
 
 
 NUEVOS COMENTARIOS
-- existing.quantity +1 está mal, tenes que tomar units.
-- todo caso eliminá el agregar en la home, no hace falta que esté ahí, siempre andá al detalle.
-- si agrego 2 unidades de 1 producto, debería mostrar 2 en carticon, no 1.
 - si a mano voya http://localhost:3000/product/333 no me dice que el producto no existe.
 - fijate de ir limpiando todos los errores de la terminal y de la consola de chrome para la entrega final
 
