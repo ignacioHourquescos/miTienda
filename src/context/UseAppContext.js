@@ -30,16 +30,16 @@ export const AppProvider = ({ children}) => {
     //Add to Cart Function. 
     const handleCartArray = (units, newItem) => { 
 
-        const existing = cartArray.find((article)=>article.id === newItem.id);
+        const existing = cartArray.find((article)=>article.id=== newItem.id);
         if (existing) {
             console.log("Articulo existente en el carrito")
-            console.log(newItem.id);
-            existing.quantity = existing.quantity +1;
+            console.log(newItem);
+            existing.quantity = existing.quantity +units;
             setCartArray([...cartArray]);
         }else{
             console.log("Articulo nuevo en el carrito")
-            console.log(newItem.id);
-            setCartArray([...cartArray, {"quantity":units, "id":newItem.id,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
+            console.log(newItem);
+            setCartArray([...cartArray, {"id":newItem.id,"quantity":units,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
         }     
 
     }

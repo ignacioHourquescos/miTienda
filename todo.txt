@@ -16,6 +16,18 @@ NUEVOS COMENTARIOS
 - si a mano voya http://localhost:3000/product/333 no me dice que el producto no existe.
 - fijate de ir limpiando todos los errores de la terminal y de la consola de chrome para la entrega final
 
+
+sumale todos los comentarios del desafío pasado
+-no usaría modal, para pedir los datos, consultado con el profesor, lo dejaría en la misma página, pero consultalo con él.
+-si apretas cancelar al popup se rompe todo
+-si en la url escribo un producto inexistente rompe
+-continua lo de doble producto si agrego de la home y detalle
+-puse pedir y no me pidió datos, habría que dejar un solo botón. y como dije, los datos los pondría sobre la misma página. (consulalo con él, por ahí te deja el modal)
+-al modal le falta doble validación de e-mail que verifique que ambos campos esten iguales.
+-todo codigo comentado eliminalo para la entrega final
+
+varios bugs pero corregilos para la entrega final, testeá bien tu app.
+
 DESAFIO 12
 
 ///////////////////////////////////////////////////////////////////////////////////////

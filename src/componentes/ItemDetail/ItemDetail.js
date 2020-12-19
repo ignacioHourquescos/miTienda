@@ -10,8 +10,10 @@ const ItemDetail = ({product}) => {
 
     const [units, setUnits]=useState(1);
 
+    
     const optionSelected = (value) =>{
         console.log("mouse clicked on itemCount");
+        console.log(value);
         setUnits(value);
     }
 

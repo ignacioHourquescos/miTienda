@@ -11,15 +11,17 @@ const ItemPurchaseIndicator = ({article}) =>{
 
       const find =(id)=>{
           var aux=0;
-          aux = cartArray.find(element =>element.name===id);
+          aux = cartArray.find(element =>element.id==id);
+          console.log("esto viene de ItemPurchaseIndicatro")
           console.log(aux);
+          
           return aux.quantity;
       }
   
      return(
       <div className="confirm_purchase"> 
             <div className="units_purchased"> 
-            {find(article.name)}
+            {find(article.id)}
             </div>
 
             <Link className="modify_purchase" to={`/product/${article.id}`} >
