@@ -1,26 +1,44 @@
-.sidebar2{
-   
-    height:100vh;
-    padding:0;
-    margin:0;
+
+.go_home{
     position:fixed;
-    right:0;
+    bottom:1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    justify-items:flex-end;
+    left:2rem;
+    padding-bottom: 1rem;
+
+    div{
+        width:10vh;
+        height:10vh;
+        border-radius:200px;
+        bottom: 1rem;
+        right:2rem;
+        z-index:15;
+        background-color:rgb(0, 6, 88);
+        text-align:center;
+    }
+}
+
+
+
+
+.call_to_action{ 
+    position:fixed;
     bottom:1rem;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
     justify-items:flex-end;
     right:2rem;
-    padding-bottom: 2rem;
-    z-index:199;
-    
+    padding-bottom: 1rem;
+ 
     
     div{
-        
         width:10vh;
         height:10vh;
         border-radius:200px;
-        
         display:flex;
         align-items:center;
         justify-content:center;
@@ -28,13 +46,12 @@
         bottom: 1rem;
         right:2rem;
         z-index:15;
-        z-index:200;
     }
     .cta1{
         background-color:rgb(122, 122, 122);
     }
     .cta2{
-        background-color:rgb(228, 65, 0);
+        background-color:rgb(228, 65, 0);  
     }
     .cta3{
         background-color:rgb(117, 247, 11);
@@ -43,17 +60,6 @@
 
 
 
-
-
-.list2{
-    width:100%;
-    padding-right:2rem;
-    margin-bottom:5.5rem;
-    display: flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    justify-items:flex-end;
-}
 
 
 .counter_cart_icon2{
@@ -66,7 +72,6 @@
     height:4vh;
     text-align:center;
     border:2px solid red;
-
     z-index:15;
     -webkit-box-shadow: 18px 22px 49px -32px rgba(0,0,0,0.75);
     -moz-box-shadow: 18px 22px 49px -32px rgba(0,0,0,0.75);
