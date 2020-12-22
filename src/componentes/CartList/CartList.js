@@ -3,31 +3,26 @@ import useAppContext from '../../context/UseAppContext';
 import './CartList.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+import ItemCount from '../ItemCount/ItemCount'
 
 
 const CartList = () => {
 
     //Variable & function from context
-    const {cartArray} = useAppContext();
+    const {cartArray, eliminateItem} = useAppContext();
 
     return (
         <div className="cart_list"> 
-                <div className="cart_list_row">
-                    <h4>Producto</h4>
-                    <h4>Cantidad</h4>
-                    <h4>Producto</h4>
-                    <h4>Precio</h4>
-                    <h4>Sub-Total</h4>
-                </div>
 
             {cartArray.map((element) =>(
                 <div className="cart_list_row">
-                    <div><img  src={element.img} alt={element.img}></img></div>
-                    <h4>{element.quantity}</h4>
+                    <div><img  src={element.img} alt={element.img}></img></div> 
+                    <div><ItemCount initial={element.quantity}/></div>
                     <h4>{element.name}</h4>
-                    <h4>${element.price}</h4>
+                    <h4>${element.price}c/u</h4>
                     <h4>${element.price*element.quantity}</h4>
-                    <FontAwesomeIcon onClick={()=>{alert("se elimina prodcuto")}} style={{color:'grey'}} icon={faTimesCircle } />
+                    <FontAwesomeIcon onClick={()=>{eliminateItem(element)}} style={{color:'grey'}} icon={faTimesCircle } />
+                    
       
                 </div>
             ))}

@@ -26,13 +26,17 @@ const ItemPurchaseIndicator = ({article, onChange}) =>{
   
      return(
       <div className="confirm_purchase"> 
-            <button onClick={() =>{eliminateItem(article); handleChange()}}>ELIMINAR</button>
+
+            <button className="eliminate_item_home" onClick={() =>{eliminateItem(article); handleChange()}}>x</button>
+            
             <div className="units_purchased"> 
-            {currentItemQuantity}
+              {currentItemQuantity}
             </div>
+            
             <Link className="modify_purchase" to={`/product/${article.id}`} >
                  Mas Detalle       
-            </Link>              
+            </Link>    
+                      
       </div> 
       )
   }

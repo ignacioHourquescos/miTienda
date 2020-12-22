@@ -16,13 +16,16 @@ const AddToCart = () => {
 
 
     return (
-        <div className="cart_container"> 
+        <div className="cart_container">
+
+            <Cart/> 
+             
             <div className="cart_actions">
                 <h1>Tu Carrito:</h1>
                 <h1>${getTotalCartValue}</h1>
                 <ClientData/>                  
             </div>
-            <Cart/>  
+            
         </div>      
 
     )

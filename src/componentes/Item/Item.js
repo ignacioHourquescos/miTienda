@@ -11,6 +11,7 @@ const Item = ({article}) =>{
     const [purchaseInProgress, setPurchaseInProgress] = useState(false);
     const [units, setUnits]=useState(1);
 
+    
     function handleChange(newValue) {
         setPurchaseInProgress(newValue);
       }

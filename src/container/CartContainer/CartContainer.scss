@@ -1,12 +1,19 @@
+$overlay: rgba(41, 41, 41, 0.20);
+
+
 .cart_container{
     padding:0 2rem;
     display:flex;
     flex-direction:row;
+    
 }
 
 .cart_actions{
+
     width:25%;
+    height:80vh;
     display:flex;
+    background-color: $overlay;
     flex-direction: column;
     align-content:center;
     align-items:center;

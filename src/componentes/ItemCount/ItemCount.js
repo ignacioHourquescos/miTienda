@@ -4,7 +4,7 @@ import './ItemCount.css';
 
 
 const ItemCount = ({initial, min, max, onAdd}) =>{
-    const [ItemCount, setItemCount]=useState(1);
+    const [ItemCount, setItemCount]=useState(initial);
 
     //funciones de barra_ItemCount
    

@@ -9,8 +9,8 @@
     display:flex;
     align-content:center;
     align-items:center;
-    background-color:rgb(243, 241, 241);
-    border-radius:5px;
+    background-color:rgb(255, 255, 255);
+    border-radius:50px 5px 5px 50px;
     margin:5px;
     padding:2px;
     line-height:0;  
@@ -27,22 +27,33 @@ box-shadow: 10px 14px 49px -34px rgba(0,0,0,0.75);
             object-fit: cover;
         }
     }
-    :nth-child(2){  
+    // :nth-child(2){  
+    //     width: 10%;
+    //     text-align:center;
+    // }
+
+    :nth-child(2){
         width: 10%;
-        text-align:center;
+        margin-left:1rem;
     }
 
     :nth-child(3){
         width: 50%;
+        margin-left:1rem;
     }
 
     :nth-child(4){
-        width: 15%;
+        width: 10%;
         text-align:center;
+        color:grey;
     }
 
     :nth-child(5){
-        width: 15%;
+        width: 10%;
+        text-align:center;
+    }
+    :nth-child(6){
+        width: 10%;
         text-align:center;
     }
 }
