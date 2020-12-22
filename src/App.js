@@ -13,6 +13,7 @@ import HomeContainer        from './container/HomeContainer/HomeContainer';
 import ItemDetailContainer  from './container/ItemDetailContainer/ItemDetailContainer';
 import CartContainer        from './container/CartContainer/CartContainer';
 import CategoryContainer    from './container/CategoryContainer/CategoryContainer';
+import BrandContainer       from './container/BrandContainer/BrandContainer';
 
 //AppContext
 import { AppProvider } from './context/UseAppContext'
@@ -26,9 +27,9 @@ function App() {
         <SideBar/>
         <CartIcon/>
         <Diagonal/>
+        <BrandContainer/>
         
           <Switch>
-
             <Route exact path="/cart">
               <CartContainer/>
                
@@ -45,6 +46,7 @@ function App() {
             </Route> 
 
             <Route exact path="/">
+
               <HomeContainer/>   
               <CallToActionMenu/>
               <CallToActionIcons/>
