@@ -10,7 +10,9 @@ const BrandContainer= () =>{
       const [intro, setIntro] = useState(true);
 
       const magic = () => {
-            setIntro(false)
+            setTimeout(function (){setIntro(false);},1000)
+            
+            
       }
 
     return(<>
