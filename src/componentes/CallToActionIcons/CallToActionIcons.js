@@ -8,23 +8,21 @@ import { faHome, faFilter, faSortAmountUpAlt} from '@fortawesome/free-solid-svg-
 
 const CallToActionIcons = () =>{
     //Variable & function from context
+    // const [categories, setCategories]=useState(0);
 
 
     return(
     <>  
-      <Link to={`/cart/`}>
-      </Link>
-
         <div className="go_home">
           <div className="cta0">
           <FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faHome } />
           </div>
         </div>
         <div className="call_to_action">
-          <div  className="cta1"> <FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faFilter} />
-          </div>  
-          <div className="cta2"><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faSortAmountUpAlt } /></div>
-          <div className="cta3"><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faHome} /></div>
+          {/* <div  className="cta1"> <FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faFilter} />
+          </div>   */}
+          {/* <div className="cta2"><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faSortAmountUpAlt } /></div> */}
+          <div className="cta3" onC><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faFilter} /></div>
         </div>
 
       

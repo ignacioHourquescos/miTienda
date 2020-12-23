@@ -9,7 +9,6 @@ export function getProductsFromDatabase() {
     return new Promise((resolve, reject) => {
       const products = getFirestore().collection('productos')
       products.get().then((query) => {
-
         if (query.size === 0) reject('no hay registros')
         const data = query.docs.map((doc) => ({ ...doc.data(), id: doc.id}))
         resolve(data)
@@ -50,10 +49,6 @@ export function getProductsFromDatabase() {
 //     })
 //   })
 // }
-
-
-
-
 
 
 // Fetche sproducts by category

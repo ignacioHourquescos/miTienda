@@ -10,14 +10,14 @@ const BrandContainer= () =>{
       const [intro, setIntro] = useState(true);
 
       const magic = () => {
-            setTimeout(function (){setIntro(false);},1000)
+            setTimeout(function (){setIntro(false);},300)
             
             
       }
 
     return(<>
 
-            <button className="brand_container" style={{zIndex: intro? '200' : '-200'}} onClick={() => magic()}>
+            <button className="brand_container" style={{display: intro ? 'block' : 'none'}} onClick={() => magic()}>
                 <h1 className="titulo" style={{display: intro ? 'block' : 'none',}}>La Galera</h1>
                 <h2 className="slogan" style={{display: intro ? 'block' : 'none',}}>MARKET</h2>
             </button>
