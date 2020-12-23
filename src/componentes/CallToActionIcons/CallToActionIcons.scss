@@ -34,7 +34,7 @@ $mobile: "only screen and (max-width : 776px)";
     justify-items:flex-end;
     right:2rem;
     padding-bottom: 1rem;
-
+    z-index:30;
     @media #{$mobile}{
         flex-direction:row;
     }
@@ -49,16 +49,10 @@ $mobile: "only screen and (max-width : 776px)";
         margin:0.4rem 0;
         bottom: 1rem;
         right:2rem;
-        z-index:200;
+        z-index:30;
         @media #{$mobile}{
             margin: 0 0.4rem;
         }
-    }
-    .cta1{
-        background-color:rgb(122, 122, 122);
-    }
-    .cta2{
-        background-color:rgb(228, 65, 0);  
     }
     .cta3{
         background-color: #1e1e1e;
@@ -84,4 +78,17 @@ $mobile: "only screen and (max-width : 776px)";
     -moz-box-shadow: 18px 22px 49px -32px rgba(0,0,0,0.75);
     box-shadow: 18px 22px 49px -32px rgba(0,0,0,0.75);
 
+}
+
+
+.category_list_container{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    z-index:2;
+    background-color: #04045e;
+    margin:0;padding:0;border:0;
+    font-size:4rem;
 }

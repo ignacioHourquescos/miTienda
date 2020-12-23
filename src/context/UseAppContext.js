@@ -4,23 +4,15 @@ import React, { createContext, useContext, useState } from 'react'
 const AppContext = createContext()
 
 
-
-
-
-
 //Product array cart
 const useAppContext = () => useContext(AppContext)
-
-
-
-
 
 
 export const AppProvider = ({ children}) => {
 
     const [cartArray, setCartArray] = useState([]);
 
-    //FUNTICON ADDS ITEMS TO CART 
+    //FUNCTION ADDS ITEMS TO CART 
     const handleCartArray = (units, newItem) => { 
 
         const existing = cartArray.find((article)=>article.id=== newItem.id);
@@ -36,6 +28,8 @@ export const AppProvider = ({ children}) => {
             setCartArray([...cartArray, {"id":newItem.id,"quantity":units,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
         }     
     }
+
+    //FUNCTION GETS ALL EXISTING CATEGORIES
 
 
     //ELIMINATE AN EXISTING ITEM OF THE CART
