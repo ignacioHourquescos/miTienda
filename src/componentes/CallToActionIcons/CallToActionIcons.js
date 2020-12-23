@@ -23,12 +23,11 @@ const CallToActionIcons = () =>{
     return(
     <> {showCategories? 
           <div className="category_list_container">
-                  <div onClick={()=>{setShowCategories(false)}}>
-                  {products.map(article => 
-                    <>
-                    <div>{article}</div>
-                    <Link to={`/wines`}>ccc</Link>
-                    </>
+                  <div className="category_list"onClick={()=>{setShowCategories(false)}}>
+                  {products.map(category => 
+                  <div>
+                    <Link className="link_to_category" to={"/"+category}>{category}</Link>
+                    </div>
                     )}
                   
                   </div>

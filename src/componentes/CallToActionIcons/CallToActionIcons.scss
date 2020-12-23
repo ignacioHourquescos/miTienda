@@ -90,5 +90,19 @@ $mobile: "only screen and (max-width : 776px)";
     z-index:2;
     background-color: #04045e;
     margin:0;padding:0;border:0;
-    font-size:4rem;
+    
 }
+
+.link_to_category{
+    text-decoration: none;
+    color:white;
+}
+
+.category_list{
+    display:flex;
+    justify-content: center;
+    align-content:center;
+    align-items: center;
+    height:100vh;
+}
+

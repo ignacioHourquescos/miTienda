@@ -45,17 +45,18 @@ export function getProductsByCategory(category){
       })
     }
 
-//FETCHES ALL EXISTING CATEGORIES
+//FETCHES ALL EXISTING SUBCATEGORIES INSIDE THE CATEGORY PASSED AND RETURNS AN ARRAY
 export function getCategories(){
   return new Promise((resolve, reject) => {
       const products = getFirestore().collection('productos');
       products.get().then((query) => {
         if (query.size === 0) reject('no hay registros')
         const data = query.docs.map((doc) => (doc.data().category))
-        console.log(data);
-        resolve(data)
+        resolve(EliminateDuplicates(data))
       })
     })
   }
 
 
+//AUXILIAR FUNCTIONS
+ const EliminateDuplicates = (names) => names.filter((v,i) => names.indexOf(v) === i)
