@@ -3,6 +3,13 @@ $mobile: "only screen and (max-width : 776px)";
 .diagonal_fixed{
       @media #{$mobile}{
             height:15vh;
+      
         }
 }
 
+
+ .diagonal{
+       @media #{$mobile}{
+            height:10vh;     
+         }
+ }

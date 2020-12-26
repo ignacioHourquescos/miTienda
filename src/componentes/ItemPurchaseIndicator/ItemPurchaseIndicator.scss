@@ -1,4 +1,5 @@
 $overlay: rgba(41, 41, 41, 0.50);
+$mobile: "only screen and (max-width : 776px)";
 
 /*CONFIRM PRUCHASE*/
 .confirm_purchase{
@@ -7,11 +8,12 @@ $overlay: rgba(41, 41, 41, 0.50);
       height:70%;
       position:absolute;
       top:0;
-      z-index:10;
+      z-index:5;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
+   
 }
   
   .units_purchased{
@@ -22,6 +24,11 @@ $overlay: rgba(41, 41, 41, 0.50);
       border-radius:200px;
       font-size:3rem;
       color:white;
+      @media #{$mobile}{
+          width:2rem;
+          height:2rem;
+        font-size:1.5rem;
+    }
   }
 
   .modify_purchase{
@@ -34,6 +41,9 @@ $overlay: rgba(41, 41, 41, 0.50);
       line-height: 2rem;
       border-radius:2px;
       text-decoration:none;
+      @media #{$mobile}{
+        margin:1rem 1rem 0 1rem;
+    }
   }
 
   .eliminate_item_home{

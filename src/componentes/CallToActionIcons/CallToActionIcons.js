@@ -9,46 +9,41 @@ import { faHome, faFilter, faSortAmountUpAlt} from '@fortawesome/free-solid-svg-
 
 
 const CallToActionIcons = () =>{
-    //Variable & function from context
-     const [showCategories, setShowCategories]=useState(false);
-      const [products, setProducts]=useState(false);
+  //Variable & function from context
+  const [showCategories, setShowCategories]=useState(false);
+  const [products, setProducts]=useState(false);
 
-     useEffect(() => {
-      getCategories().then((result) => {
-          setProducts(result);
-      })   
-    }, []);
-     
-
-    return(
-    <> {showCategories? 
+  
+  useEffect(() => {
+    getCategories().then((result) => {
+        setProducts(result);
+    })   
+  }, []);
+   
+  return(
+    <> 
+      {showCategories? 
           <div className="category_list_container">
-                  <div className="category_list"onClick={()=>{setShowCategories(false)}}>
-                  {products.map(category => 
-                  <div>
-                    <Link className="link_to_category" to={"/"+category}>{category}</Link>
-                    </div>
-                    )}
-                  
-                  </div>
+            <div className="category_list" onClick={()=>{setShowCategories(false)}}>
+              {products.map(category => 
+                 <div className="category_specific_container">
+                  <Link className="link_to_category" to={"/"+category}>{category}</Link>
+                </div>
+              )}
+            </div>
           </div>
-          : ""}
-    
-
-      
-
-        <div className="go_home">
-           <div className="cta0"><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faHome } /></div>
-        </div>
-        
-        <div className="call_to_action">
-          <div className="cta3" onClick={() => setShowCategories(true)}><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faFilter} /></div>
-        </div>
-
-      
- 
+        : ""}
+              
+      <div className="go_home">
+         <div className="cta0"><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faHome } /></div>
+      </div>
+            
+      <div className="call_to_action">
+        <div className="cta3" onClick={() => setShowCategories(true)}><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faFilter} /></div>
+      </div>              
+           
     </>
-    )
+  )
 }
 
 export default CallToActionIcons;

@@ -60,3 +60,6 @@ export function getCategories(){
 
 //AUXILIAR FUNCTIONS
  const EliminateDuplicates = (names) => names.filter((v,i) => names.indexOf(v) === i)
+
+
+ //ADD PRODUCTS TO FIREBASEAPP
