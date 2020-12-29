@@ -1,0 +1,12 @@
+.overlay > h1{
+    z-index:2000;
+    color:red;
+}
+
+.loader_container{
+    width:100%;
+    height:60vh;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+}

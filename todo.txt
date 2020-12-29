@@ -1,24 +1,31 @@
 
 
-EN POGRESO
-- que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
-
-
-
 NUEVOS COMENTARIOS
-- si a mano voya http://localhost:3000/product/333 no me dice que el producto no existe.
-- fijate de ir limpiando todos los errores de la terminal y de la consola de chrome para la entrega final
 
+- que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
+- fijate de ir limpiando todos los errores de la terminal y de la consola de chrome para la entrega final
 -no usaría modal, para pedir los datos, consultado con el profesor, lo dejaría en la misma página, pero consultalo con él.
 -si apretas cancelar al popup se rompe todo
--si en la url escribo un producto inexistente rompe
 -puse pedir y no me pidió datos, habría que dejar un solo botón. y como dije, los datos los pondría sobre la misma página. (consulalo con él, por ahí te deja el modal)
 -al modal le falta doble validación de e-mail que verifique que ambos campos esten iguales.
 -todo codigo comentado eliminalo para la entrega final
+- varios bugs pero corregilos para la entrega final, testeá bien tu app.
 
-varios bugs pero corregilos para la entrega final, testeá bien tu app.
+HECHO
+- hacé npm uninstall node-sass y lueo npm i sass
+- estas permitiendo agregar 0 productos
+- dice prodcutos
+- el botón comprar en la pantalla principal no hace nada
+- si abro queso, el botón de incrementar queda abajo de los 3 puntos y no me permite hacerle click (no sé bien la utilidad de eso tampoco)
+- si agrego desde la página principal uno producto, y luego voy al detalle y agrego el mismo producto, en el carrito me aparece en 2 filas (no agrupa)
+- creo te agrega doble porque si agregas en la home el id es texto, si agregas en detalle es nro.
+- permitir eliminar un producto del carrito
+-continua lo de doble producto si agrego de la home y detalle
+- si a mano voya http://localhost:3000/product/333 no me dice que el producto no existe.
 
-DESAFIO 12
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////
 ENTREGA FINAL
@@ -73,17 +80,6 @@ EXTRAS
 
 
 /////////////////////////
-HECHO
-- hacé npm uninstall node-sass y lueo npm i sass
-- estas permitiendo agregar 0 productos
-- dice prodcutos
-- el botón comprar en la pantalla principal no hace nada
-- si abro queso, el botón de incrementar queda abajo de los 3 puntos y no me permite hacerle click (no sé bien la utilidad de eso tampoco)
-- si agrego desde la página principal uno producto, y luego voy al detalle y agrego el mismo producto, en el carrito me aparece en 2 filas (no agrupa)
-- creo te agrega doble porque si agregas en la home el id es texto, si agregas en detalle es nro.
-- permitir eliminar un producto del carrito
--continua lo de doble producto si agrego de la home y detalle
-
 
 JON MIRCHA
 JS DOJO GOOGLE CHINO

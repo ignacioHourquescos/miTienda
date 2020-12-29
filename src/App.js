@@ -7,6 +7,7 @@ import SideBar              from './componentes/Sidebar/SideBar';
 import CallToActionMenu     from './componentes/CallToActionMenu/CallToActionMenu'
 import Diagonal             from './componentes/Diagonal/Diagonal';
 import CallToActionIcons    from './componentes/CallToActionIcons/CallToActionIcons'; 
+import NotFoundPage         from './componentes/NotFoundPage/NotFoundPage';
 
 //Containers
 import HomeContainer        from './container/HomeContainer/HomeContainer';
@@ -32,28 +33,32 @@ function App() {
           <Switch>
             <Route exact path="/cart">
               <CartContainer/>
-               
             </Route>
+
+            <Route exact path="/">
+              <HomeContainer/>   
+              <CallToActionMenu/>
+              <CallToActionIcons/>
+            </Route>
+          
              
              <Route exact path="/:category">
               <CategoryContainer/>  
               <CallToActionMenu/>
               <CallToActionIcons/>
             </Route>
+
             <Route exact path="/product/:id">
               <ItemDetailContainer/>
-             
             </Route> 
 
-            <Route exact path="/">
-
-              <HomeContainer/>   
-              <CallToActionMenu/>
-              <CallToActionIcons/>
+            <Route exact path="*">
+                <NotFoundPage/>
             </Route>
-            {/* <Route exact path="/cart/:userid">
-              <Cart/>
-            </Route>  */}
+
+       
+            
+
           </Switch>
           
       </BrowserRouter>

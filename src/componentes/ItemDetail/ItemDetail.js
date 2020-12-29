@@ -2,7 +2,6 @@ import React, {useState}  from 'react';
 //Components & CSS
 import ItemCount from '../ItemCount/ItemCount';
 import ItemDescription from '../ItemDescription/ItemDescription';
-import ItemImage from '../ItemImage/ItemImage';
 import AddToCart from '../AddToCart/AddToCart';
 import useAppContext from '../../context/UseAppContext';
 import './ItemDetail.scss';
@@ -26,7 +25,9 @@ const ItemDetail = ({product}) => {
     return (
         <div className="container">
             <div className="flexcolI---I">
-                <ItemImage product={product}/>
+                 <div className="image_detail_container">
+                    <img className="image_detail" src={product.img} alt={product.img}/>
+                </div>
                 <div>canitdada acutal en tu carrito: {find(product.id)}</div>
             </div>
             <div className="flexcolI---I item_detail_desc">

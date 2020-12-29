@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {getSingleProductFromDatabase} from '../../lib/database';
-import './ItemDetailContainer.css';
+import './ItemDetailContainer.scss';
 import ItemDetail from '../../componentes/ItemDetail/ItemDetail';
 import {useParams} from 'react-router-dom';
+import MyLoader from "../../componentes/ContentLoader/ContentLoader"
+
+
 
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const [product, setProduct] = useState([]);
     const {id}=useParams();
     
-    console.log("este es el numero de id: " +id);
     useEffect(() => {
         setLoading(true);
         getSingleProductFromDatabase(id)
@@ -18,9 +20,17 @@ const ItemDetailContainer = () => {
     }, [id]);
 
 
-    return (<div>{loading ? <h1>Loading...</h1> : <ItemDetail product={product}/>}</div>)
-      
-    
+    return (
+        <div className="loader_container">
+        
+            {   
+                loading  
+                ? <div className="loader_container"><MyLoader/></div>  
+                : <ItemDetail product={product}/>
+            }
+
+        </div>
+    )    
 }
 
 export default ItemDetailContainer

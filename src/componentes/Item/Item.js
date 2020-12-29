@@ -6,7 +6,7 @@ import useAppContext from '../../context/UseAppContext';
 
 
 
-const Item = ({article}) =>{
+const Item = ({article, loadingArticle}) =>{
     const {cartArray, handleCartArray} = useAppContext();
     const [purchaseInProgress, setPurchaseInProgress] = useState(false);
     const [units, setUnits]=useState(1);
@@ -28,8 +28,10 @@ const Item = ({article}) =>{
 
 
    return(
+       <>
+       {loadingArticle ? <h1>Loading...</h1>:
         <div className="product_grid">
-            
+ 
             <div className="card_holder">
 
                 {/*////////CARD IMAGE & DETAIL//////*/}
@@ -59,7 +61,10 @@ const Item = ({article}) =>{
 
 
             </div>
+            
         </div>
+        }
+        </>
     )
 }
 

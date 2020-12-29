@@ -1,16 +1,31 @@
+$mobile: "only screen and (max-width : 776px)";
+
 .container{
     display:flex;
-    height:80%;
-    margin:0 2rem;
+    max-width: 1200px;
+    height:80vh;
+    margin:1rem;
     justify-content:space-between;
     align-items: center;
-    padding:2rem;
-    background-color: rgba(255, 255, 255, 0.733);
+    padding:0rem;
+    background-color: rgba(255, 255, 255, 0.548);
+    
+    @media #{$mobile}{
+        flex-direction: column;
+        margin:0rem;
+    }
+
 
     .item_detail_desc{
         width:60%;
-        margin:2rem;
+        margin:1rem;
+        @media #{$mobile}{
+            width: 90%;
+       
+   
+        }
     }
+
 }
 
 .shopping_cart{
@@ -21,7 +36,36 @@
 .flexcol{
     display:flex;
     flex-direction:column;
-    padding:1rem;
+    padding:0rem;
     width:50%;
+    @media #{$mobile}{
+        width:100%;
+
+    }
 }
 
+
+
+.image_detail_container{
+   height:40%;
+    position: relative;
+    text-align:center;
+    background-color:white;
+    @media #{$mobile}{
+        width:100%;
+        padding:0;
+    }
+}
+
+.image_detail{
+   max-width: 40%;
+    object-fit: cover;
+    border-radius:4px 4px 0 0;
+    z-index:1;
+    padding:1rem;
+    @media #{$mobile}{
+        max-width:100%;
+        width:100%;
+        padding:0;
+    }
+}
