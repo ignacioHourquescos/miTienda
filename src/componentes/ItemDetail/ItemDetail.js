@@ -24,16 +24,18 @@ const ItemDetail = ({product}) => {
 
     return (
         <div className="container">
-            <div className="flexcolI---I">
-                 <div className="image_detail_container">
+            <div className="item_detail_left">
+                <div className="image_detail_container">
                     <img className="image_detail" src={product.img} alt={product.img}/>
                 </div>
                 <div>canitdada acutal en tu carrito: {find(product.id)}</div>
             </div>
-            <div className="flexcolI---I item_detail_desc">
+            <div className="item_detail_right">
                 <ItemDescription product={product}/> 
-                <ItemCount initial={1} min={0} max={10}  onAdd={optionSelected}/>
-                <AddToCart product={product} units={units}/>
+                <div calssName="">
+                    <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/>
+                    <AddToCart product={product} units={units}/>
+                </div>
             </div>
         </div>
             

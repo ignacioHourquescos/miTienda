@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
-import './ItemCount.css';
+import './ItemCount.scss';
 
 
 const ItemCount = ({initial, min, max, onAdd}) =>{

@@ -3,34 +3,34 @@ $mobile: "only screen and (max-width : 776px)";
 .container{
     display:flex;
     max-width: 1200px;
-    height:80vh;
+    height:70vh;
     margin:1rem;
     justify-content:space-between;
     align-items: center;
     padding:0rem;
     background-color: rgba(255, 255, 255, 0.548);
-    
     @media #{$mobile}{
         flex-direction: column;
-        margin:0rem;
+     
     }
 
-
-    .item_detail_desc{
-        width:60%;
-        margin:1rem;
-        @media #{$mobile}{
-            width: 90%;
-       
-   
-        }
-    }
 
 }
 
-.shopping_cart{
+
+
+.item_detail_right{
     display:flex;
-    justify-content: space-between;
+    flex-direction:column;
+    justify-content:space-around;
+    width:60vh;
+    height:90%;
+    margin:1rem;
+    padding: 2rem;
+    @media #{$mobile}{
+        width: 90%;
+        padding:0;
+    }
 }
 
 .flexcol{
@@ -46,26 +46,43 @@ $mobile: "only screen and (max-width : 776px)";
 
 
 
-.image_detail_container{
-   height:40%;
-    position: relative;
-    text-align:center;
-    background-color:white;
-    @media #{$mobile}{
-        width:100%;
-        padding:0;
-    }
-}
 
-.image_detail{
-   max-width: 40%;
-    object-fit: cover;
-    border-radius:4px 4px 0 0;
-    z-index:1;
+.item_detail_left{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    justify-items:center;
+    align-content:space-between;
+    align-items:space-between;
     padding:1rem;
-    @media #{$mobile}{
-        max-width:100%;
-        width:100%;
-        padding:0;
+    
+    .image_detail_container{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        height:50vh;
+        width:50vh;
+        position: relative;
+        text-align:center;
+        background-color:white;
+        @media #{$mobile}{ 
+            padding:0;
+            width:50vh;
+            height:100%;
+        }
     }
+
+    .image_detail{
+        width:40%;
+        object-fit: cover;
+        border-radius:4px 4px 0 0;
+        z-index:1;
+        padding:2rem;
+        @media #{$mobile}{
+            max-width:100%;
+            width:40%;
+            padding:0;
+        }
+    }
+  
 }
