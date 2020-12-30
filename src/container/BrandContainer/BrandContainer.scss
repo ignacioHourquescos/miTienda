@@ -22,6 +22,7 @@ $mobile: "only screen and (max-width : 776px)";
       text-align: center;
       color:white;
       font-size:5rem;
+      margin:0 0 1rem 0;
       @media #{$mobile}{
             font-size:3rem;
         }
@@ -31,6 +32,11 @@ $mobile: "only screen and (max-width : 776px)";
       color:white;
       line-height:1vh;
       text-align: center;
-     
+     letter-spacing: 10px;;
 }
 
+.go_home_icon{
+      height:20%;
+      margin-bottom:0;
+     
+}
