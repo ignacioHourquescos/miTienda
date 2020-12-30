@@ -1,5 +1,6 @@
 import React  from 'react';
 import useAppContext from '../../context/UseAppContext';
+import {Link} from 'react-router-dom';
 import './CartList.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle} from '@fortawesome/free-solid-svg-icons';
@@ -16,14 +17,14 @@ const CartList = () => {
 
             {cartArray.map((element) =>(
                 <div className="cart_list_row">
-                    <div><img  src={element.img} alt={element.img}></img></div> 
-                    <div><ItemCount initial={element.quantity}/></div>
+                    <div><Link to={`/product/${element.id}`} ><img  src={element.img} alt={element.img}></img></Link> </div> 
+                    <div><ItemCount initial={element.quantity} product={element}/></div>
                     <h4>{element.name}</h4>
                     <h4>${element.price}c/u</h4>
                     <h4>${element.price*element.quantity}</h4>
                     <FontAwesomeIcon onClick={()=>{eliminateItem(element)}} style={{color:'grey'}} icon={faTimesCircle } />
                     
-      
+                       
                 </div>
             ))}
         </div>

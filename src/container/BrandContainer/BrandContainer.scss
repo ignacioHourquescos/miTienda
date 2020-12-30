@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Kavoon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Suez+One&display=swap');
+$mobile: "only screen and (max-width : 776px)";
 
 .brand_container{
       position:fixed;
@@ -11,6 +12,7 @@
       z-index:40;
       background-color: #04045e;
       margin:0;padding:0;border:0;
+  
 }
 
 .titulo{
@@ -20,12 +22,15 @@
       text-align: center;
       color:white;
       font-size:5rem;
+      @media #{$mobile}{
+            font-size:3rem;
+        }
 }
 
 .slogan{
       color:white;
       line-height:1vh;
       text-align: center;
-      letter-spacing: 2rem;
+     
 }
 

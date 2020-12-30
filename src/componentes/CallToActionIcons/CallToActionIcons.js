@@ -34,9 +34,7 @@ const CallToActionIcons = () =>{
           </div>
         : ""}
               
-      <div className="go_home">
-         <div className="cta0"><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faHome } /></div>
-      </div>
+ 
             
       <div className="call_to_action">
         <div className="cta3" onClick={() => setShowCategories(true)}><FontAwesomeIcon style={{color:'white', height:'100%'}}  icon={faFilter} /></div>

@@ -29,8 +29,13 @@ export const AppProvider = ({ children}) => {
         }     
     }
 
-    //FUNCTION GETS ALL EXISTING CATEGORIES
-
+    //CALCULATES NUMBER OF UNITS OF A CERTAIN PRODUCT
+    const ItemQuantity = (item) => {
+        let aux=0;
+        aux = cartArray.find(element =>element.id==item.id);
+        if (!aux) return 0;
+        return aux.quantity;
+    }
 
     //ELIMINATE AN EXISTING ITEM OF THE CART
     const eliminateItem = (item) => {
@@ -53,7 +58,15 @@ export const AppProvider = ({ children}) => {
         },0);
     
         
-    return(<AppContext.Provider value={{cartArray, handleCartArray, countIndividualCartItems, eliminateItem, getTotalCartValue}}>{children}</AppContext.Provider>)
+    return(
+    <AppContext.Provider value={
+        {cartArray, 
+        handleCartArray,
+        countIndividualCartItems,
+        eliminateItem, 
+        ItemQuantity,
+        getTotalCartValue}}>
+    {children}</AppContext.Provider>)
 }
 
 

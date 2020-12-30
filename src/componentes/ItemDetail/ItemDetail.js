@@ -28,13 +28,13 @@ const ItemDetail = ({product}) => {
                 <div className="image_detail_container">
                     <img className="image_detail" src={product.img} alt={product.img}/>
                 </div>
-                <div>canitdada acutal en tu carrito: {find(product.id)}</div>
+                {/* <div>canitdada acutal en tu carrito: {find(product.id)}</div> */}
             </div>
             <div className="item_detail_right">
                 <ItemDescription product={product}/> 
                 <div calssName="">
-                    <ItemCount initial={0} min={0} max={10}  onAdd={optionSelected}/>
-                    <AddToCart product={product} units={units}/>
+                
+                    <AddToCart initial={0} min={0} max={1000}  product={product} />
                 </div>
             </div>
         </div>
