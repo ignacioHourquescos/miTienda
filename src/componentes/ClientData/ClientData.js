@@ -1,77 +1,74 @@
-import React, { useState } from 'react';
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-import {getFirestore} from '../../firebase'
-import swal from 'sweetalert'
-
-//AppContext
+import React, { useState } from "react";
+import "./ClientData.scss";
+import { getFirestore } from '../../firebase'
 import useAppContext from '../../context/UseAppContext';
+import Swal from 'sweetalert2';
+import swal from 'sweetalert';
 
-const MySwal = withReactContent(Swal);
+const ClientData = (props) => {
 
-let enterData = {
-  title: 'Ingrese sus datos',
-  focusConfirm: false,
-  html: `
-    <input class="swal2-input" id="name"      type="text" placeholder="Nombre" /><br />
-    <input class="swal2-input" id="mail"      type="mail" placeholder="Mail" /><br />
-    <input class="swal2-input" id="phone" type="phone" placeholder="Telefono" />
-  `,
-  type: 'warning',
-  showCancelButton: true,
-  cancelButtonColor: 'grey',
-  confirmButtonText: 'Confirmar',
-  allowOutsideClick: false,
-  preConfirm: () => ({
-    name: document.getElementById('name').value,
-    mail: document.getElementById('mail').value,
-    phone: document.getElementById('phone').value
-  })
-};
+	const { getTotalCartValue, cartArray } = useAppContext();
+	const [name, setName] = useState("");
+	const [phone, setPhone] = useState("");
+	const [mail, setEmail] = useState("");
+	const [mail2, setEmail2] = useState("");
+	const handleNameChange = (event) => { setName(event.target.value); };
+	const handlePhoneChange = (event) => { setPhone(event.target.value); };
+	const handleEmailChange = (event) => { setEmail(event.target.value); };
+	const handleEmail2Change = (event) => { setEmail2(event.target.value); };
 
-const ClientData = () =>{
-  const [formdata, setformdata] = useState();
-  const {getTotalCartValue,cartArray} = useAppContext();
+	const validar = () => {
 
-  const handleResetPassword = () => {
-    const resetPw = async () => {
-      const swalval = await MySwal.fire(enterData);  
-      
-      if (true) {
-        if (swalval.value.name=='' ) {
-          await MySwal.fire({ type: 'error', title: 'Complete su nombre' });
-          resetPw();
-        } else if (swalval.value.mail=='' && swalval.value.phone==''){
-          await MySwal.fire({ type: 'error', title: 'Complete al menos un dato de contacto' });
-          resetPw();
-        }
-        else  {
-          setformdata(swalval);
-          let purchase ={
-            buyer: {name:swalval.value.name, mail:swalval.value.mail, phone:swalval.value.phone},
-            items: cartArray,
-            total: getTotalCartValue,
-            date: new Date()
-          }
-        const db =getFirestore().collection("Purchases").add(purchase)
-        .then(({id})=> {
-           swal("Gracias "+ swalval.value.name+ "!\n" +"Tu compra fue ingresada correctamente \n" + "Nro orden: " + id);
-        }).catch(error =>{
-            swal("ocurrio un error. Intente nuevamente!");
-        })
-        }
-      }
-    }
-    console.log(formdata);
-   
-    resetPw();
-  }
+		//FORM VALIDATION OF INPUTS
+		const mailRegex = /^[a-zA-Z0-9._]+[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+		const phoneRegex = /^[0-9]+$/;
 
-  return (
-    <div>
-      <button onClick={handleResetPassword}>Confirmar Compra</button>
-    </div>
-  );
+
+		if (name === "") 									{ swal("Debe ingresar un nombre y apellido"); return; }
+		if (phone.trim() === "" || !phoneRegex.test(phone)) { swal("Debe ingresar un teléfono valido"); return; }
+		if (mail.trim() === "") 							{ swal("Debe ingresar un e-mail"); return; }
+		if (!mailRegex.test(mail)) 							{ swal("Debe ingresar un e-mail válido"); return; }
+		if (mail.trim() !== mail2.trim()) 					{ swal("Los email son diferentes"); return; }
+
+
+
+		//GENERATE OBJECT TO POST IN FIREBASE
+		let purchase = {
+			buyer: { name: name, mail: mail, phone: phone },
+			items: cartArray,
+			total: getTotalCartValue,
+			date: new Date()
+		}
+		const db = getFirestore().collection("Purchases").add(purchase)
+			.then(({ id }) => {
+				swal("Gracias " + name + "!\n" + "Tu compra fue ingresada correctamente \n" + "Nro orden: " + id);
+			}).catch(error => {
+				swal("ocurrio un error. Intente nuevamente!");
+			})
+	};
+
+	return (
+		<>
+			<div className="client_data">
+				<div>
+					<h1>Tu Carrito:${getTotalCartValue}</h1>
+				</div>
+
+				<div className="client_data_input">
+					<input type="text" 	placeholder="Nombre" 	 		value={name} 	onChange={handleNameChange} />
+					<input type="tel" 	placeholder="Telefono" 	 		value={phone} 	onChange={handlePhoneChange} />
+					<input type="mail" 	placeholder="Email" 	 		value={mail} 	onChange={handleEmailChange} />
+					<input type="text" 	placeholder="Reingrese Mail" 	value={mail2} 	onChange={handleEmail2Change} />
+				</div>
+
+				<div className="client_data_checkout">
+					<button className="client_data_checkout_button" 		onClick={validar}>Finalizar Compra</button>
+					<button className="client_data_checkout_button_mobile" 	onClick={validar}>Finalizar Compra</button>
+				</div>
+
+			</div>
+		</>
+	);
 }
 
-export default ClientData;
+export default ClientData

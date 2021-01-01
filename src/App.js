@@ -4,7 +4,6 @@ import './App.css'
 //Components
 import CartIcon             from './componentes/CartIcon/CartIcon';
 import SideBar              from './componentes/Sidebar/SideBar';
-import CallToActionMenu     from './componentes/CallToActionMenu/CallToActionMenu'
 import Diagonal             from './componentes/Diagonal/Diagonal';
 import CallToActionIcons    from './componentes/CallToActionIcons/CallToActionIcons'; 
 import NotFoundPage         from './componentes/NotFoundPage/NotFoundPage';
