@@ -43,7 +43,7 @@
   .bm-menu {
     background: #373a47;
     padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+    font-size: 2rem;
     color:white;
   }
   
@@ -61,6 +61,7 @@
   .bm-item {
       color:white;
     display: inline-block;
+    margin-bottom:2rem;
   }
   
   /* Styling of overlay */
@@ -75,7 +76,7 @@
     color:white;
     text-decoration:none;
     font-family: 'Varela Round', sans-serif;
-    margin:0;
+    margin:2rem;
     padding:2rem 1rem;
     text-transform: uppercase;
 }

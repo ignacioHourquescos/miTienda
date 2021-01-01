@@ -2,7 +2,7 @@
 
 NUEVOS COMENTARIOS
 
-- que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
+
 - fijate de ir limpiando todos los errores de la terminal y de la consola de chrome para la entrega final
 -no usaría modal, para pedir los datos, consultado con el profesor, lo dejaría en la misma página, pero consultalo con él.
 -si apretas cancelar al popup se rompe todo
@@ -22,30 +22,34 @@ HECHO
 - permitir eliminar un producto del carrito
 -continua lo de doble producto si agrego de la home y detalle
 - si a mano voya http://localhost:3000/product/333 no me dice que el producto no existe.
-
+- que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
 
 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-ENTREGA FINAL
-- Un usuario debe poder ingresar, navegar por los productos e ir a sus detalles.
-- Desde el detalle se debe poder ver la descripción, foto y precio e ingresarlo al carrito. 
-- Una vez que el carrito tenga al menos un producto, se deberá visualizar un listado compacto de la orden con el precio total. 
-- Al ingresar su nombre, apellido, teléfono e e-mail (ingresándolo dos veces para corroborar que sea correcto), debe activarse el botón de ‘realizar compra’.
 - Al clickear ‘realizar compra’ debe guardarse en la base de datos una orden que tenga todos los productos, la fecha y dar feedback del número de orden.
+- Al ingresar su nombre, apellido, teléfono e e-mail (ingresándolo dos veces para corroborar que sea correcto), debe activarse el botón de ‘realizar compra’.
+ - Acceder a un menú desplegable que contendrá las categorías. Al clickear en una, debe navegar a la lista de productos de la misma mediante un route /categories/:categoryId. Éste invocará la misma vista que el home, pero visualizando sólamente productos de esa categoría.
+-Link para foto (puede almacenarse de modo estático en la página en una subruta /images/:itemid )
+
+ENTREGA FINAL
+HECHO - Un usuario debe poder ingresar, navegar por los productos e ir a sus detalles.
+HECHO - Desde el detalle se debe poder ver la descripción, foto y precio e ingresarlo al carrito. 
+HECHO - Una vez que el carrito tenga al menos un producto, se deberá visualizar un listado compacto de la orden con el precio total. 
 
 
 REQUISTISSO BASE
-- Inicio: Al momento de ingresar a la app en la ruta base ‘/’
-      - Visualizar -como mínimo- un set de productos disponibles para la compra.
-      - Contar con algún acceso visible a la vista de carrito que debe alojarse en el route /cart.
-      - Acceder a un menú desplegable que contendrá las categorías. Al clickear en una, debe navegar a la lista de productos de la misma mediante un route /categories/:categoryId. Éste invocará la misma vista que el home, pero visualizando sólamente productos de esa categoría.
-- Flow: Al clickear un ítem del listado debe navegar a la ruta /item/:id, donde id es el id del item (generado por firebase), y ver la descripción del producto ( foto, precio, selector de cantidad). Si se ingresa a /item/:id y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.
+HECHO - Inicio: Al momento de ingresar a la app en la ruta base ‘/’
+      HECHO - Visualizar -como mínimo- un set de productos disponibles para la compra.
+      HECHO - Contar con algún acceso visible a la vista de carrito que debe alojarse en el route /cart.
+     
+- Flow: Al clickear un ítem del listado debe navegar a la ruta /item/:id, donde id es el id del item (generado por firebase), 
+y ver la descripción del producto ( foto, precio, selector de cantidad). 
+Si se ingresa a /item/:id y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.
 - Firebase:
       - Implementar al menos dos colecciones:
             -items: catálogo completo
-                  -Link para foto (puede almacenarse de modo estático en la página en una subruta /images/:itemid )
                   -Precio unitario
                   -Descripción (sólo se ve en detalle)
                   -Categoria (id a mano para versión estática, o id de firebase para versión dinámica -opcional-)
@@ -57,7 +61,7 @@ REQUISTISSO BASE
        Idealmente, categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} 
        para que quede /categories/calzado en lugar de /categories/ad43k348j
        
-- El cart debe ser accesible durante toda la experiencia y tener una indicación de la cantidad de items incluidos agregados (ej. si hay un ítem con dos unidades y un ítem con una unidad, debe decir ‘tres’).
+HECHO - El cart debe ser accesible durante toda la experiencia y tener una indicación de la cantidad de items incluidos agregados (ej. si hay un ítem con dos unidades y un ítem con una unidad, debe decir ‘tres’).
 - Checkout mínimo:
       - Items con sus cantidades
       - Total de la orden
@@ -68,9 +72,11 @@ REQUISTISSO BASE
 - Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
 
 EXTRAS
-- auth/login: Implementar alguno de los servicios de autenticación disponibles de firebase para evitar el flujo de email. Si un usuario está logueado, el checkout debería decir ‘comprar como xxxx@gmail.com’, para evitar compras con cuentas indeseadas.
+- auth/login: Implementar alguno de los servicios de autenticación disponibles de firebase para evitar el flujo de email. 
+Si un usuario está logueado, el checkout debería decir ‘comprar como xxxx@gmail.com’, para evitar compras con cuentas indeseadas.
 -Adicionalmente al auth/login, puedes implementar una wishlist para guardar productos para comprar en otro momento. Los productos se deberían poder guardar desde el detalle o desde el listado, y acceder desde el navbar o menú desplegable. La wishlist debe tener accesos para agregar esos ítems al cart.
-- Custom item: Posibilidad de agregar características seleccionables al producto (ej. talla, color, etc). La customización no debería modificar el precio. Las selecciones serán detalladas en el checkout. Por ejemplo: 1 x camisa (roja) $ 200 y 2 x camisa (verde) $400.
+- Custom item: Posibilidad de agregar características seleccionables al producto (ej. talla, color, etc). 
+La customización no debería modificar el precio. Las selecciones serán detalladas en el checkout. Por ejemplo: 1 x camisa (roja) $ 200 y 2 x camisa (verde) $400.
 - Stock check: Validar stock al momento de intentar generar la order.
 - Categories dinámicas: crear una colección de firebase para las categorías e hidratar el menú en base a eso.
 - Cart persistente: Hacer que el cart sea persistente en alguna api de almacenamiento local en el navegador (local/session storage).

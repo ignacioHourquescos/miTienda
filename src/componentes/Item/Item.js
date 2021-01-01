@@ -10,11 +10,16 @@ const Item = ({article, loadingArticle}) =>{
     const {cartArray, handleCartArray} = useAppContext();
     const [purchaseInProgress, setPurchaseInProgress] = useState(false);
     const [units, setUnits]=useState(1);
+    const [galeraDiscount, setGaleraDiscount] = useState(false);
 
     
     function handleChange(newValue) {
         setPurchaseInProgress(newValue);
       }
+
+    const showGaleraDiscount = () => {
+        alert("hay un descuetno");
+    } 
 
     useEffect(()=>{
         if(cartArray.find(element =>element.id==article.id)) {
@@ -38,6 +43,11 @@ const Item = ({article, loadingArticle}) =>{
                 {purchaseInProgress ? <ItemPurchaseIndicator article={article} onChange={handleChange} /> :""}
 
                 <div className="image_container">  
+                    <div onClick={() =>{showGaleraDiscount()}}>
+                     {article.galera ? <div className="galera_discount"></div> :" "}
+                     </div>
+                        
+                    
                     <Link to={`/product/${article.id}`} style={{backgroundColor:"white"}}  >
                         <img style={{backgroundColor:"white"}} className="image" src={article.img} alt={article.desc}/>
                     </Link>
