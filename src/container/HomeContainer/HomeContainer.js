@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import './HomeContainer.css';
+import './HomeContainer.scss';
 
 import ItemList from '../../componentes/ItemList/ItemList';
 import {getProductsFromDatabase} from '../../lib/database';

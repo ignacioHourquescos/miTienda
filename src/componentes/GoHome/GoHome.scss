@@ -9,6 +9,9 @@ $mobile: "only screen and (max-width : 776px)";
     justify-items:flex-end;
     left:2rem;
     padding-bottom: 1rem;
+    -webkit-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 1);
+    box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 1);
 
     div{
         width:10vh;
@@ -23,6 +26,9 @@ $mobile: "only screen and (max-width : 776px)";
         display:flex;
         align-items:center;
         justify-content:center;
+        -webkit-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 1);
+        box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 1);
         
         img{
             width:60%;

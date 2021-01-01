@@ -17,22 +17,17 @@ export const AppProvider = ({ children}) => {
 
         const existing = cartArray.find((article)=>article.id=== newItem.id);
         if (existing) {
-            console.log("Articulo existente en el carrito")
-            console.log(newItem);
             existing.quantity = existing.quantity +units;
             setCartArray([...cartArray]);
-
-        }else{
-            console.log("Articulo nuevo en el carrito")
-            console.log(newItem);
-            setCartArray([...cartArray, {"id":newItem.id,"quantity":units,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
-        }     
+        }
+        else setCartArray([...cartArray, {"id":newItem.id,"quantity":units,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
+            
     }
 
     //CALCULATES NUMBER OF UNITS OF A CERTAIN PRODUCT
     const ItemQuantity = (item) => {
         let aux=0;
-        aux = cartArray.find(element =>element.id==item.id);
+        aux = cartArray.find(element =>element.id===item.id);
         if (!aux) return 0;
         return aux.quantity;
     }

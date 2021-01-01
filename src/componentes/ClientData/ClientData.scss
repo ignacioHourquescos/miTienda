@@ -4,14 +4,14 @@ $mobile: "only screen and (max-width : 776px)";
 	display:flex;
   	flex-direction:column;
   	width:30%;
-	background-color: rgba(41, 41, 41, 0.20);
+	background-color: rgba(182, 182, 182, 0.2);
 	border-radius:5px;
 	margin:0 2.5%;
 	padding:2% 5%;
 	height:70vh;
 	align-content:center;
 	align-items:center;
-	justify-content:space-between;
+	justify-content:space-around;
 	-webkit-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
 	box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
@@ -19,11 +19,26 @@ $mobile: "only screen and (max-width : 776px)";
 		width:85%;
 	}
 
+	.client_data_cart_detail {
+		margin: 0px;
+	}
+
+
   	.client_data_input{
-    	width:100%;
+		width:100%;
+		
     	@media #{$mobile}{
         	width:90%;
-    	}
+		}
+		input{
+			width:96%;
+			border:0;
+			background-color:rgba(233, 232, 232, 0.568);
+			border:1px solid rgb(61, 61, 61);
+			padding:2%;
+			margin-bottom:1.2rem;
+			font-size:1rem;
+		  }
   	}
   	.client_data_checkout{
     	width:100%;
@@ -38,7 +53,8 @@ $mobile: "only screen and (max-width : 776px)";
 			background-color:black;
 			color:white;
 			border:none;
-			padding:0.5rem;
+			padding:2%;
+			font-size:1rem;
 			@media #{$mobile}{
 				display:none;
 			}
@@ -63,13 +79,5 @@ $mobile: "only screen and (max-width : 776px)";
 	  	}
 	}
 
-  	input{
-    	width:100%;
-    	border:0;
-    	border-bottom:1px solid grey;
-    	background-color:transparent;
-    	margin-bottom:1.2rem;
-    	font-size:1.2rem;
-  	}
 }
 

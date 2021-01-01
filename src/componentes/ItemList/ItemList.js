@@ -1,21 +1,13 @@
 
-import React, {useState, useEffect} from 'react';
-import './ItemList.css';
+import React from 'react';
+import './ItemList.scss';
 import Item from '../Item/Item';
 
-
-import MyLoader from "../ContentLoader/ContentLoader"
-
-
-
-const ItemList = ({products,loading}) =>{
-
- 
-    
+const ItemList = ({ products, loading }) => {
 
     return (
         <> {
-products.map(article => <Item key={article.id} article={article} loadingArticle={loading}/>)
+            products.map(article => <Item key={article.id} article={article} loadingArticle={loading} />)
         }
         </>
     );

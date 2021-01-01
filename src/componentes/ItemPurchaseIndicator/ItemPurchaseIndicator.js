@@ -17,10 +17,10 @@ const ItemPurchaseIndicator = ({article, onChange}) =>{
 
       useEffect(() => {
         let aux=0;
-        aux = cartArray.find(element =>element.id==article.id);
+        aux = cartArray.find(element =>element.id===article.id);
         if (!aux) setCurrentItemQuantity(0);
         else setCurrentItemQuantity(aux.quantity)
-      }, [cartArray]);
+      }, [cartArray, article.id]);
     
      
   
