@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import './App.css'
+
 //Components
 import CartIcon             from './componentes/CartIcon/CartIcon';
 import SideBar              from './componentes/Sidebar/SideBar';
@@ -14,6 +14,7 @@ import ItemDetailContainer  from './container/ItemDetailContainer/ItemDetailCont
 import CartContainer        from './container/CartContainer/CartContainer';
 import CategoryContainer    from './container/CategoryContainer/CategoryContainer';
 import BrandContainer       from './container/BrandContainer/BrandContainer';
+import OrderId              from './container/OrderId/OrderId';  
 
 //AppContext
 import { AppProvider } from './context/UseAppContext'
@@ -27,7 +28,7 @@ function App() {
         <SideBar/>
         <CartIcon/>
         <Diagonal/>
-        <BrandContainer/>
+        
         
           <Switch>
             <Route exact path="/cart">
@@ -36,11 +37,17 @@ function App() {
             </Route>
 
             <Route exact path="/">
+            <BrandContainer/>
               <HomeContainer/>   
               <CallToActionIcons/>
             </Route>
           
              
+            <Route exact path="/order/:id">
+              <OrderId/>
+              <GoHome/>
+            </Route> 
+
              <Route exact path="/:category">
               <CategoryContainer/>  
               <CallToActionIcons/>
@@ -51,6 +58,7 @@ function App() {
               <ItemDetailContainer/>
               <GoHome/>
             </Route> 
+
 
             <Route exact path="*">
               <NotFoundPage/>

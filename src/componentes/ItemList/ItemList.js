@@ -6,9 +6,8 @@ import Item from '../Item/Item';
 const ItemList = ({ products, loading }) => {
 
     return (
-        <> {
-            products.map(article => <Item key={article.id} article={article} loadingArticle={loading} />)
-        }
+        <>
+            {products.map(article => <Item key={article.id} article={article} loadingArticle={loading} />)}
         </>
     );
 }

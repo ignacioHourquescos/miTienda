@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Suez+One&display=swap');
+
 /* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
@@ -25,8 +27,8 @@
   /* Color/shape of close button cross */
   .bm-cross {
     position: fixed;
-    background-color:yellow;
-    height:20px;
+    background-color:rgb(230, 230, 230);
+    height:25px;
  
   }
 
@@ -41,10 +43,11 @@
   
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
+    background: #030303;
     padding: 2.5em 1.5em 0;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color:white;
+    font-family: 'Suez One', serif;
   }
   
   /* Morph shape necessary with bubble or elastic */
@@ -79,4 +82,26 @@
     margin:2rem;
     padding:2rem 1rem;
     text-transform: uppercase;
+}
+
+
+.order_serach_section{
+  width:100%;
+}
+
+.order_search_input{
+  width:90%;
+  color:black;
+  line-height:2rem;
+  padding: 0 5%;
+}
+
+
+.order_search_link { 
+  width:100%;
+
+    padding:0px;
+    font-size: 1.1rem;
+    color:white;
+    text-align:center;
 }

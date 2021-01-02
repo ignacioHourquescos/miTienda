@@ -1,6 +1,5 @@
-
-
-NUEVOS COMENTARIOS
+COMENTARIOS TRABAJSO PRACTICOS
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 - fijate de ir limpiando todos los errores de la terminal y de la consola de chrome para la entrega final
@@ -11,26 +10,28 @@ NUEVOS COMENTARIOS
 -todo codigo comentado eliminalo para la entrega final
 - varios bugs pero corregilos para la entrega final, testeá bien tu app.
 
-HECHO
-- hacé npm uninstall node-sass y lueo npm i sass
-- estas permitiendo agregar 0 productos
-- dice prodcutos
-- el botón comprar en la pantalla principal no hace nada
-- si abro queso, el botón de incrementar queda abajo de los 3 puntos y no me permite hacerle click (no sé bien la utilidad de eso tampoco)
-- si agrego desde la página principal uno producto, y luego voy al detalle y agrego el mismo producto, en el carrito me aparece en 2 filas (no agrupa)
-- creo te agrega doble porque si agregas en la home el id es texto, si agregas en detalle es nro.
-- permitir eliminar un producto del carrito
--continua lo de doble producto si agrego de la home y detalle
-- si a mano voya http://localhost:3000/product/333 no me dice que el producto no existe.
-- que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
+
+HECHO - hacé npm uninstall node-sass y lueo npm i sass
+HECHO - estas permitiendo agregar 0 productos
+HECHO - dice prodcutos
+HECHO - el botón comprar en la pantalla principal no hace nada
+HECHO - si abro queso, el botón de incrementar queda abajo de los 3 puntos y no me permite hacerle click (no sé bien la utilidad de eso tampoco)
+HECHO - si agrego desde la página principal uno producto, y luego voy al detalle y agrego el mismo producto, en el carrito me aparece en 2 filas (no agrupa)
+HECHO - creo te agrega doble porque si agregas en la home el id es texto, si agregas en detalle es nro.
+HECHO - permitir eliminar un producto del carrito
+HECHO -continua lo de doble producto si agrego de la home y detalle
+HECHO - si a mano voya http://localhost:3000/product/333 no me dice que el producto no existe.
+HECHO - que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
 
 
 
-
-///////////////////////////////////////////////////////////////////////////////////////
+REQUISITOS ENTREGA FINAL
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 - Acceder a un menú desplegable que contendrá las categorías. Al clickear en una, debe navegar a la lista de productos de la misma mediante un route /categories/:categoryId. Éste invocará la misma vista que el home, pero visualizando sólamente productos de esa categoría.
 - Si se ingresa a /item/:id y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.- 
+- Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
+librerias que use. sweet alert / fontaweosme / REACTbURGER MENU
 
 ENTREGA FINAL
 HECHO - Un usuario debe poder ingresar, navegar por los productos e ir a sus detalles.
@@ -47,45 +48,45 @@ HECHO - Visualizar -como mínimo- un set de productos disponibles para la compra
 HECHO - Contar con algún acceso visible a la vista de carrito que debe alojarse en el route /cart.
 HECHO - Flow: Al clickear un ítem del listado debe navegar a la ruta /item/:id, donde id es el id del item (generado por firebase), y ver la descripción del producto ( foto, precio, selector de cantidad). 
 
-- Firebase:
-      - Implementar al menos dos colecciones:
-            -items: catálogo completo
-                  -Precio unitario
-                  -Descripción (sólo se ve en detalle)
-                  -Categoria (id a mano para versión estática, o id de firebase para versión dinámica -opcional-)
-- orders: las órdenes generadas, que deben incluir los productos, descripciones y los precios al momento de la compra. 
-      -Las órdenes deben poder tener items surtidos, cada uno con su cantidad. Por ejemplo: remeras x 2 y gorra x 1
-      -id, items, fecha, estado ( por defecto en ‘generada’)
-- categories (solo para versión dinámica -opcional-): 
+HECHO- Firebase:
+HECHO      - Implementar al menos dos colecciones:
+HECHO            -items: catálogo completo
+HECHO                  -Precio unitario
+HECHO                  -Descripción (sólo se ve en detalle)        
+HECHO      las órdenes generadas, que deben incluir los productos, descripciones y los precios al momento de la compra. 
+HECHO      -Las órdenes deben poder tener items surtidos, cada uno con su cantidad. Por ejemplo: remeras x 2 y gorra x 1
+HECHO      -id, items, fecha, estado ( por defecto en ‘generada’)
+
+- categories (solo para versión dinámica -opcional-): -Categoria (id a mano para versión estática, o id de firebase para versión dinámica -opcional-)
       - Versión dinámica (-opcional-): Crear una colección de categories en firebase para hidratar el menú y usar los id’s de éstos para linkearlos a sus ítems.
        Idealmente, categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} 
        para que quede /categories/calzado en lugar de /categories/ad43k348j
        
 HECHO - El cart debe ser accesible durante toda la experiencia y tener una indicación de la cantidad de items incluidos agregados (ej. si hay un ítem con dos unidades y un ítem con una unidad, debe decir ‘tres’).
-- Checkout mínimo:
-      - Items con sus cantidades
-      - Total de la orden
-      - Input para nombre, apellido y teléfono
-      - Input para email y lógica de repetir el email 2 veces (a excepción de que realicen el desafío extra de auth, en ese caso no sería necesario)
-- Finalizada la orden, debo recibir mi order id con el id del objeto de firebase.
-- La navegabilidad debe ocurrir utilizando el router, y no href’s o location.
-- Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
+HECHO- Checkout mínimo:
+HECHO      - Items con sus cantidades
+HECHO      - Total de la orden
+HECHO      - Input para nombre, apellido y teléfono
+HECHO      - Input para email y lógica de repetir el email 2 veces (a excepción de que realicen el desafío extra de auth, en ese caso no sería necesario)
+HECHO - Finalizada la orden, debo recibir mi order id con el id del objeto de firebase.
+HECHO - La navegabilidad debe ocurrir utilizando el router, y no href’s o location.
 
-EXTRAS
+
+REQUISITOS EXTRAS
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+HECHO - Categories dinámicas: crear una colección de firebase para las categorías e hidratar el menú en base a eso.
+HECHO - Mis órdenes: Con el orderId que se entrega al final de la compra, el usuario podría buscar su orden y usar el componente que ya utilizaste para el detalle, para mostrar cómo quedó conformada la order y el precio, pero no mostrar datos personales de la compra.
+
 - auth/login: Implementar alguno de los servicios de autenticación disponibles de firebase para evitar el flujo de email. 
 Si un usuario está logueado, el checkout debería decir ‘comprar como xxxx@gmail.com’, para evitar compras con cuentas indeseadas.
--Adicionalmente al auth/login, puedes implementar una wishlist para guardar productos para comprar en otro momento. Los productos se deberían poder guardar desde el detalle o desde el listado, y acceder desde el navbar o menú desplegable. La wishlist debe tener accesos para agregar esos ítems al cart.
+-Adicionalmente al auth/login, puedes implementar una wishlist para guardar productos para comprar en otro momento. 
+Los productos se deberían poder guardar desde el detalle o desde el listado, y acceder desde el navbar o menú desplegable. La wishlist debe tener accesos para agregar esos ítems al cart.
 - Custom item: Posibilidad de agregar características seleccionables al producto (ej. talla, color, etc). 
 La customización no debería modificar el precio. Las selecciones serán detalladas en el checkout. Por ejemplo: 1 x camisa (roja) $ 200 y 2 x camisa (verde) $400.
 - Stock check: Validar stock al momento de intentar generar la order.
-- Categories dinámicas: crear una colección de firebase para las categorías e hidratar el menú en base a eso.
 - Cart persistente: Hacer que el cart sea persistente en alguna api de almacenamiento local en el navegador (local/session storage).
-- Mis órdenes: Con el orderId que se entrega al final de la compra, el usuario podría buscar su orden y usar el componente que ya utilizaste para el detalle, para mostrar cómo quedó conformada la order y el precio, pero no mostrar datos personales de la compra.
 
 
-
-
-/////////////////////////
 
 JON MIRCHA
 JS DOJO GOOGLE CHINO

@@ -21,6 +21,7 @@ $mobile: "only screen and (max-width : 776px)";
 
 	.client_data_cart_detail {
 		margin: 0px;
+		font-family: 'Suez One', serif;
 	}
 
 
@@ -41,13 +42,14 @@ $mobile: "only screen and (max-width : 776px)";
 		  }
   	}
   	.client_data_checkout{
-    	width:100%;
-    	@media #{$mobile}{
-        	width:80%;
-    	}
+    		width:100%;
+    		@media #{$mobile}{
+      	  	width:80%;
+    		}
 
     	.client_data_checkout_button{
-      		width:100%;
+			width:100%;
+			font-family: 'Suez One', serif;
       		text-align:center;
 			height:2rem;
 			background-color:black;
@@ -62,6 +64,7 @@ $mobile: "only screen and (max-width : 776px)";
 		
 		.client_data_checkout_button_mobile{
 			display:none;
+			font-family: 'Suez One', serif;
 			width:60%;
 			text-align:center;
 			height:10vh;

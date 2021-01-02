@@ -4,7 +4,7 @@ import {getFirestore} from '../firebase'
 
 
 
-// Fetches all Products
+//FETCHES ALL PRODUCTS
 export function getProductsFromDatabase() {
     return new Promise((resolve, reject) => {
       const products = getFirestore().collection('productos')
@@ -56,6 +56,21 @@ export function getCategories(){
       })
     })
   }
+
+//FETCHES ORDER BY ID
+export function getOrderById(id) {
+  return new Promise((resolve, reject) => {
+    const products = getFirestore().collection('Purchases')
+    const getSingleOrder = products.doc(id);
+    getSingleOrder.get().then((query) => {
+      const data= query.data()
+      if (query.size === 0 || typeof data ==='undefined') reject('no hay registros')
+      console.log(data);
+     
+       resolve(data)
+    })
+  })
+}
 
 
 //AUXILIAR FUNCTIONS

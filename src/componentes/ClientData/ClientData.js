@@ -42,7 +42,8 @@ const ClientData = () => {
 			buyer: { name: name, mail: mail, phone: phone },
 			items: cartArray,
 			total: getTotalCartValue,
-			date: new Date()
+			date: new Date(),
+			estado: "generada"
 		}
 		const db = getFirestore().collection("Purchases").add(purchase)
 			.then(({ id }) => {swal("Gracias " + name + "!\n Tu compra fue ingresada correctamente \n Nro orden: " + id);})

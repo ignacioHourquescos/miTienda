@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Item.scss';
 import ItemPurchaseIndicator from '../ItemPurchaseIndicator/ItemPurchaseIndicator'
 import useAppContext from '../../context/UseAppContext';
+import galera from '../../images/galera.png';
 
 
 
@@ -32,9 +33,9 @@ const Item = ({ article, loadingArticle }) => {
 
 						<div className="image_container">
 							<div onClick={() => { showGaleraDiscount() }}>
-								{article.galera ? <div className="galera_discount"></div> : " "}
+								{article.galera ? <div className="galera_discount"><img className="go_home_icon_2" src= {galera} alt="galera" /></div> : " "}
 							</div>
-							<Link to={`/product/${article.id}`} style={{ backgroundColor: "white" }}  >
+							<Link to={`/product/${article.id}`} style={{ backgroundColor: "white", padding:"0rem" }}  >
 								<img style={{ backgroundColor: "white" }} className="image" src={article.img} alt={article.desc} />
 							</Link>
 						</div>

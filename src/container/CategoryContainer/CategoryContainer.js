@@ -5,7 +5,7 @@ import '../HomeContainer/HomeContainer.scss';
 import ItemList from '../../componentes/ItemList/ItemList';
 import {getProductsByCategory} from '../../lib/database';
 import {useParams} from 'react-router-dom';
-
+import ContentLoader from '../../componentes/ContentLoader/ContentLoader';
 
 
 const Home= () =>{
@@ -26,7 +26,7 @@ const Home= () =>{
     return(<>
 
             <div className="home_container">
-                  {loading ? <h1>Loading...</h1> : <ItemList className="list" products={products}/>}
+                  {loading ? <ContentLoader/> : <ItemList className="list" products={products}/>}
             </div>
         </>
     )
