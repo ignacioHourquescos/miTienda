@@ -21,7 +21,7 @@ export const AppProvider = ({ children}) => {
             existing.quantity = existing.quantity +units;
             setCartArray([...cartArray]);
         }
-        else setCartArray([...cartArray, {"id":newItem.id,"quantity":units,"name" :newItem.name,"price":newItem.price, "img":newItem.img}]);
+        else setCartArray([...cartArray, {"id":newItem.id,"quantity":units,"name" :newItem.name,"price":newItem.price, "img":newItem.img, "discount":newItem.discount, "min":newItem.min, "galera":newItem.galera}]);
             
     }
 
@@ -50,9 +50,21 @@ export const AppProvider = ({ children}) => {
 
     //CALULATES TOTAL VALUE OF CART
     const getTotalCartValue = cartArray.reduce((acumulator, current) => {
-            return acumulator + current.quantity * current.price;       
+   
+            return acumulator + current.quantity * current.price;
+         
         },0);
     
+
+    //CALULATES TOTAL GALERA DISCOUNT OF THE CART
+    const getTotalCartValueDiscount = cartArray.reduce((acumulator, current) => {
+        if (current.quantity>=current.min){
+        return acumulator +(current.quantity * current.price) * (current.discount/100);      
+    }   else{
+        return 0;
+    }
+    },0);
+
         
     return(
     <AppContext.Provider value={
@@ -61,6 +73,7 @@ export const AppProvider = ({ children}) => {
         countIndividualCartItems,
         eliminateItem, 
         ItemQuantity,
+        getTotalCartValueDiscount,
         getTotalCartValue}}>
     {children}</AppContext.Provider>)
 }

@@ -37,4 +37,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 
+[![Galera-GIF.gif](https://i.postimg.cc/tTxg6XXz/Galera-GIF.gif)](https://postimg.cc/vgGMFwx1)
 
+hacer la barra de passos en cart
+break up CLient Data compoenent
+arreglar bug de menu que no cierra

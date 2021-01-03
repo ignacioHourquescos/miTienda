@@ -2,18 +2,17 @@ $mobile: "only screen and (max-width : 776px)";
 
 .flexrowI---I{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content: space-between;
-    align-items:center;
-    @media #{$mobile}{
-        flex-direction: column;
-        margin:0rem;
-    }
+    align-items:left;
+    
+
   }
 
 .item_detail_name{
     font-family: 'Suez One', serif;
     font-size:2rem;
+
     @media #{$mobile}{
         margin:1rem;
         margin:0;
@@ -33,15 +32,22 @@ $mobile: "only screen and (max-width : 776px)";
     flex-direction:column;
 }
 .item_detail_desc{
+    margin-top:1rem 0;
     font-size:1rem;
     width:100%;
 }
 
 .item_detail_id{
-    font-size:1rem;
+    font-size:0.5rem;
     @media #{$mobile}{
         font-size:0.4rem;
         margin:0;
     }
 }
 
+.item_detail_price{
+    margin-bottom:1rem;
+    font-family: 'Suez One', serif;
+    font-size:2rem;
+    color:rgb(83, 60, 175);
+}

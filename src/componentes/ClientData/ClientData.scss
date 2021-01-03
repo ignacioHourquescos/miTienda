@@ -17,11 +17,34 @@ $mobile: "only screen and (max-width : 776px)";
 	box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
 	@media #{$mobile}{
 		width:85%;
+		height:80vh;
 	}
 
 	.client_data_cart_detail {
 		margin: 0px;
 		font-family: 'Suez One', serif;
+		border-bottom:2px solid black;
+		padding:5%;
+		width:90%;
+		h1{
+			margin:0 0 0.3rem 0;
+		}
+		div{
+			display:flex;
+			flex-direction:row;
+			justify-content:space-between;
+			.cart{
+				font-size:1rem;
+			}
+			.discount{
+				font-size:1rem;
+				color:red;
+			}
+			.total{
+				font-size:1.3rem;
+			}
+		}
+		
 	}
 
 
@@ -29,7 +52,8 @@ $mobile: "only screen and (max-width : 776px)";
 		width:100%;
 		
     	@media #{$mobile}{
-        	width:90%;
+			width:100%;
+			margin-bottom:20%;
 		}
 		input{
 			width:96%;
@@ -58,7 +82,8 @@ $mobile: "only screen and (max-width : 776px)";
 			padding:2%;
 			font-size:1rem;
 			@media #{$mobile}{
-				display:none;
+				background-color: transparent;
+				color:transparent;
 			}
 		}
 		

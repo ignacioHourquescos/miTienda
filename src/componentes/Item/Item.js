@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Item.scss';
 import ItemPurchaseIndicator from '../ItemPurchaseIndicator/ItemPurchaseIndicator'
+import GaleraDiscountDetail from '../GaleraDiscountDetail/GaleraDiscountDetail'
 import useAppContext from '../../context/UseAppContext';
 import galera from '../../images/galera.png';
 
@@ -10,11 +11,18 @@ import galera from '../../images/galera.png';
 const Item = ({ article, loadingArticle }) => {
 	const { cartArray, handleCartArray } = useAppContext();
 	const [purchaseInProgress, setPurchaseInProgress] = useState(false);
+	const [galeraDiscount, setGaleraDiscount] = useState(false);
+	const [aux, setAux] =useState(true);
 	const [units, setUnits] = useState(1);
+	
+
+	const handleChange = newValue => {setPurchaseInProgress(newValue); setAux(true);}
+	const handleGaleraChange = () => setGaleraDiscount(false);
 
 
-	const handleChange = newValue => setPurchaseInProgress(newValue)
-	const showGaleraDiscount = () => alert("hay un descuetno")
+	const showGaleraDiscount = () => {
+		setGaleraDiscount(true);
+	}
 	
 	useEffect(() => {
 		if (cartArray.find(element => element.id === article.id)) setPurchaseInProgress(true)
@@ -27,13 +35,14 @@ const Item = ({ article, loadingArticle }) => {
 				<div className="product_grid">
 
 					<div className="card_holder">
-
+					{galeraDiscount ? <GaleraDiscountDetail article={article} onChange={handleGaleraChange} /> : ""}
 						{/*////////CARD IMAGE & DETAIL//////*/}
 						{purchaseInProgress ? <ItemPurchaseIndicator article={article} onChange={handleChange} /> : ""}
 
 						<div className="image_container">
 							<div onClick={() => { showGaleraDiscount() }}>
-								{article.galera ? <div className="galera_discount"><img className="go_home_icon_2" src= {galera} alt="galera" /></div> : " "}
+								
+								{(article.galera && aux) ? <div className="galera_discount"><img className="go_home_icon_2" src= {galera} alt="galera" /></div> : " "}
 							</div>
 							<Link to={`/product/${article.id}`} style={{ backgroundColor: "white", padding:"0rem" }}  >
 								<img style={{ backgroundColor: "white" }} className="image" src={article.img} alt={article.desc} />
@@ -49,7 +58,7 @@ const Item = ({ article, loadingArticle }) => {
 								<h3 className="price"> ${article.price}</h3>
 							</Link>
 							<div className="add_to_cart">
-								<button onClick={() => { handleCartArray(units, article); setPurchaseInProgress(true) }}>AGREGAR</button>
+								<button onClick={() => { handleCartArray(units, article); setPurchaseInProgress(true);setAux(false) }}>AGREGAR</button>
 							</div>
 						</div>
 

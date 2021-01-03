@@ -15,8 +15,8 @@ const ItemDescription = ({product}) => {
                 </div>
 
                 <div className="item_description_2">
-                    <h2 className="item_detail_price">Precio: ${product.price}</h2>
-                    <h3 className="item_detail_desc">Descripcion: {product.desc}</h3>
+                    <h2 className="item_detail_price"> ${product.price}</h2>
+                    <h3 className="item_detail_desc">{product.desc}</h3>
                 </div>
                 
                 <div className="flexrowI---I">

@@ -15,7 +15,7 @@ const Cart = () => {
     return (
         <>
             {cartArray.length === 0
-                ? <h1>No tiene productos en el carrito</h1>
+                ? <h1 className="empty_cart">No tiene productos en el carrito</h1>
                 : <div className="cart_list">
                         {cartArray.map((element) => ( 
                             <div key={element.id} className="cart_list_row">
@@ -30,10 +30,12 @@ const Cart = () => {
                                     <div className="cart_item_main">
                                         <ItemCount initial={element.quantity} product={element} />
                                         <h4>{element.name}</h4>
+                                        <h3>{element.quantity>=element.min? element.galera: ""}</h3>
                                     </div>
                                     <div className="cart_item_secondary">
                                         <h4>${element.price}c/u</h4>
-                                        <h4>${element.price * element.quantity}</h4>
+                                        <h4>{element.quantity>=element.min? element.discount+"%": ""}</h4>
+                                        <h4>${element.quantity>=element.min? element.price * element.quantity * (1-(element.discount/100)) :element.price * element.quantity}</h4>
                                         <FontAwesomeIcon onClick={() => { eliminateItem(element) }} style={{ color: 'tomato' }} icon={faTrash} />
                                     </div>
                                 </div>

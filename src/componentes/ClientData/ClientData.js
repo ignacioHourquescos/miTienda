@@ -3,12 +3,12 @@ import "./ClientData.scss";
 import { getFirestore } from '../../firebase'
 import useAppContext from '../../context/UseAppContext';
 import swal from 'sweetalert';
-
+import ProgressBar from '../ProgressBar/ProgressBar';
 const ClientData = () => {
 
-	const { getTotalCartValue, cartArray } = useAppContext();
-	const [adress,setAdress] = useState();
-	const [region, setRegion] =useState();
+	const { getTotalCartValue,getTotalCartValueDiscount, cartArray } = useAppContext();
+	const [adress,setAdress] = useState("");
+	const [region, setRegion] =useState("");
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [mail, setEmail] = useState("");
@@ -22,22 +22,54 @@ const ClientData = () => {
 	const handleRegionChange = (event) 	=> { setRegion(event.target.value); };
 
 
-	const purchaseInit = () => {
+	const purchaseInit = () =>{
+		if ( cartArray.length===0){
+			swal("carrito vacio");
+			return;
+		}
+		window.scroll({
+			top: document.body.offsetHeight,
+			left: 0, 
+			behavior: 'smooth',
+		    });
+		if (adress === "") 									{ swal("Debe ingresar una direccion"); 	return; }
+		if (region === "") { swal("Debe elegir un barrio"); 	return; }
+		setPurchaseInProgress(false)
+	}
 
+
+
+
+	const formValidation = () => {
+		if ( cartArray.length===0){
+			swal("carrito vacio");
+			return;
+		}
+
+		window.scroll({
+			top: document.body.offsetHeight,
+			left: 0, 
+			behavior: 'smooth',
+		});
 		//FORM VALIDATION OF INPUTS
 		const mailRegex = /^[a-zA-Z0-9._]+[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
 		const phoneRegex = /^[0-9]+$/;
 
-		// if (name === "") 									{ swal("Debe ingresar un nombre y apellido"); 	return; }
-		// if (phone.trim() === "" || !phoneRegex.test(phone)) { swal("Debe ingresar un teléfono valido"); 	return; }
-		// if (mail.trim() === "") 							{ swal("Debe ingresar un e-mail"); 				return; }
-		// if (!mailRegex.test(mail)) 							{ swal("Debe ingresar un e-mail válido"); 		return; }
-		// if (mail.trim() !== mail2.trim()) 					{ swal("Los email son diferentes"); 			return; }
+			if (name === "") 									{ swal("Debe ingresar un nombre y apellido"); 	return; }
+			if (phone.trim() === "" || !phoneRegex.test(phone)) { swal("Debe ingresar un teléfono valido"); 	return; }
+			if (mail.trim() === "") 							{ swal("Debe ingresar un e-mail"); 				return; }
+			if (!mailRegex.test(mail)) 							{ swal("Debe ingresar un e-mail válido"); 		return; }
+			if (mail.trim() !== mail2.trim()) 					{ swal("Los email son diferentes"); 			return; }
+	
 
-
+		
 
 		//GENERATE OBJECT TO POST IN FIREBASE
-		if (purchaseInProgress===false){
+		if ( cartArray.length===0){
+			swal("carrito vacio");
+			return;
+		}
+		else if(purchaseInProgress===false ){
 		let purchase = {
 			buyer: { name: name, mail: mail, phone: phone },
 			items: cartArray,
@@ -47,7 +79,7 @@ const ClientData = () => {
 		}
 		const db = getFirestore().collection("Purchases").add(purchase)
 			.then(({ id }) => {swal("Gracias " + name + "!\n Tu compra fue ingresada correctamente \n Nro orden: " + id);})
-			.catch(error => {swal("ocurrio un error. Intente nuevamente!");})
+			.catch(error => 	{swal("ocurrio un error. Intente nuevamente!");})
 
 		}
 		//CHANGE TRIGGER PURCHASE BUTTON NAMES
@@ -59,8 +91,26 @@ const ClientData = () => {
 		<>
 			<div className="client_data">
 				<div className="client_data_cart_detail">
-					<h1>Tu Carrito:${getTotalCartValue}</h1>
+					<h1>Tu Carrito</h1>
+					<div>
+						<h1 className="cart">Subtotal:</h1>
+						<h1 className="cart">${getTotalCartValue}</h1>
+					</div>
+					<div>
+						<h1 className="discount">Descuento de la Galera:</h1>
+						<h1 className="discount">${getTotalCartValueDiscount}</h1>
+					</div>
+					<hr/>
+					<div>
+						<h1 className="total">Total:</h1>
+						<h1 className="total">${getTotalCartValue - getTotalCartValueDiscount}</h1>
+					</div>
+
+
+
+					
 				</div>
+				{/* <ProgressBar progress={purchaseInProgress}/> */}
 
 				{purchaseInProgress
 
@@ -85,8 +135,8 @@ const ClientData = () => {
 							<input type="text" 	placeholder="Reingrese Mail" 	value={mail2} 	onChange={handleEmail2Change} />
 						</div>
 						<div className="client_data_checkout">
-							<button className="client_data_checkout_button" 		onClick={purchaseInit}>Confirmar Compra</button>
-							<button className="client_data_checkout_button_mobile" 	onClick={purchaseInit}>Confirmar Compra</button>
+							<button className="client_data_checkout_button" 		onClick={formValidation}>Confirmar Compra</button>
+							<button className="client_data_checkout_button_mobile" 	onClick={formValidation}>Confirmar Compra</button>
 						</div>
 					</>
 				}

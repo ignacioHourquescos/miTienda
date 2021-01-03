@@ -15,7 +15,7 @@ h2{
     margin: 0.4rem;
     @media #{$mobile}{
         width:48%;
-        height:30vh;        
+        height:35vh;        
         margin: 1%;
     }
 
@@ -158,20 +158,20 @@ h3{
 
 .galera_discount{
     position:absolute;
-    top:0.5rem;
-    right:0.5rem;
-    border-radius:200px;
-    width:2rem;
-    height:2rem;
-    border:5px #4545c9 solid;
-    background-color:#04045e;
+    top:0rem;
+    right:0rem;
+    border-radius:0 0 0 200px;
+    width:7vh;
+    height:7vh;
+  
+    background-color:#04045eac;
 
     z-index:10;
 }
 
 .go_home_icon_2{
-    height:70%;
-    padding:0.2rem;
+    height:40%;
+    padding:20%;
     margin-bottom:0;
     animation: shake 3s;
     animation-iteration-count: infinite;

@@ -17,7 +17,7 @@ const ItemDetail = ({ product }) => {
 
             <div className="item_detail_right">
                 <ItemDescription product={product} />
-                <div calssName="">
+                <div className="">
                     <AddToCart initial={0} min={0} max={1000} product={product} />
                 </div>
             </div>
