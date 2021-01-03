@@ -5,6 +5,8 @@ It was created with React and firebase as de databse, for a brand name "La Galer
 ## UX Experimental purchasing
 Certain products of the market have special discounts. it may be a discount in %, a bonus etc. The ones who do have a discount will show the hat icon.
 when clicked the promotion will be exposed. The market aldo offers a shortcut to adding articles to the cart in a fast way by adding clicking on "agregar" button
+
+
 [![Galera-GIF.gif](https://i.postimg.cc/tTxg6XXz/Galera-GIF.gif)](https://postimg.cc/vgGMFwx1)
 
 ### External Libraries
