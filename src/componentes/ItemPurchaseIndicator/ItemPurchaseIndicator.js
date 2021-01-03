@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import './ItemPurchaseIndicator.scss';
 import useAppContext from '../../context/UseAppContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -27,8 +29,9 @@ const ItemPurchaseIndicator = ({article, onChange}) =>{
      return(
       <div className="confirm_purchase"> 
 
-            <button className="eliminate_item_home" onClick={() =>{eliminateItem(article); handleChange()}}>x</button>
-            
+            {/* <button className="eliminate_item_home" onClick={() =>{eliminateItem(article); handleChange()}}>x</button> */}
+            <FontAwesomeIcon  className="eliminate_item_home" onClick={() => {eliminateItem(article); handleChange()}} style={{ color: 'white' }} icon={faTrash} />
+
             <div className="units_purchased"> 
               {currentItemQuantity}
             </div>

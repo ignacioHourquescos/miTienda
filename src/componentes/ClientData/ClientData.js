@@ -3,7 +3,6 @@ import "./ClientData.scss";
 import { getFirestore } from '../../firebase'
 import useAppContext from '../../context/UseAppContext';
 import swal from 'sweetalert';
-import ProgressBar from '../ProgressBar/ProgressBar';
 const ClientData = () => {
 
 	const { getTotalCartValue,getTotalCartValueDiscount, cartArray } = useAppContext();
@@ -31,7 +30,7 @@ const ClientData = () => {
 			top: document.body.offsetHeight,
 			left: 0, 
 			behavior: 'smooth',
-		    });
+		});
 		if (adress === "") 									{ swal("Debe ingresar una direccion"); 	return; }
 		if (region === "") { swal("Debe elegir un barrio"); 	return; }
 		setPurchaseInProgress(false)
@@ -61,8 +60,6 @@ const ClientData = () => {
 			if (!mailRegex.test(mail)) 							{ swal("Debe ingresar un e-mail válido"); 		return; }
 			if (mail.trim() !== mail2.trim()) 					{ swal("Los email son diferentes"); 			return; }
 	
-
-		
 
 		//GENERATE OBJECT TO POST IN FIREBASE
 		if ( cartArray.length===0){

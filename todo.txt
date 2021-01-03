@@ -3,11 +3,7 @@ COMENTARIOS TRABAJSO PRACTICOS
 
 
 - fijate de ir limpiando todos los errores de la terminal y de la consola de chrome para la entrega final
--no usaría modal, para pedir los datos, consultado con el profesor, lo dejaría en la misma página, pero consultalo con él.
--si apretas cancelar al popup se rompe todo
--puse pedir y no me pidió datos, habría que dejar un solo botón. y como dije, los datos los pondría sobre la misma página. (consulalo con él, por ahí te deja el modal)
--al modal le falta doble validación de e-mail que verifique que ambos campos esten iguales.
--todo codigo comentado eliminalo para la entrega final
+- todo codigo comentado eliminalo para la entrega final
 - varios bugs pero corregilos para la entrega final, testeá bien tu app.
 
 
@@ -22,25 +18,26 @@ HECHO - permitir eliminar un producto del carrito
 HECHO -continua lo de doble producto si agrego de la home y detalle
 HECHO - si a mano voya http://localhost:3000/product/333 no me dice que el producto no existe.
 HECHO - que haya un item en el navbar para volver más fácil a la home, ahora tengo que hacerle click al menú hamburguesa
-
+HECHO -al modal le falta doble validación de e-mail que verifique que ambos campos esten iguales.
+HECHo --puse pedir y no me pidió datos, habría que dejar un solo botón. y como dije, los datos los pondría sobre la misma página. (consulalo con él, por ahí te deja el modal)
+HECHO -no usaría modal, para pedir los datos, consultado con el profesor, lo dejaría en la misma página, pero consultalo con él.
+HECHO -si apretas cancelar al popup se rompe todo
 
 
 REQUISITOS ENTREGA FINAL
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- Acceder a un menú desplegable que contendrá las categorías. Al clickear en una, debe navegar a la lista de productos de la misma mediante un route /categories/:categoryId. Éste invocará la misma vista que el home, pero visualizando sólamente productos de esa categoría.
-- Si se ingresa a /item/:id y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.- 
-- Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
-librerias que use. sweet alert / fontaweosme / REACTbURGER MENU
 
 ENTREGA FINAL
+HECHO - Acceder a un menú desplegable que contendrá las categorías. Al clickear en una, debe navegar a la lista de productos de la misma mediante un route /categories/:categoryId. Éste invocará la misma vista que el home, pero visualizando sólamente productos de esa categoría.
 HECHO - Un usuario debe poder ingresar, navegar por los productos e ir a sus detalles.
 HECHO - Desde el detalle se debe poder ver la descripción, foto y precio e ingresarlo al carrito. 
 HECHO - Una vez que el carrito tenga al menos un producto, se deberá visualizar un listado compacto de la orden con el precio total. 
 HECHO - Al clickear ‘realizar compra’ debe guardarse en la base de datos una orden que tenga todos los productos, la fecha y dar feedback del número de orden.
 HECHO - Al ingresar su nombre, apellido, teléfono e e-mail (ingresándolo dos veces para corroborar que sea correcto), debe activarse el botón de ‘realizar compra’.
 HECHO -Link para foto (puede almacenarse de modo estático en la página en una subruta /images/:itemid )
-
+HECHO - Si se ingresa a /item/:id y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.- 
+HECHO - Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
 
 REQUISTISSO BASE
 HECHO - Inicio: Al momento de ingresar a la app en la ruta base ‘/’
@@ -57,11 +54,7 @@ HECHO      las órdenes generadas, que deben incluir los productos, descripcione
 HECHO      -Las órdenes deben poder tener items surtidos, cada uno con su cantidad. Por ejemplo: remeras x 2 y gorra x 1
 HECHO      -id, items, fecha, estado ( por defecto en ‘generada’)
 
-- categories (solo para versión dinámica -opcional-): -Categoria (id a mano para versión estática, o id de firebase para versión dinámica -opcional-)
-      - Versión dinámica (-opcional-): Crear una colección de categories en firebase para hidratar el menú y usar los id’s de éstos para linkearlos a sus ítems.
-       Idealmente, categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} 
-       para que quede /categories/calzado en lugar de /categories/ad43k348j
-       
+
 HECHO - El cart debe ser accesible durante toda la experiencia y tener una indicación de la cantidad de items incluidos agregados (ej. si hay un ítem con dos unidades y un ítem con una unidad, debe decir ‘tres’).
 HECHO- Checkout mínimo:
 HECHO      - Items con sus cantidades
@@ -77,17 +70,29 @@ REQUISITOS EXTRAS
 HECHO - Categories dinámicas: crear una colección de firebase para las categorías e hidratar el menú en base a eso.
 HECHO - Mis órdenes: Con el orderId que se entrega al final de la compra, el usuario podría buscar su orden y usar el componente que ya utilizaste para el detalle, para mostrar cómo quedó conformada la order y el precio, pero no mostrar datos personales de la compra.
 
-- auth/login: Implementar alguno de los servicios de autenticación disponibles de firebase para evitar el flujo de email. 
-Si un usuario está logueado, el checkout debería decir ‘comprar como xxxx@gmail.com’, para evitar compras con cuentas indeseadas.
--Adicionalmente al auth/login, puedes implementar una wishlist para guardar productos para comprar en otro momento. 
-Los productos se deberían poder guardar desde el detalle o desde el listado, y acceder desde el navbar o menú desplegable. La wishlist debe tener accesos para agregar esos ítems al cart.
-- Custom item: Posibilidad de agregar características seleccionables al producto (ej. talla, color, etc). 
-La customización no debería modificar el precio. Las selecciones serán detalladas en el checkout. Por ejemplo: 1 x camisa (roja) $ 200 y 2 x camisa (verde) $400.
-- Stock check: Validar stock al momento de intentar generar la order.
-- Cart persistente: Hacer que el cart sea persistente en alguna api de almacenamiento local en el navegador (local/session storage).
+PENDIENTE - auth/login: Implementar alguno de los servicios de autenticación disponibles de firebase para evitar el flujo de email. 
+            Si un usuario está logueado, el checkout debería decir ‘comprar como xxxx@gmail.com’, para evitar compras con cuentas indeseadas.
+PENDIENTE -Adicionalmente al auth/login, puedes implementar una wishlist para guardar productos para comprar en otro momento. 
+            Los productos se deberían poder guardar desde el detalle o desde el listado, y acceder desde el navbar o menú desplegable. La wishlist debe tener accesos para agregar esos ítems al cart.
+NO APLICA - Custom item: Posibilidad de agregar características seleccionables al producto (ej. talla, color, etc). 
+            La customización no debería modificar el precio. Las selecciones serán detalladas en el checkout. Por ejemplo: 1 x camisa (roja) $ 200 y 2 x camisa (verde) $400.
+PENDIENTE - Stock check: Validar stock al momento de intentar generar la order.
+PENDIENTE - Cart persistente: Hacer que el cart sea persistente en alguna api de almacenamiento local en el navegador (local/session storage).
+PENDIENTE - categories (solo para versión dinámica -opcional-): -Categoria (id a mano para versión estática, o id de firebase para versión dinámica -opcional-)
+PENDIENTE - Versión dinámica (-opcional-): Crear una colección de categories en firebase para hidratar el menú y usar los id’s de éstos para linkearlos a sus ítems.
+PENDIENTE        Idealmente, categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} 
+PENDIENTE        para que quede /categories/calzado en lugar de /categories/ad43k348j
+       
 
 
 
-JON MIRCHA
-JS DOJO GOOGLE CHINO
-KRUGGER EFFECT
+category"Whisky"(string)
+desc"whisky de pura malta tradicional"
+img"https://http2.mlstatic.com/D_NQ_NP_2X_797618-MLA31661623964_082019-F.webp"
+name"Whisky"
+price200
+pres
+
+discount20
+galera"20% OFF 2da unidad"
+min2

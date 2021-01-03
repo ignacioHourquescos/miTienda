@@ -48,7 +48,7 @@ function App() {
               <GoHome/>
             </Route> 
 
-             <Route exact path="/:category">
+             <Route exact path="/category/:category">
               <CategoryContainer/>  
               <CallToActionIcons/>
               <GoHome/>

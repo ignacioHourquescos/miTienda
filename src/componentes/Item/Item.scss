@@ -129,14 +129,17 @@ h3{
     width:100%;
     font-size:0.8rem;
     text-align:center;
-    color:rgb(48, 48, 48);
+    color:rgb(255, 255, 255);
     border:0px;
     line-height:1.7rem;
-    background-color:rgb(220, 220, 220);
+    background-color:#1f1f1f;
+    // background-color:rgb(220, 220, 220);
     border-radius:2px;
     margin-bottom:0.5rem;
     border:0;
     border:1px solid rgb(192, 192, 192);
+    
+    font-family: 'Suez One', serif;
  
 
 }
@@ -161,10 +164,10 @@ h3{
     top:0rem;
     right:0rem;
     border-radius:0 0 0 200px;
-    width:7vh;
-    height:7vh;
-  
-    background-color:#04045eac;
+    width:9vh;
+    height:9vh;
+    background-color:#04045e;
+    
 
     z-index:10;
 }
@@ -173,6 +176,6 @@ h3{
     height:40%;
     padding:20%;
     margin-bottom:0;
-    animation: shake 3s;
-    animation-iteration-count: infinite;
+    
+   
 }

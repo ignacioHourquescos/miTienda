@@ -12,6 +12,8 @@ const Cart = () => {
 
     const { cartArray, eliminateItem } = useAppContext();
 
+
+
     return (
         <>
             {cartArray.length === 0

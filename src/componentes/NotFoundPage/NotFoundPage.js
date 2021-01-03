@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const  NotFoundPage = () =>{
     return(
-        <div>
+        <div style={{textAlign:"center",fontFamily:"'Suez One', serif",fontSize:"2rem"}}>
       
-            <p style={{textAlign:"center"}}>Ups! No tenemos ningun producto de esas características!
+            <p >Ups! No tenemos ningun producto de esas características!</p>
             <Link to="/">Volver al inicio </Link> 
-            </p>
+            
             
           </div>
     )
