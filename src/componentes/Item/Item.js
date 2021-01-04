@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Item.scss';
-import ItemPurchaseIndicator 	from '../ItemPurchaseIndicator/ItemPurchaseIndicator'
-import GaleraDiscountDetail 	from '../GaleraDiscountDetail/GaleraDiscountDetail'
-import useAppContext 		from '../../context/UseAppContext';
-import galera			from '../../images/galera.png';
+import ItemPurchaseIndicator from '../ItemPurchaseIndicator/ItemPurchaseIndicator'
+import GaleraDiscountDetail from '../GaleraDiscountDetail/GaleraDiscountDetail'
+import useAppContext from '../../context/UseAppContext';
+import galera from '../../images/galera.png';
 
 
 
@@ -13,17 +13,17 @@ const Item = ({ article, loadingArticle }) => {
 	const { cartArray, handleCartArray } = useAppContext();
 	const [purchaseInProgress, setPurchaseInProgress] = useState(false);
 	const [galeraDiscount, setGaleraDiscount] = useState(false);
-	const [aux, setAux] =useState(true);
+	const [aux, setAux] = useState(true);
 	const [units, setUnits] = useState(1);
-	
 
-	const handleChange = newValue => {setPurchaseInProgress(newValue); setAux(true);}
+
+	const handleChange = newValue => { setPurchaseInProgress(newValue); setAux(true); }
 	const handleGaleraChange = () => setGaleraDiscount(false);
 	const showGaleraDiscount = () => setGaleraDiscount(true);
-	
-	
+
+
 	useEffect(() => {
-		if (cartArray.find(element => element.id === article.id)) {setPurchaseInProgress(true); setAux(false);}
+		if (cartArray.find(element => element.id === article.id)) { setPurchaseInProgress(true); setAux(false); }
 		else setPurchaseInProgress(false)
 	}, [cartArray, article.id])
 
@@ -36,12 +36,12 @@ const Item = ({ article, loadingArticle }) => {
 
 
 					{/*/////////////CARD OVERLAYS//////////*/}
-					{galeraDiscount 
-						? <GaleraDiscountDetail article={article} onChange={handleGaleraChange} /> 
+					{galeraDiscount
+						? <GaleraDiscountDetail article={article} onChange={handleGaleraChange} />
 						: ""
 					}
-					{purchaseInProgress 
-						? <ItemPurchaseIndicator article={article} onChange={handleChange} /> 
+					{purchaseInProgress
+						? <ItemPurchaseIndicator article={article} onChange={handleChange} />
 						: ""
 					}
 
@@ -51,13 +51,13 @@ const Item = ({ article, loadingArticle }) => {
 					<div className="image_container">
 						<div onClick={() => { showGaleraDiscount() }}>
 							{(article.galera && aux)
-								?<div className="galera_discount">
-									<img className="go_home_icon_2" src= {galera} alt="galera" />
-								 </div> 
+								? <div className="galera_discount">
+									<img className="go_home_icon_2" src={galera} alt="galera" />
+								</div>
 								: " "
 							}
 						</div>
-						<Link to={`/product/${article.id}`} style={{ backgroundColor: "white", padding:"0rem" }}  >
+						<Link to={`/product/${article.id}`} style={{ backgroundColor: "white", padding: "0rem" }}  >
 							<img style={{ backgroundColor: "white" }} className="image" src={article.img} alt={article.desc} />
 						</Link>
 					</div>
@@ -72,11 +72,11 @@ const Item = ({ article, loadingArticle }) => {
 							<h3 className="price"> ${article.price}</h3>
 						</Link>
 						<div className="add_to_cart">
-							<button onClick={() => { 
+							<button onClick={() => {
 								handleCartArray(units, article);
 								setPurchaseInProgress(true);
-								setAux(false) 
-								}}>
+								setAux(false)
+							}}>
 								AGREGAR
 							</button>
 						</div>

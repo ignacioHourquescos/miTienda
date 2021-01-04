@@ -21,12 +21,12 @@ const CartIcon = () => {
 		setCartItems(countIndividualCartItems(cartArray))
 	}, [cartArray, countIndividualCartItems])
 
-	const scrollTop = () =>{	
+	const scrollTop = () => {
 		window.scroll({
 			top: 0,
-			left: 0, 
+			left: 0,
 			behavior: 'smooth',
-		  });
+		});
 	}
 
 	return (

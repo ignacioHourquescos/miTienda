@@ -1,72 +1,76 @@
 $mobile: "only screen and (max-width : 776px)";
 
-  
-  .add_to_cart_ItemCount {
-    display: flex;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    justify-content:space-between;
-    border: 1px solid rgb(59, 59, 59);
-    border-radius:5px;
-    background-color:white;
-    margin:2rem;
-    button{
-        font-size:1rem;
-        font-weight: bold;
-        text-align:center;
-        background-color:rgb(255, 255, 255);
-        border:0px;
-        color:rgb(71, 71, 71);
-        border-radius:5px;
-        width:2rem;
-        margin:0;
-        padding:0;
-        @media #{$mobile}{
-          font-size:2rem;
-        }
-    }
-}
 
-.item_quantity{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+.add_to_cart_ItemCount {
+  display: flex;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(59, 59, 59);
+  border-radius: 5px;
+  background-color: white;
+  margin: 2rem;
+
+  button {
+    font-size: 1rem;
     font-weight: bold;
-}
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    color: rgb(71, 71, 71);
+    border-radius: 5px;
+    width: 2rem;
+    margin: 0;
+    padding: 0;
 
-
-.add_to_cart_button{
-    width:80%;
-    font-family: 'Suez One', serif;
-      text-align:center;
-    height:2rem;
-    background-color:black;
-    color:white;
-    border:none;
-    padding:2%;
-    font-size:1rem;
-    @media #{$mobile}{
-        background-color: transparent;
-        color:transparent;
-    }
-}
-
-.add_to_cart_button_mobile{
-    display:none;
-    font-family: 'Suez One', serif;
-    width:60%;
-    text-align:center;
-    height:10vh;
-    border-radius: 50px;
-      background-color:black;
-      color:white;
-      border:none;
-      padding:0.5rem;
-    @media #{$mobile}{
-        display:block;
-        position: fixed;
-        bottom:2rem;
-        right:5%;
+    @media #{$mobile} {
+      font-size: 2rem;
     }
   }
+}
+
+.item_quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+}
+
+
+.add_to_cart_button {
+  width: 80%;
+  font-family: 'Suez One', serif;
+  text-align: center;
+  height: 2rem;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 2%;
+  font-size: 1rem;
+
+  @media #{$mobile} {
+    background-color: transparent;
+    color: transparent;
+  }
+}
+
+.add_to_cart_button_mobile {
+  display: none;
+  font-family: 'Suez One', serif;
+  width: 60%;
+  text-align: center;
+  height: 10vh;
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+
+  @media #{$mobile} {
+    display: block;
+    position: fixed;
+    bottom: 2rem;
+    right: 5%;
+  }
+}

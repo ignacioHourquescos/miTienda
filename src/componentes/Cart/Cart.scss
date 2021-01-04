@@ -2,10 +2,11 @@ $mobile: "only screen and (max-width : 776px)";
 
 .cart_list {
 	width: 70%;
+
 	@media #{$mobile} {
 		width: 100%;
 		padding: 1rem 0;
-		height:100vh;
+		height: 100vh;
 	}
 }
 
@@ -22,6 +23,7 @@ $mobile: "only screen and (max-width : 776px)";
 	-webkit-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
 	box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
+
 	@media #{$mobile} {
 		margin: 0.3rem;
 	}
@@ -41,6 +43,7 @@ $mobile: "only screen and (max-width : 776px)";
 		justify-items: space-around;
 		justify-content: space-between;
 		width: 100%;
+
 		@media #{$mobile} {
 			flex-direction: column;
 			align-content: left;
@@ -56,7 +59,7 @@ $mobile: "only screen and (max-width : 776px)";
 			margin: 5px;
 			padding: 2px;
 			width: 100%;
-			
+
 
 			@media #{$mobile} {
 				margin: 0;
@@ -67,10 +70,11 @@ $mobile: "only screen and (max-width : 776px)";
 				margin-left: 0rem;
 				margin: 0 2px;
 				padding: 0;
-				
+
 			}
-			h3{
-				color:red;
+
+			h3 {
+				color: red;
 				margin-left: 0.5rem;
 			}
 
@@ -101,6 +105,7 @@ $mobile: "only screen and (max-width : 776px)";
 				width: 25%;
 				text-align: center;
 				color: grey;
+
 				@media #{$mobile} {
 					font-size: 0.5rem;
 				}
@@ -117,6 +122,7 @@ $mobile: "only screen and (max-width : 776px)";
 			:nth-child(4) {
 				width: 20%;
 				text-align: center;
+
 				@media #{$mobile} {
 					position: absolute;
 					right: 0rem;
@@ -126,28 +132,29 @@ $mobile: "only screen and (max-width : 776px)";
 	}
 }
 
-.empty_cart{
+.empty_cart {
 	font-family: 'Suez One', serif;
-	font-size:1.5rem;
-	background-color:white;
-	width:70%;
-	text-align:center;
-	   background-color: rgba(182, 182, 182, 0.2);
-	   color:rgb(83, 83, 83);
-   	 border-radius:5px;
-   	 margin:0%;
-    	padding:2% 5%;
-	    height:70vh;
-	    display:flex;
-    	align-content:center;
-    	align-items:center;
-    	justify-content:space-around;
-    -webkit-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
-    @media #{$mobile} {
-	width:90%;
-	height:100vh;
+	font-size: 1.5rem;
+	background-color: white;
+	width: 70%;
+	text-align: center;
+	background-color: rgba(182, 182, 182, 0.2);
+	color: rgb(83, 83, 83);
+	border-radius: 5px;
+	margin: 0%;
+	padding: 2% 5%;
+	height: 70vh;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: space-around;
+	-webkit-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
+	box-shadow: 10px 14px 49px -34px rgba(0, 0, 0, 0.75);
 
-}
+	@media #{$mobile} {
+		width: 90%;
+		height: 100vh;
+
+	}
 }

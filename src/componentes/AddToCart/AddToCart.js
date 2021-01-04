@@ -21,7 +21,7 @@ const AddToCart = ({ product, initial, min, max }) => {
 
     const addToCart = () => {
         let unitsModal = units * -1;
-        if ((units === 0 || isNaN(units) || itemCount === 0)) 
+        if ((units === 0 || isNaN(units) || itemCount === 0))
             swal("Debe seleccionar una cantidad valida!")
         else if (itemCount > 0) {
             handleCartArray(units, product);
@@ -67,4 +67,4 @@ const AddToCart = ({ product, initial, min, max }) => {
 
 export default AddToCart
 
-   
+

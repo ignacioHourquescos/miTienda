@@ -1,10 +1,10 @@
 import React from "react"
-import './ContentLoader.scss' 
+import './ContentLoader.scss'
 
 
 const MyLoader = (props) => (
       <>
-      <div className="loader"></div>
+            <div className="loader"></div>
       </>
 )
 

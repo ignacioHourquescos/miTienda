@@ -21,19 +21,19 @@ const CallToActionIcons = () => {
 		<>
 			{showCategories
 
-			?
-			<div className="category_list_container">
-				<div className="category_list" onClick={() => { setShowCategories(false) }}>
-					{products.map(category =>
-						<div className="category_specific_container">
-							<Link className="link_to_category" to={`/category/${category}`}>{category}</Link>
-						</div>
-					)}
+				?
+				<div className="category_list_container">
+					<div className="category_list" onClick={() => { setShowCategories(false) }}>
+						{products.map(category =>
+							<div className="category_specific_container">
+								<Link className="link_to_category" to={`/category/${category}`}>{category}</Link>
+							</div>
+						)}
+					</div>
 				</div>
-			</div>
 
-			: 
-			""}
+				:
+				""}
 
 			<div className="call_to_action">
 				<div className="cta3" onClick={() => setShowCategories(true)}>
