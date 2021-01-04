@@ -3,7 +3,7 @@ $mobile: "only screen and (max-width : 776px)";
 
 /*CONFIRM PRUCHASE*/
 .galera_discount_detail {
-	background-color: rgba(83, 60, 175, 0.884);
+	background-color: #04045eb4;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -22,7 +22,7 @@ $mobile: "only screen and (max-width : 776px)";
 
 		@media #{$mobile} {
 
-			font-size: 1.5rem;
+			font-size: 1.3rem;
 		}
 	}
 
@@ -44,7 +44,8 @@ $mobile: "only screen and (max-width : 776px)";
   @media #{$mobile} {
     width: 2rem;
     height: 2rem;
-    font-size: 1.5rem;
+    padding:0.2rem;
+    font-size: 1rem;
   }
 
 }

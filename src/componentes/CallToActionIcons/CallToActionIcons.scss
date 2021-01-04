@@ -74,7 +74,7 @@ $mobile: "only screen and (max-width : 776px)";
     z-index: 16;
 
     @media #{$mobile} {
-        height: 80vh;
+        height: 100vh;
     }
 }
 
