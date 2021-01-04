@@ -30,8 +30,10 @@ export function getSingleProductFromDatabase(id) {
 
 			const data = query.data()
 			if (query.size === 0 || data === undefined) reject('no hay registros')
-			data.id = id
-			resolve(data)
+			else{
+				data.id = id
+				resolve(data)
+			}
 		})
 
 	})

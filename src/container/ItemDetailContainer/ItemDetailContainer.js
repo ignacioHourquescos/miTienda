@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
             .then((result) => { setProduct(result); })
             .then(() => setLoading(false))
             .catch((err) =>{history.push('/*')})
-    }, [id]);
+    }, [id, history]);
 
 
     return (

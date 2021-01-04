@@ -22,7 +22,7 @@ const Home = () => {
             .then((result) => { setProducts(result); })
             .then(() => setLoading(false))
            .catch((err) =>{history.push('/*')})
-    }, [category]);
+    }, [category, history]);
 
 
 
