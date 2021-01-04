@@ -13,10 +13,6 @@ const SideBar = () => {
 
 
 
-	const event = new KeyboardEvent('keypress', {
-		key: 'enter',
-	});
-
 	const closeMenu = () => {
 		setMenuOpen(false);
 
@@ -24,7 +20,7 @@ const SideBar = () => {
 
 	useEffect(() => {
 		closeMenu();
-	}, [Menu]);
+	}, []);
 
 
 

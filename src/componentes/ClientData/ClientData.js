@@ -74,7 +74,7 @@ const ClientData = () => {
 				date: new Date(),
 				estado: "generada"
 			}
-			const db = getFirestore().collection("Purchases").add(purchase)
+			getFirestore().collection("Purchases").add(purchase)
 				.then(({ id }) => { swal("Gracias " + name + "!\n Tu compra fue ingresada correctamente \n Nro orden: " + id); })
 				.catch(error => { swal("ocurrio un error. Intente nuevamente!"); })
 

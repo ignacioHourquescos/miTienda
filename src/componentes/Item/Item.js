@@ -14,7 +14,7 @@ const Item = ({ article, loadingArticle }) => {
 	const [purchaseInProgress, setPurchaseInProgress] = useState(false);
 	const [galeraDiscount, setGaleraDiscount] = useState(false);
 	const [aux, setAux] = useState(true);
-	const [units, setUnits] = useState(1);
+	const units = 1;
 
 
 	const handleChange = newValue => { setPurchaseInProgress(newValue); setAux(true); }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ItemDetail.scss';
 import ItemDescription from '../ItemDescription/ItemDescription';
 import AddToCart from '../AddToCart/AddToCart';

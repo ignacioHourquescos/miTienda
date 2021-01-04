@@ -30,12 +30,10 @@ const ItemCount = ({initial, min, max, onAdd, product}) =>{
         
         useEffect((t) => {
             setItemCount(ItemCount);
-
-        }, [ItemCount]);
-
-        useEffect(() => {
             setCurrentItemQuantity(ItemQuantity(product));
-          }, [cartArray]);
+        }, [ItemCount,cartArray,ItemQuantity,product]);
+
+ 
         
     
     return(

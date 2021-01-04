@@ -11,7 +11,7 @@ const useAppContext = () => useContext(AppContext)
 export const AppProvider = ({ children}) => {
 
     const [cartArray, setCartArray] = useState([]);
-    const [menuOpenState, setMenuOpenState] = useState(false)
+
 
     //FUNCTION ADDS ITEMS TO CART 
     const handleCartArray = (units, newItem) => { 

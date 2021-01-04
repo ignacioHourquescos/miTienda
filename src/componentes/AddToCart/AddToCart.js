@@ -37,7 +37,7 @@ const AddToCart = ({ product, initial, min, max }) => {
         setItemCount(itemCount);
         setCurrentItemQuantity(ItemQuantity(product));
         setUnits(itemCount)
-    }, [itemCount, cartArray]);
+    }, [itemCount, cartArray,ItemQuantity,product]);
 
 
     return (

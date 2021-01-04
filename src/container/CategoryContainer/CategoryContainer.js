@@ -6,6 +6,7 @@ import ItemList from '../../componentes/ItemList/ItemList';
 import {getProductsByCategory} from '../../lib/database';
 import {useParams} from 'react-router-dom';
 import ContentLoader from '../../componentes/ContentLoader/ContentLoader';
+import swal from 'sweetalert';
 
 
 const Home= () =>{
@@ -19,6 +20,7 @@ const Home= () =>{
         getProductsByCategory(category)
             .then((result) => {setProducts(result);}) 
             .then(()       =>  setLoading(false)) 
+            .catch((err) => swal(err))
     }, [category]);
 
 

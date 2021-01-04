@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React  from 'react';
 import './GaleraDiscountDetail.scss';
-import useAppContext from '../../context/UseAppContext';
+
 
 
 
 
 const ItemPurchaseIndicator = ({ article, onChange }) => {
 
-
   function handleChange() {
     onChange(false);
   }
-
-
-
 
   return (
     <div className="galera_discount_detail">

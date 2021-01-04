@@ -6,17 +6,15 @@ import {useParams} from 'react-router-dom';
 const OrderId = () =>{
     
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [total, setTotal] = useState();
     
     //const {order}="OEvLgJokpduAIWsC8Hes";
     const {id}=useParams();
 
     useEffect(() => {
-        setLoading(true);
+
         getOrderById(id)
             .then((result) => {setProducts(result.items);setTotal(result.total)})
-            .then(()       =>  setLoading(false)) 
     }, [id]);
 
 
