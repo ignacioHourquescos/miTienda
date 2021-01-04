@@ -84,62 +84,52 @@ const ClientData = () => {
 
 	};
 
-	return (
-		<>
-			<div className="client_data">
-				<div className="client_data_cart_detail">
-					<h1>Tu Carrito</h1>
-					<div>
-						<h1 className="cart">Subtotal:</h1>
-						<h1 className="cart">${getTotalCartValue}</h1>
-					</div>
-					<div>
-						<h1 className="discount">Descuento de la Galera:</h1>
-						<h1 className="discount">${getTotalCartValueDiscount}</h1>
-					</div>
-					<hr />
-					<div>
-						<h1 className="total">Total:</h1>
-						<h1 className="total">${getTotalCartValue - getTotalCartValueDiscount}</h1>
-					</div>
-
-
-
-
+	return (<>
+		<div className="client_data">
+			<div className="client_data_cart_detail">
+				<h1>Tu Carrito</h1>
+				<div>
+					<h1 className="cart">Subtotal:</h1>
+					<h1 className="cart">${getTotalCartValue}</h1>
 				</div>
-				{/* <ProgressBar progress={purchaseInProgress}/> */}
-
-				{purchaseInProgress
-
-					?//IF PURCHASE IS NOT IN PROGESS SHOW LOCATION INPUTS
-					<>
-						<div className="client_data_input">
-							<input type="text" placeholder="Direccion" value={adress} onChange={handleAdressChange} />
-							<input type="tel" placeholder="Barrio" value={region} onChange={handleRegionChange} />
-						</div>
-						<div className="client_data_checkout">
-							<button className="client_data_checkout_button" onClick={purchaseInit}>Iniciar Compra</button>
-							<button className="client_data_checkout_button_mobile" onClick={purchaseInit}>iniciar Compra</button>
-						</div>
-					</>
-
-					://IF PURCHASE IS IN PROGRESS SHOW PERSONAL DETAIL INPUTS
-					<>
-						<div className="client_data_input">
-							<input type="text" placeholder="Nombre" value={name} onChange={handleNameChange} />
-							<input type="tel" placeholder="Telefono" value={phone} onChange={handlePhoneChange} />
-							<input type="mail" placeholder="Email" value={mail} onChange={handleEmailChange} />
-							<input type="text" placeholder="Reingrese Mail" value={mail2} onChange={handleEmail2Change} />
-						</div>
-						<div className="client_data_checkout">
-							<button className="client_data_checkout_button" onClick={formValidation}>Confirmar Compra</button>
-							<button className="client_data_checkout_button_mobile" onClick={formValidation}>Confirmar Compra</button>
-						</div>
-					</>
-				}
+				<div>
+					<h1 className="discount">Descuento de la Galera:</h1>
+					<h1 className="discount">${getTotalCartValueDiscount}</h1>
+				</div>
+				<hr />
+				<div>
+					<h1 className="total">Total:</h1>
+					<h1 className="total">${getTotalCartValue - getTotalCartValueDiscount}</h1>
+				</div>
 			</div>
-		</>
-	);
+			{purchaseInProgress
+				?//IF PURCHASE IS NOT IN PROGESS SHOW LOCATION INPUTS
+				<>
+					<div className="client_data_input">
+						<input type="text" placeholder="Direccion" value={adress} onChange={handleAdressChange} />
+						<input type="tel" placeholder="Barrio" value={region} onChange={handleRegionChange} />
+					</div>
+					<div className="client_data_checkout">
+						<button className="client_data_checkout_button" onClick={purchaseInit}>Iniciar Compra</button>
+						<button className="client_data_checkout_button_mobile" onClick={purchaseInit}>iniciar Compra</button>
+					</div>
+				</>
+				://IF PURCHASE IS IN PROGRESS SHOW PERSONAL DETAIL INPUTS
+				<>
+					<div className="client_data_input">
+						<input type="text" placeholder="Nombre" value={name} onChange={handleNameChange} />
+						<input type="tel" placeholder="Telefono" value={phone} onChange={handlePhoneChange} />
+						<input type="mail" placeholder="Email" value={mail} onChange={handleEmailChange} />
+						<input type="text" placeholder="Reingrese Mail" value={mail2} onChange={handleEmail2Change} />
+					</div>
+					<div className="client_data_checkout">
+						<button className="client_data_checkout_button" onClick={formValidation}>Confirmar Compra</button>
+						<button className="client_data_checkout_button_mobile" onClick={formValidation}>Confirmar Compra</button>
+					</div>
+				</>
+			}
+		</div>
+	</>);
 }
 
 export default ClientData

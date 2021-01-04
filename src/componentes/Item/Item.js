@@ -46,7 +46,6 @@ const Item = ({ article, loadingArticle }) => {
 					}
 
 
-
 					{/*/////////////CARD IMAGE//////////*/}
 					<div className="image_container">
 						<div onClick={() => { showGaleraDiscount() }}>
@@ -63,14 +62,14 @@ const Item = ({ article, loadingArticle }) => {
 					</div>
 
 
-
-
 					{/*/////////////CARD FOOTER//////////*/}
 					<div className="data_container">
+
 						<Link className="link_to_product" to={`/product/${article.id}`} >
 							<h2>{article.name}</h2>
 							<h3 className="price"> ${article.price}</h3>
 						</Link>
+
 						<div className="add_to_cart">
 							<button onClick={() => {
 								handleCartArray(units, article);
@@ -80,15 +79,13 @@ const Item = ({ article, loadingArticle }) => {
 								AGREGAR
 							</button>
 						</div>
+
 					</div>
-
-
 
 				</div>
 			</div>
 		}
-	</>
-	)
+	</>)
 }
 
 export default Item;
