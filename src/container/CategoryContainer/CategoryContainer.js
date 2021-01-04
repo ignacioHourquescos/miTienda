@@ -6,7 +6,7 @@ import ItemList from '../../componentes/ItemList/ItemList';
 import { getProductsByCategory } from '../../lib/database';
 import { useParams } from 'react-router-dom';
 import ContentLoader from '../../componentes/ContentLoader/ContentLoader';
-import swal from 'sweetalert';
+import { useHistory } from "react-router-dom";
 
 
 const Home = () => {
@@ -14,13 +14,14 @@ const Home = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const { category } = useParams();
+    let history = useHistory();
 
     useEffect(() => {
         setLoading(true);
         getProductsByCategory(category)
             .then((result) => { setProducts(result); })
             .then(() => setLoading(false))
-            .catch((err) => swal(err))
+           .catch((err) =>{history.push('/*')})
     }, [category]);
 
 

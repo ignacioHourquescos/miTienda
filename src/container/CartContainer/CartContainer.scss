@@ -2,31 +2,33 @@ $overlay: rgba(41, 41, 41, 0.20);
 $mobile: "only screen and (max-width : 776px)";
 
 
-.cart_container{
-    padding:0 2rem;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    @media #{$mobile}{
-        flex-direction:column;
-        padding:1rem 0 0 0;
+.cart_container {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media #{$mobile} {
+        flex-direction: column;
+        padding: 1rem 0 0 0;
     }
 }
 
-.cart_actions{
-    width:25%;
-    height:80vh;
-    display:flex;
+.cart_actions {
+    width: 25%;
+    height: 80vh;
+    display: flex;
     background-color: $overlay;
     flex-direction: column;
-    align-content:center;
-    align-items:center;
-    @media #{$mobile}{
-        width:100%;
+    align-content: center;
+    align-items: center;
+
+    @media #{$mobile} {
+        width: 100%;
     }
-    button{
-        width:70%;
-        padding:0.75rem;
-   
+
+    button {
+        width: 70%;
+
     }
 }

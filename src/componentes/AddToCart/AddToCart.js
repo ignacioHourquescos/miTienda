@@ -21,6 +21,7 @@ const AddToCart = ({ product, initial, min, max }) => {
 
     const addToCart = () => {
         let unitsModal = units * -1;
+
         if ((units === 0 || isNaN(units) || itemCount === 0))
             swal("Debe seleccionar una cantidad valida!")
         else if (itemCount > 0) {
@@ -44,6 +45,7 @@ const AddToCart = ({ product, initial, min, max }) => {
         <>
 
             <div className="add_to_cart_ItemCount">
+                
                 <button onClick={() => { restarUnidad(itemCount) }}>-</button>
                 <span>
                     {currentItemQuantity === 0
@@ -51,15 +53,18 @@ const AddToCart = ({ product, initial, min, max }) => {
                         : currentItemQuantity + itemCount}
                 </span>
                 <button onClick={() => { sumarUnidad(itemCount) }}>+</button>
+
             </div>
 
             <div>
+
                 <button className="add_to_cart_button" onClick={() => { addToCart() }}>
                     {currentItemQuantity > 0 ? "Modificar" : "Agregar"}
                 </button>
                 <button className="add_to_cart_button_mobile" onClick={() => { addToCart() }}>
                     {currentItemQuantity > 0 ? "Modificar" : "Agregar"}
                 </button>
+                
             </div>
         </>
     )

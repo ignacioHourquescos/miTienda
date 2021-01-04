@@ -6,40 +6,41 @@ import swal from 'sweetalert';
 const ClientData = () => {
 
 	const { getTotalCartValue, getTotalCartValueDiscount, cartArray } = useAppContext();
-	const [adress, setAdress] = useState("");
-	const [region, setRegion] = useState("");
-	const [name, setName] = useState("");
-	const [phone, setPhone] = useState("");
-	const [mail, setEmail] = useState("");
-	const [mail2, setEmail2] = useState("");
+	const [adress, setAdress] 	= useState("");
+	const [region, setRegion] 	= useState("");
+	const [name, setName] 		= useState("");
+	const [phone, setPhone] 	= useState("");
+	const [mail, setEmail] 		= useState("");
+	const [mail2, setEmail2] 	= useState("");
 	const [purchaseInProgress, setPurchaseInProgress] = useState(true);
-	const handleNameChange = (event) => { setName(event.target.value); };
-	const handlePhoneChange = (event) => { setPhone(event.target.value); };
-	const handleEmailChange = (event) => { setEmail(event.target.value); };
-	const handleEmail2Change = (event) => { setEmail2(event.target.value); };
-	const handleAdressChange = (event) => { setAdress(event.target.value); };
-	const handleRegionChange = (event) => { setRegion(event.target.value); };
+	const handleNameChange 		= (event) => { setName(event.target.value); };
+	const handlePhoneChange 	= (event) => { setPhone(event.target.value); };
+	const handleEmailChange 	= (event) => { setEmail(event.target.value); };
+	const handleEmail2Change	= (event) => { setEmail2(event.target.value); };
+	const handleAdressChange 	= (event) => { setAdress(event.target.value); };
+	const handleRegionChange 	= (event) => { setRegion(event.target.value); };
 
 
 	const purchaseInit = () => {
 		if (cartArray.length === 0) {
-			swal("carrito vacio");
+			swal("Su Carrito esta vacio!");
 			return;
 		}
+
 		window.scroll({
 			top: document.body.offsetHeight,
 			left: 0,
 			behavior: 'smooth',
 		});
-		if (adress === "") { swal("Debe ingresar una direccion"); return; }
+
+		if (adress === "") { swal("Ingrese su dirección"); return; }
 		if (region === "") { swal("Debe elegir un barrio"); return; }
+
 		setPurchaseInProgress(false)
 	}
 
-
-
-
 	const formValidation = () => {
+
 		if (cartArray.length === 0) {
 			swal("carrito vacio");
 			return;
@@ -50,15 +51,15 @@ const ClientData = () => {
 			left: 0,
 			behavior: 'smooth',
 		});
-		//FORM VALIDATION OF INPUTS
+	
 		const mailRegex = /^[a-zA-Z0-9._]+[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
 		const phoneRegex = /^[0-9]+$/;
 
-		if (name === "") { swal("Debe ingresar un nombre y apellido"); return; }
+		if (name === "") 									{ swal("Debe ingresar un nombre y apellido"); return; }
 		if (phone.trim() === "" || !phoneRegex.test(phone)) { swal("Debe ingresar un teléfono valido"); return; }
-		if (mail.trim() === "") { swal("Debe ingresar un e-mail"); return; }
-		if (!mailRegex.test(mail)) { swal("Debe ingresar un e-mail válido"); return; }
-		if (mail.trim() !== mail2.trim()) { swal("Los email son diferentes"); return; }
+		if (mail.trim() === "") 							{ swal("Debe ingresar un e-mail"); return; }
+		if (!mailRegex.test(mail)) 							{ swal("Debe ingresar un e-mail válido"); return; }
+		if (mail.trim() !== mail2.trim()) 					{ swal("Los email son diferentes"); return; }
 
 
 		//GENERATE OBJECT TO POST IN FIREBASE

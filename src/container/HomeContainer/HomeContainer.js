@@ -24,7 +24,6 @@ const Home = () => {
     return (<>
 
         <div className="home_container">
-
             {loading ? <MyLoader /> : <ItemList className="list" products={products} loading={loading} />}
         </div>
     </>

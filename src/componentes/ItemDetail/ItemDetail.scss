@@ -1,94 +1,86 @@
 $mobile: "only screen and (max-width : 776px)";
 
-.container{
-    display:flex;
+.container {
+    display: flex;
     max-width: 1200px;
-    height:70vh;
-    margin:1rem;
-    justify-content:space-between;
+    height: 70vh;
+    margin: 1rem;
+    justify-content: space-between;
     align-items: center;
-    padding:0rem;
+    padding: 0rem;
     background-color: rgba(255, 255, 255, 0.548);
-    @media #{$mobile}{
+
+    @media #{$mobile} {
         flex-direction: column;
-        width:100%;
-     
+        width: 100%;
+
     }
-
-
 }
 
-
-
-.item_detail_right{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-around;
-    
-    width:60vh;
-    height:90%;
-    margin:1rem;
+.item_detail_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60vh;
+    height: 90%;
+    margin: 1rem;
     padding: 2rem;
 
-       
-
-    @media #{$mobile}{
+    @media #{$mobile} {
         width: 90%;
-        padding:0;
+        padding: 0;
     }
 }
 
-.flexcol{
-    display:flex;
-    flex-direction:column;
-    padding:0rem;
-    width:50%;
-    @media #{$mobile}{
-        width:100%;
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    width: 50%;
+
+    @media #{$mobile} {
+        width: 100%;
 
     }
 }
 
-
-
-
-.item_detail_left{
-    display:flex;
-    flex-direction:column;
+.item_detail_left {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    justify-items:center;
-    align-content:space-between;
-    align-items:space-between;
-    padding:0rem;
-    
-    
-    .image_detail_container{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        height:70vh;
-        width:100%;
+    justify-items: center;
+    align-content: space-between;
+    align-items: space-between;
+    padding: 0rem;
+
+    .image_detail_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+        width: 100%;
         position: relative;
-        text-align:center;
-        background-color:white;
-        @media #{$mobile}{ 
-            padding:0;
-            width:100%;
-            height:20vh;
+        text-align: center;
+        background-color: white;
+
+        @media #{$mobile} {
+            padding: 0;
+            width: 100%;
+            height: 20vh;
         }
     }
 
-    .image_detail{
-        height:100%;
+    .image_detail {
+        height: 100%;
         object-fit: cover;
-        border-radius:4px 4px 0 0;
-        z-index:1;
-        padding:2rem;
-        @media #{$mobile}{
-            max-width:100%;
-            width:40%;
-            padding:0;
+        border-radius: 4px 4px 0 0;
+        z-index: 1;
+        padding: 2rem;
+
+        @media #{$mobile} {
+            max-width: 100%;
+            width: 40%;
+            padding: 0;
         }
     }
-  
 }

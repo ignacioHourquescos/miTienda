@@ -13,7 +13,6 @@ import useAppContext from '../../context/UseAppContext';
 
 const CartIcon = () => {
 
-	//Variable & function from context
 	const { cartArray, countIndividualCartItems, getTotalCartValue, getTotalCartValueDiscount } = useAppContext();
 	const [cartItems, setCartItems] = useState(0);
 
@@ -31,13 +30,17 @@ const CartIcon = () => {
 
 	return (
 		<Link to={`/cart/`} onClick={scrollTop}>
+
 			<div className="sidebar">
+
 				<div className="menu">
 					<div className="counter_cart_icon">{cartItems}</div>
 					<FontAwesomeIcon style={{ color: 'white' }} icon={faShoppingCart} />
 					<div className="total_value_icon">{getTotalCartValue === 0 ? " " : "$" + (getTotalCartValue - getTotalCartValueDiscount)}</div>
 				</div>
+				
 			</div>
+
 		</Link>
 	)
 }

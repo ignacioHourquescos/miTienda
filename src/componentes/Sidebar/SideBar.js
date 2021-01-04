@@ -25,17 +25,22 @@ const SideBar = () => {
 
 
 	return (<>
+
 		<Menu className="side_bar_menu" left isOpen={menuOpen} >
+		
 			<Link style={{ textDecoration: 'none', color: 'white' }} to={'/'} onClick={() => closeMenu()}>Home</Link>
 			<Link style={{ textDecoration: 'none', color: 'white' }} to={'/cart'} onClick={() => closeMenu()}>Cart</Link>
+
 			<br /><br /><br />
+
 			<div className="order_serach_section">
 				<input className="order_search_input" type="text" placeholder="Ingrese codigo de pedido" value={order} onChange={handleOrderChange} />
 				<Link className="order_search_link" style={{ textDecoration: 'none' }} to={`/order/${order}`}>Ver estado de mi pedido --></Link>
 			</div>
+
 		</Menu>
-	</>
-	);
+
+	</>);
 }
 
 

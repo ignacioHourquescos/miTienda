@@ -30,24 +30,19 @@ const Item = ({ article, loadingArticle }) => {
 
 	return (<>
 		{loadingArticle ? <h1>Loading...</h1> :
+			
 			<div className="product_grid">
+				
 				<div className="card_holder">
 
-
-
 					{/*/////////////CARD OVERLAYS//////////*/}
-					{galeraDiscount
-						? <GaleraDiscountDetail article={article} onChange={handleGaleraChange} />
-						: ""
-					}
-					{purchaseInProgress
-						? <ItemPurchaseIndicator article={article} onChange={handleChange} />
-						: ""
-					}
+					{galeraDiscount? <GaleraDiscountDetail article={article} onChange={handleGaleraChange} />: ""}
+					{purchaseInProgress? <ItemPurchaseIndicator article={article} onChange={handleChange} />: ""}
 
 
 					{/*/////////////CARD IMAGE//////////*/}
 					<div className="image_container">
+
 						<div onClick={() => { showGaleraDiscount() }}>
 							{(article.galera && aux)
 								? <div className="galera_discount">
@@ -56,9 +51,11 @@ const Item = ({ article, loadingArticle }) => {
 								: " "
 							}
 						</div>
+
 						<Link to={`/product/${article.id}`} style={{ backgroundColor: "white", padding: "0rem" }}  >
 							<img style={{ backgroundColor: "white" }} className="image" src={article.img} alt={article.desc} />
 						</Link>
+
 					</div>
 
 
@@ -83,6 +80,7 @@ const Item = ({ article, loadingArticle }) => {
 					</div>
 
 				</div>
+				
 			</div>
 		}
 	</>)
